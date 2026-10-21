@@ -6,7 +6,7 @@
     "nodejs_compat"
   ],
   "build": {
-    "command": "pnpm run build"
+    "command": "npm run build"
   },
   "assets": {
     "directory": "./out",
