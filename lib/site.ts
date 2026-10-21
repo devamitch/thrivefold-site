@@ -28,14 +28,13 @@ export const siteConfig = {
 }
 
 export const navItems = [
-  { href: '#tracker', label: 'Interactive Tracker' },
-  { href: '#pillars', label: 'Clinical Pillars' },
-  { href: '#progress', label: 'Progress Telemetry' },
-  { href: '#breathwork', label: 'Somatic Pacer' },
-  { href: '#architecture', label: 'Zero-Cloud Architecture' },
-  { href: '#security', label: 'Privacy & Safety' },
+  { href: '#principles', label: 'Principles' },
+  { href: '#pacer', label: 'Somatic Pacer' },
+  { href: '#ledger', label: 'Clinical Ledger' },
+  { href: '#security', label: 'Hardware Specs' },
   { href: '#beta', label: 'Early Access' },
 ]
 
 export const routes = ['/']
+
 

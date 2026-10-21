@@ -1,112 +1,130 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Menu, X, ArrowUpRight, Activity, ShieldCheck, HeartPulse } from 'lucide-react'
-import { navItems, siteConfig } from '@/lib/site'
+import { ArrowUpRight, Menu, X } from 'lucide-react'
+
+const NAV_LINKS = [
+  { href: '#features', label: 'Features' },
+  { href: '#pacer', label: 'Somatic Pacer' },
+  { href: '#tracker', label: 'Therapy Tracker' },
+  { href: '#clinical', label: 'Clinical Bridge' },
+  { href: '#security', label: 'Security' },
+  { href: '#faq', label: 'FAQ' },
+]
 
 export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 12)
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
+  const closeMenu = () => setMobileMenuOpen(false)
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand Logo & Name */}
-        <a href="#top" className="flex items-center gap-3 group">
-          <div className="relative w-9 h-9 rounded-xl overflow-hidden border border-[var(--border)] flex items-center justify-center bg-[var(--surface)] p-1 shadow-xs transition-transform group-hover:scale-105">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-200 ${
+        scrolled
+          ? 'bg-white/85 shadow-[0_4px_30px_-4px_rgba(25,25,24,0.06)] backdrop-blur-xl'
+          : 'bg-[var(--bg)]/85 backdrop-blur-md'
+      }`}
+    >
+      <div className="mx-auto flex h-[64px] sm:h-[68px] w-full max-w-[1240px] items-center justify-between px-4 sm:px-8 lg:px-10">
+        {/* Brand Link */}
+        <a
+          href="#top"
+          className="group inline-flex shrink-0 items-center gap-2 sm:gap-2.5 rounded-xl focus-visible:outline-offset-4"
+          aria-label="Thrivefold Home"
+          onClick={closeMenu}
+        >
+          <span className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center overflow-hidden rounded-[12px] sm:rounded-[14px] bg-white shadow-xs border border-[var(--border)] p-1">
             <Image
               src="/favicon.svg"
-              alt="Thrivefold Therapy Logo"
+              alt="Thrivefold Mark"
               width={32}
               height={32}
-              className="object-contain"
+              className="h-full w-full object-contain"
             />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-serif font-bold text-lg leading-tight text-[var(--ink)] tracking-tight">
-              Thrivefold
-            </span>
-            <span className="text-[10px] font-mono text-[var(--ink-muted)] tracking-wider uppercase">
-              Sovereign Therapy OS
-            </span>
-          </div>
+          </span>
+          <span className="font-serif text-[1.25rem] sm:text-[1.35rem] font-semibold tracking-[-0.03em] text-[var(--ink)]">
+            Thrivefold
+          </span>
         </a>
 
-        {/* Desktop Nav (Anchors for Single Page) */}
-        <nav className="hidden xl:flex items-center gap-6">
-          {navItems.map((item) => (
+        {/* Desktop Navigation Links */}
+        <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
+          {NAV_LINKS.map((link) => (
             <a
-              key={item.href}
-              href={item.href}
-              className="text-xs font-medium text-[var(--ink-secondary)] hover:text-[var(--ink)] transition-colors py-1 hover:border-b hover:border-[var(--sage)]"
+              key={link.href}
+              href={link.href}
+              className="rounded-full px-3.5 py-2 text-[13px] font-medium text-[var(--ink-secondary)] transition-colors hover:bg-[var(--surface2)] hover:text-[var(--ink)]"
             >
-              {item.label}
+              {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Action CTAs */}
-        <div className="hidden sm:flex items-center gap-3">
-          <a
-            href="#tracker"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium border border-[var(--border)] text-[var(--ink-secondary)] hover:border-[var(--sage)] hover:text-[var(--sage)] transition-all bg-[var(--surface)] interactive-btn"
-          >
-            <Activity className="w-3.5 h-3.5 text-[var(--sage)]" />
-            <span>Live Tracker</span>
-          </a>
+        {/* CTA & Mobile Menu Toggle */}
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href="#beta"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-[var(--ink)] text-[var(--bg)] hover:opacity-90 transition-all shadow-xs interactive-btn"
+            className="squircle-button inline-flex items-center gap-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-[13px] font-semibold px-4 py-2 sm:min-h-10 sm:px-5 shadow-xs"
           >
-            <span>Early Access</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            <span>Get Beta Access</span>
+            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
-        </div>
 
-        {/* Mobile menu toggle */}
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="xl:hidden p-2 rounded-lg text-[var(--ink-secondary)] hover:text-[var(--ink)] interactive-btn"
-          aria-label="Toggle Navigation"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+          <button
+            type="button"
+            className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full text-[var(--ink)] transition-colors hover:bg-[var(--surface2)] md:hidden"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden border-b border-[var(--border)] bg-[var(--surface)] px-4 py-6 space-y-4 shadow-lg">
-          <div className="flex flex-col space-y-3">
-            {navItems.map((item) => (
+        <nav
+          aria-label="Mobile navigation"
+          className="absolute inset-x-0 top-full border-b border-[var(--border)] bg-[var(--surface)] px-5 pb-6 pt-3 shadow-lg md:hidden"
+        >
+          <div className="mx-auto flex max-w-[720px] flex-col gap-1">
+            {NAV_LINKS.map((link) => (
               <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-medium text-[var(--ink)] py-2 border-b border-[var(--border)] flex items-center justify-between"
+                key={link.href}
+                href={link.href}
+                onClick={closeMenu}
+                className="rounded-xl px-3 py-2.5 text-[15px] font-medium text-[var(--ink)] transition-colors hover:bg-[var(--surface2)]"
               >
-                <span>{item.label}</span>
-                <span className="text-xs text-[var(--ink-muted)]">→</span>
+                {link.label}
               </a>
             ))}
-          </div>
-          <div className="pt-2 flex flex-col gap-2">
-            <a
-              href="#tracker"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 rounded-xl font-medium text-xs border border-[var(--border)] bg-[var(--surface2)] text-[var(--ink)]"
-            >
-              Test Live Therapy Tracker
-            </a>
             <a
               href="#beta"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 rounded-xl font-semibold text-xs bg-[var(--ink)] text-[var(--bg)]"
+              onClick={closeMenu}
+              className="squircle-button mt-3 flex w-full items-center justify-center gap-1.5 bg-[var(--terracotta)] text-white py-3 text-[14px] font-semibold"
             >
-              Request iOS / Android Beta Invite
+              Get Beta Access <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   )

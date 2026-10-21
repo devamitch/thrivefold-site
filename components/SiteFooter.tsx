@@ -1,141 +1,101 @@
 import Image from 'next/image'
-import { siteConfig } from '@/lib/site'
-import { ShieldCheck, HeartPulse, Brain, Compass, PhoneCall, ArrowUpRight } from 'lucide-react'
+import { Heart, ShieldCheck, ArrowUpRight } from 'lucide-react'
 
 export function SiteFooter() {
   return (
-    <footer className="w-full border-t border-[var(--border)] bg-[var(--surface)] text-[var(--ink)] pt-16 pb-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-[var(--border)]">
-          {/* Brand Column (2 cols) */}
-          <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl border border-[var(--border)] p-1 flex items-center justify-center bg-[var(--surface2)] shadow-xs">
-                <Image src="/favicon.svg" alt="Thrivefold Logo" width={32} height={32} />
-              </div>
-              <span className="font-serif font-bold text-xl tracking-tight">Thrivefold</span>
-            </div>
-            <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed max-w-sm font-light">
-              Sovereign on-device therapy companion, somatic mood monitoring, and longitudinal progress tracking. Built with calm architecture and zero cloud surveillance.
+    <footer className="border-t border-[var(--border)] bg-white text-[var(--ink)] mt-24">
+      {/* 24/7 Crisis Support Bar */}
+      <div className="border-b border-[var(--border)] bg-[var(--surface2)] px-4 py-4 text-center">
+        <p className="text-xs sm:text-sm text-[var(--ink-secondary)]">
+          <strong className="text-[var(--terracotta-strong)]">In immediate distress?</strong>{' '}
+          You are not alone. Call or text <strong className="text-[var(--ink)]">988</strong> (USA & Canada),{' '}
+          <strong className="text-[var(--ink)]">111</strong> (UK), or reach out to your local emergency services immediately.
+        </p>
+      </div>
+
+      <div className="mx-auto max-w-[1240px] px-4 py-16 sm:px-8 sm:py-20 lg:px-10 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-14 border-b border-[var(--border)]">
+          {/* Brand Info (5 cols) */}
+          <div className="md:col-span-5 space-y-4">
+            <a href="#top" className="inline-flex items-center gap-2.5">
+              <span className="flex h-9 w-9 items-center justify-center rounded-[14px] bg-white border border-[var(--border)] shadow-xs p-1">
+                <Image
+                  src="/favicon.svg"
+                  alt="Thrivefold Mark"
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
+              </span>
+              <span className="font-serif text-xl font-semibold tracking-[-0.03em] text-[var(--ink)]">
+                Thrivefold
+              </span>
+            </a>
+
+            <p className="text-sm text-[var(--ink-secondary)] leading-relaxed max-w-sm">
+              Sovereign mental health sanctuary running strictly on your personal hardware. Somatic nervous system regulation, cognitive distortion tracking, and clinical appointment preparation.
             </p>
-            <div className="flex items-center gap-2 pt-2 text-xs font-mono text-[var(--ink-muted)]">
-              <ShieldCheck className="w-4 h-4 text-[var(--sage)]" />
-              <span>Offline Sovereign · AES-256 Keystore Hardware Vault</span>
+
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface2)] text-xs text-[var(--ink-secondary)]">
+              <ShieldCheck className="w-3.5 h-3.5 text-[var(--sage-strong)]" />
+              <span>Zero-knowledge hardware cryptography</span>
             </div>
           </div>
 
-          {/* Quick Anchor Navigation */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)]">Therapy Navigation</h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-[var(--ink-secondary)]">
-              <li>
-                <a href="#tracker" className="hover:text-[var(--sage)] transition-colors">
-                  Interactive Mood Tracker
-                </a>
-              </li>
-              <li>
-                <a href="#pillars" className="hover:text-[var(--sage)] transition-colors">
-                  Clinical Pillars
-                </a>
-              </li>
-              <li>
-                <a href="#progress" className="hover:text-[var(--sage)] transition-colors">
-                  Progress Telemetry
-                </a>
-              </li>
-              <li>
-                <a href="#breathwork" className="hover:text-[var(--sage)] transition-colors">
-                  Somatic Breathwork Pacer
-                </a>
-              </li>
-              <li>
-                <a href="#architecture" className="hover:text-[var(--sage)] transition-colors">
-                  Zero-Cloud Architecture
-                </a>
-              </li>
-            </ul>
+          {/* Quick Links (4 cols) */}
+          <div className="md:col-span-4 space-y-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--ink-muted)] block">
+              Sanctuary Navigation
+            </span>
+            <div className="flex flex-col space-y-2 text-sm text-[var(--ink-secondary)]">
+              <a href="#features" className="hover:text-[var(--terracotta)] transition-colors">
+                Therapeutic Architecture
+              </a>
+              <a href="#pacer" className="hover:text-[var(--terracotta)] transition-colors">
+                4-7-8 Somatic Pacer
+              </a>
+              <a href="#tracker" className="hover:text-[var(--terracotta)] transition-colors">
+                Interactive Distortion Tracker
+              </a>
+              <a href="#clinical" className="hover:text-[var(--terracotta)] transition-colors">
+                Clinical Progression Band
+              </a>
+              <a href="#security" className="hover:text-[var(--terracotta)] transition-colors">
+                Hardware Enclave Security
+              </a>
+              <a href="#faq" className="hover:text-[var(--terracotta)] transition-colors">
+                Frequently Asked Questions
+              </a>
+            </div>
           </div>
 
-          {/* Legal & Safety */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)]">Sovereignty & Safety</h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-[var(--ink-secondary)]">
-              <li>
-                <a href="#security" className="hover:text-[var(--ink)] transition-colors">
-                  Clinical Boundaries
-                </a>
-              </li>
-              <li>
-                <a href="#privacy" className="hover:text-[var(--ink)] transition-colors">
-                  Zero-Knowledge Privacy
-                </a>
-              </li>
-              <li>
-                <a href="#terms" className="hover:text-[var(--ink)] transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#beta" className="hover:text-[var(--ink)] transition-colors">
-                  Early Access Cohort
-                </a>
-              </li>
-              <li>
-                <a href="tel:988" className="hover:text-[var(--clay)] transition-colors font-medium flex items-center gap-1">
-                  <PhoneCall className="w-3.5 h-3.5 text-[var(--clay)]" />
-                  <span>988 Crisis Hotline (24/7)</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Amit Dev Labs Ecosystem */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)]">Amit Dev Labs</h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-[var(--ink-secondary)]">
-              <li>
-                <a href={siteConfig.ecosystem.neev} target="_blank" rel="noreferrer" className="hover:text-[var(--ink)] transition-colors flex items-center justify-between">
-                  <span>Neev Sanctuary</span>
-                  <span className="text-[10px] font-mono text-[var(--ink-muted)]">Family OS</span>
-                </a>
-              </li>
-              <li>
-                <a href={siteConfig.ecosystem.setu} target="_blank" rel="noreferrer" className="hover:text-[var(--ink)] transition-colors flex items-center justify-between">
-                  <span>Setu P2P</span>
-                  <span className="text-[10px] font-mono text-[var(--ink-muted)]">Direct WiFi</span>
-                </a>
-              </li>
-              <li>
-                <a href={siteConfig.ecosystem.blinkquest} target="_blank" rel="noreferrer" className="hover:text-[var(--ink)] transition-colors flex items-center justify-between">
-                  <span>BlinkQuest</span>
-                  <span className="text-[10px] font-mono text-[var(--ink-muted)]">Eye Care</span>
-                </a>
-              </li>
-              <li>
-                <a href={siteConfig.ecosystem.kshem} target="_blank" rel="noreferrer" className="hover:text-[var(--ink)] transition-colors flex items-center justify-between">
-                  <span>KSHEM</span>
-                  <span className="text-[10px] font-mono text-[var(--ink-muted)]">Safety</span>
-                </a>
-              </li>
-              <li>
-                <a href={siteConfig.ecosystem.labs} target="_blank" rel="noreferrer" className="hover:text-[var(--ink)] transition-colors flex items-center justify-between">
-                  <span>Devamit Hub</span>
-                  <span className="text-[10px] font-mono text-[var(--ink-muted)]">Systems</span>
-                </a>
-              </li>
-            </ul>
+          {/* Early Access Action (3 cols) */}
+          <div className="md:col-span-3 space-y-4">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[var(--ink-muted)] block">
+              Private Release
+            </span>
+            <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+              Available via private invitation for Apple iOS and Android.
+            </p>
+            <a
+              href="#beta"
+              className="squircle-button inline-flex items-center gap-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-semibold px-4 py-2.5 shadow-xs"
+            >
+              <span>Get Beta Access</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
 
-        {/* Bottom Attribution Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
-          <p>© {new Date().getFullYear()} Thrivefold. Engineered with care by <a href={siteConfig.authorUrl} target="_blank" rel="noreferrer" className="underline hover:text-[var(--ink)] font-medium">{siteConfig.author}</a> under Amit Dev Labs.</p>
-          <div className="flex items-center gap-4">
-            <a href="#privacy" className="hover:text-[var(--ink)]">Privacy</a>
-            <a href="#terms" className="hover:text-[var(--ink)]">Terms</a>
-            <a href="/sitemap.xml" className="hover:text-[var(--ink)]">Sitemap</a>
-            <a href="/llms.txt" className="hover:text-[var(--ink)]">llms.txt</a>
-          </div>
+        {/* Legal & Medical Disclaimer Colophon */}
+        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
+          <p>
+            © {new Date().getFullYear()} Thrivefold · An <a href="https://devamit.co.in" target="_blank" rel="noopener noreferrer" className="text-[var(--ink)] hover:text-[var(--terracotta)] font-medium underline underline-offset-2">Amit Dev Labs</a> Sovereign Project.
+          </p>
+
+          <p className="max-w-xl text-[11px] leading-normal">
+            Disclaimer: Thrivefold is an on-device self-regulation workbook and therapy companion, not a licensed medical clinic or emergency service. If you are experiencing acute distress, please contact emergency professionals.
+          </p>
         </div>
       </div>
     </footer>
