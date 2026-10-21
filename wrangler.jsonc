@@ -1,14 +1,17 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "thrivefold-site",
-  "compatibility_date": "2024-09-23",
+  "compatibility_date": "2026-04-26",
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "pages_build_output_dir": "out",
+  "build": {
+    "command": "pnpm run build"
+  },
   "assets": {
-    "directory": "out",
-    "binding": "ASSETS"
+    "directory": "./out",
+    "not_found_handling": "404-page",
+    "html_handling": "drop-trailing-slash"
   },
   "routes": [
     {
