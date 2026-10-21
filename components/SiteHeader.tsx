@@ -1,9 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, ArrowUpRight, Sparkles, Activity, ShieldCheck, HeartPulse } from 'lucide-react'
+import { Menu, X, ArrowUpRight, Activity, ShieldCheck, HeartPulse } from 'lucide-react'
 import { navItems, siteConfig } from '@/lib/site'
 
 export function SiteHeader() {

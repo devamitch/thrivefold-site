@@ -1,13 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Sparkles, Brain, HeartPulse, Activity, CheckCircle2, RotateCcw, ShieldCheck, ChevronRight, Zap } from 'lucide-react'
+import { Brain, HeartPulse, Activity, CheckCircle2, ShieldCheck, Zap, Sliders } from 'lucide-react'
 
 interface LoggedSession {
   id: string
   time: string
   mood: string
-  moodEmoji: string
   somatic: string
   cognitiveLoad: number
   trigger: string
@@ -17,11 +16,10 @@ interface LoggedSession {
 }
 
 export function InteractiveTherapyTracker() {
-  const [selectedMood, setSelectedMood] = useState<{ id: string; label: string; emoji: string; category: string }>({
+  const [selectedMood, setSelectedMood] = useState<{ id: string; label: string; tag: string }>({
     id: 'anxious',
     label: 'Anxious & Hypervigilant',
-    emoji: '⚡',
-    category: 'elevated',
+    tag: 'Elevated Sympathetic Tone',
   })
 
   const [selectedSomatic, setSelectedSomatic] = useState('Constriction in chest or shallow breathing')
@@ -32,11 +30,10 @@ export function InteractiveTherapyTracker() {
     id: 'sample-1',
     time: 'Today · 3:15 PM',
     mood: 'Anxious & Hypervigilant',
-    moodEmoji: '⚡',
     somatic: 'Constriction in chest or shallow breathing',
     cognitiveLoad: 7,
     trigger: 'Catastrophizing an upcoming performance review at work',
-    distortion: 'Catastrophizing & Fortune-Telling (Overestimating catastrophe probability)',
+    distortion: 'Catastrophizing & Fortune-Telling (Overestimating negative probability)',
     reframe: 'My nervous system is treating an anticipated conversation like physical danger. The review is simply an exchange of words; whatever feedback emerges, I have the agency, time, and track record to address it incrementally.',
     prescription: 'Physiological Sigh (2 rapid nasal inhales followed by 1 prolonged oral exhalation) × 5 repetitions to lower heart rate.',
   })
@@ -46,7 +43,6 @@ export function InteractiveTherapyTracker() {
       id: 'history-1',
       time: 'Yesterday · 8:30 PM',
       mood: 'Melancholic & Heavy',
-      moodEmoji: '🌧️',
       somatic: 'Lethargy in limbs, eye fatigue',
       cognitiveLoad: 5,
       trigger: 'Boundary guilt with family expectations',
@@ -58,7 +54,6 @@ export function InteractiveTherapyTracker() {
       id: 'history-2',
       time: '2 days ago · 9:10 AM',
       mood: 'Quiet Clarity & Flow',
-      moodEmoji: '💎',
       somatic: 'Open posture, steady relaxed heart rate',
       cognitiveLoad: 3,
       trigger: 'Morning journaling and 20-minute sunlight walk',
@@ -69,12 +64,12 @@ export function InteractiveTherapyTracker() {
   ])
 
   const moods = [
-    { id: 'anxious', label: 'Anxious & Hypervigilant', emoji: '⚡', category: 'elevated' },
-    { id: 'grounded', label: 'Grounded & Present', emoji: '🌿', category: 'calm' },
-    { id: 'melancholic', label: 'Melancholic & Heavy', emoji: '🌧️', category: 'low' },
-    { id: 'overstimulated', label: 'Overstimulated & Rushed', emoji: '🌪️', category: 'elevated' },
-    { id: 'clarity', label: 'Quiet Clarity & Flow', emoji: '💎', category: 'calm' },
-    { id: 'restless', label: 'Restless & Yearning', emoji: '🌊', category: 'medium' },
+    { id: 'anxious', label: 'Anxious & Hypervigilant', tag: 'High Cortisol' },
+    { id: 'grounded', label: 'Grounded & Present', tag: 'Vagal Tone' },
+    { id: 'melancholic', label: 'Melancholic & Heavy', tag: 'Low Dopamine' },
+    { id: 'overstimulated', label: 'Overstimulated & Rushed', tag: 'Sensory Saturation' },
+    { id: 'clarity', label: 'Quiet Clarity & Flow', tag: 'Optimal Focus' },
+    { id: 'restless', label: 'Restless & Yearning', tag: 'Motor Agitation' },
   ]
 
   const somatics = [
@@ -120,7 +115,6 @@ export function InteractiveTherapyTracker() {
         id: `sess-${Date.now()}`,
         time: 'Just now',
         mood: selectedMood.label,
-        moodEmoji: selectedMood.emoji,
         somatic: selectedSomatic,
         cognitiveLoad,
         trigger: triggerNote,
@@ -148,22 +142,22 @@ export function InteractiveTherapyTracker() {
             Test the Sovereign Therapy Tracker
           </h2>
           <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed font-light">
-            Experience how Thrivefold transforms spontaneous emotional turbulence into structured clinical clarity. Choose your emotional state, somatic baseline, and cognitive trigger below.
+            Experience how Thrivefold transforms emotional turbulence into structured clinical clarity. Choose your emotional state, somatic baseline, and cognitive trigger below.
           </p>
         </div>
 
         {/* Two-Column Interactive Workspace */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Input Form (7 cols) */}
-          <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-sm thrive-card space-y-6">
+          <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-xs thrive-card space-y-6">
             {/* Step 1: Mood Valence */}
             <div>
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)] flex items-center gap-2">
                   <span className="w-5 h-5 rounded-full bg-[var(--surface2)] flex items-center justify-center text-[10px] font-bold text-[var(--ink)]">1</span>
-                  Emotional Valence / Mood State
+                  Emotional Valence / State
                 </span>
-                <span className="text-xs font-medium text-[var(--sage)]">Single Tap</span>
+                <span className="text-xs font-medium text-[var(--sage)]">Tap to Select</span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {moods.map((m) => (
@@ -171,14 +165,14 @@ export function InteractiveTherapyTracker() {
                     type="button"
                     key={m.id}
                     onClick={() => setSelectedMood(m)}
-                    className={`p-3 rounded-2xl text-left border transition-all interactive-btn flex flex-col justify-between h-20 ${
+                    className={`p-3.5 rounded-2xl text-left border transition-all interactive-btn flex flex-col justify-between h-20 ${
                       selectedMood.id === m.id
                         ? 'border-[var(--ink)] bg-[var(--surface2)] shadow-xs font-semibold'
                         : 'border-[var(--border)] bg-[var(--surface)] hover:border-[var(--border-strong)] text-[var(--ink-secondary)]'
                     }`}
                   >
-                    <span className="text-xl">{m.emoji}</span>
-                    <span className="text-xs leading-snug line-clamp-1">{m.label}</span>
+                    <span className="text-xs font-mono text-[var(--ink-muted)] block">{m.tag}</span>
+                    <span className="text-xs leading-snug line-clamp-1 text-[var(--ink)]">{m.label}</span>
                   </button>
                 ))}
               </div>
@@ -191,7 +185,7 @@ export function InteractiveTherapyTracker() {
                   <span className="w-5 h-5 rounded-full bg-[var(--surface2)] flex items-center justify-center text-[10px] font-bold text-[var(--ink)]">2</span>
                   Somatic Physical Sensation
                 </span>
-                <span className="text-xs font-mono text-[var(--ink-muted)]">Nervous System Feedback</span>
+                <span className="text-xs font-mono text-[var(--ink-muted)]">Nervous System Signal</span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {somatics.map((s, idx) => (
@@ -216,9 +210,9 @@ export function InteractiveTherapyTracker() {
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)] flex items-center gap-2">
                   <span className="w-5 h-5 rounded-full bg-[var(--surface2)] flex items-center justify-center text-[10px] font-bold text-[var(--ink)]">3</span>
-                  Perceived Cognitive Load / Stress
+                  Perceived Cognitive Load / Strain
                 </span>
-                <span className="text-xs font-mono font-bold text-[var(--ink)] px-2 py-0.5 rounded bg-[var(--surface2)]">
+                <span className="text-xs font-mono font-bold text-[var(--ink)] px-2.5 py-0.5 rounded bg-[var(--surface2)] border border-[var(--border)]">
                   {cognitiveLoad} / 10 · {cognitiveLoad <= 3 ? 'Restorative Sanctuary' : cognitiveLoad <= 6 ? 'Functional Balance' : cognitiveLoad <= 8 ? 'High Tension' : 'Burnout Risk'}
                 </span>
               </div>
@@ -272,17 +266,17 @@ export function InteractiveTherapyTracker() {
               type="button"
               onClick={handleSynthesize}
               disabled={isSynthesizing}
-              className="w-full py-3.5 rounded-2xl bg-[var(--ink)] text-[var(--bg)] font-semibold text-xs uppercase tracking-wider hover:bg-[var(--sage)] transition-all flex items-center justify-center gap-2 interactive-btn shadow-sm"
+              className="w-full py-3.5 rounded-2xl bg-[var(--ink)] text-[var(--bg)] font-semibold text-xs uppercase tracking-wider hover:bg-[var(--sage)] transition-all flex items-center justify-center gap-2 interactive-btn shadow-xs"
             >
               {isSynthesizing ? (
                 <>
                   <Zap className="w-4 h-4 animate-spin text-[var(--sage-light)]" />
-                  <span>Synthesizing On-Device Neural Reframe...</span>
+                  <span>Analyzing On-Device Cognitive Pattern...</span>
                 </>
               ) : (
                 <>
-                  <Sparkles className="w-4 h-4 text-[var(--sage-light)]" />
-                  <span>Log Entry & Synthesize On-Device Reframe</span>
+                  <Brain className="w-4 h-4 text-[var(--sage-light)]" />
+                  <span>Analyze Thought & Generate Cognitive Reframe</span>
                 </>
               )}
             </button>
@@ -292,14 +286,11 @@ export function InteractiveTherapyTracker() {
           <div className="lg:col-span-5 space-y-6">
             {/* Active Synthesized Insight Card */}
             {activeInsight && (
-              <div className="p-6 sm:p-7 rounded-3xl bg-[var(--surface)] border border-[var(--border-strong)] shadow-md thrive-card relative overflow-hidden">
+              <div className="p-6 sm:p-7 rounded-3xl bg-[var(--surface)] border border-[var(--border-strong)] shadow-xs thrive-card relative overflow-hidden">
                 <div className="flex items-center justify-between pb-4 border-b border-[var(--border)] mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-2xl">{activeInsight.moodEmoji}</span>
-                    <div>
-                      <span className="text-xs font-bold text-[var(--ink)] block">{activeInsight.mood}</span>
-                      <span className="text-[10px] font-mono text-[var(--ink-muted)]">{activeInsight.time}</span>
-                    </div>
+                  <div>
+                    <span className="text-xs font-bold text-[var(--ink)] block">{activeInsight.mood}</span>
+                    <span className="text-[10px] font-mono text-[var(--ink-muted)]">{activeInsight.time}</span>
                   </div>
                   <div className="inline-flex items-center gap-1 text-[10px] font-mono text-[var(--sage)] bg-[var(--sage-container)] px-2.5 py-1 rounded-full border border-[var(--sage)]/20">
                     <ShieldCheck className="w-3 h-3" />
@@ -319,7 +310,7 @@ export function InteractiveTherapyTracker() {
                     <span className="font-mono text-[10px] uppercase text-[var(--sage)] font-bold block mb-1">
                       Cognitive Reframe Statement
                     </span>
-                    <p className="text-[var(--ink-secondary)] italic">{activeInsight.reframe}</p>
+                    <p className="text-[var(--ink-secondary)]">{activeInsight.reframe}</p>
                   </div>
 
                   <div className="p-3.5 rounded-2xl bg-[var(--surface2)] border border-[var(--border)]">
@@ -344,7 +335,7 @@ export function InteractiveTherapyTracker() {
                     key={item.id}
                     className="p-3 rounded-2xl bg-[var(--surface2)] border border-[var(--border)] text-xs flex items-start gap-3"
                   >
-                    <span className="text-lg shrink-0 mt-0.5">{item.moodEmoji}</span>
+                    <div className="w-2 h-2 rounded-full bg-[var(--sage)] mt-1.5 shrink-0" />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-[var(--ink)]">{item.mood}</span>

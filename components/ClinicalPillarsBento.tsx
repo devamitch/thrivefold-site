@@ -1,4 +1,4 @@
-import { HeartPulse, Brain, Compass, TrendingUp, ShieldCheck, Lock, Sparkles, CheckCircle2 } from 'lucide-react'
+import { HeartPulse, Brain, Compass, TrendingUp, ShieldCheck, Lock, CheckCircle2 } from 'lucide-react'
 
 export function ClinicalPillarsBento() {
   return (
@@ -11,17 +11,17 @@ export function ClinicalPillarsBento() {
             <span>Four Integrated Therapeutic Pillars</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[var(--ink)] tracking-tight mb-4">
-            Engineered for Real Human Transformation
+            Engineered for Grounded Human Healing
           </h2>
           <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed font-light">
-            Generic mood apps ask you how you feel with a single smiley face and do nothing with the answer. Thrivefold synthesizes somatics, cognitive science, session preparation, and longitudinal recovery velocity.
+            Generic mental wellness apps log passive smileys with zero follow-through. Thrivefold integrates physiological somatics, cognitive deconstruction, clinical therapy continuity, and nervous system recovery momentum.
           </p>
         </div>
 
         {/* 4-Card Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {/* Pillar 1: Somatics */}
-          <div className="p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-sm thrive-card flex flex-col justify-between">
+          <div className="p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-xs thrive-card flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-[var(--sage-container)] flex items-center justify-center text-[var(--sage)]">
@@ -40,7 +40,7 @@ export function ClinicalPillarsBento() {
             </div>
             <div className="p-4 rounded-2xl bg-[var(--surface2)] border border-[var(--border)] space-y-2 text-xs">
               <div className="flex items-center justify-between text-[var(--ink-secondary)]">
-                <span>Vagal Tone Indicator:</span>
+                <span>Vagal Tone Baseline:</span>
                 <strong className="text-[var(--sage)]">Parasympathetic Dominant</strong>
               </div>
               <div className="flex items-center justify-between text-[var(--ink-secondary)]">
@@ -51,7 +51,7 @@ export function ClinicalPillarsBento() {
           </div>
 
           {/* Pillar 2: CBT Deconstruction */}
-          <div className="p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-sm thrive-card flex flex-col justify-between">
+          <div className="p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-xs thrive-card flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-[var(--lavender-container)] flex items-center justify-center text-[var(--lavender)]">
@@ -81,7 +81,7 @@ export function ClinicalPillarsBento() {
           </div>
 
           {/* Pillar 3: Clinical Session Vault */}
-          <div className="p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-sm thrive-card flex flex-col justify-between">
+          <div className="p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-xs thrive-card flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-[var(--clay-container)] flex items-center justify-center text-[var(--clay)]">
@@ -111,7 +111,7 @@ export function ClinicalPillarsBento() {
           </div>
 
           {/* Pillar 4: Longitudinal Telemetry */}
-          <div className="p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-sm thrive-card flex flex-col justify-between">
+          <div className="p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-xs thrive-card flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)]">

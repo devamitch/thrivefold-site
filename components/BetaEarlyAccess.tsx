@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Sparkles, Send, CheckCircle2, Apple, Smartphone, ShieldCheck, ArrowRight, Lock } from 'lucide-react'
+import { Send, CheckCircle2, Apple, Smartphone, ShieldCheck, Lock } from 'lucide-react'
 
 export function BetaEarlyAccess() {
   const [email, setEmail] = useState('')
@@ -27,7 +27,7 @@ export function BetaEarlyAccess() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--surface2)] border border-[var(--border)] text-xs font-mono uppercase tracking-wider text-[var(--sage)] mb-4 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5" />
+            <ShieldCheck className="w-3.5 h-3.5" />
             <span>Closed Beta & Direct Early Release</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[var(--ink)] tracking-tight mb-4">
@@ -40,7 +40,7 @@ export function BetaEarlyAccess() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-5xl mx-auto">
           {/* Left Form (7 cols) */}
-          <div className="lg:col-span-7 p-8 rounded-3xl bg-[var(--surface2)] border border-[var(--border)] shadow-sm thrive-card">
+          <div className="lg:col-span-7 p-8 rounded-3xl bg-[var(--surface2)] border border-[var(--border)] shadow-xs thrive-card">
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -103,7 +103,7 @@ export function BetaEarlyAccess() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-2xl bg-[var(--ink)] text-[var(--bg)] font-semibold text-xs uppercase tracking-wider hover:bg-[var(--sage)] transition-all flex items-center justify-center gap-2 interactive-btn shadow-sm"
+                  className="w-full py-4 rounded-2xl bg-[var(--ink)] text-[var(--bg)] font-semibold text-xs uppercase tracking-wider hover:bg-[var(--sage)] transition-all flex items-center justify-center gap-2 interactive-btn shadow-xs"
                 >
                   <Send className="w-4 h-4 text-[var(--sage-light)]" />
                   <span>Request Closed Beta Invitation</span>

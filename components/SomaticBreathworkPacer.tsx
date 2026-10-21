@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Play, Pause, RotateCcw, HeartPulse, ShieldCheck, Sparkles, Wind } from 'lucide-react'
+import { Play, Pause, RotateCcw, HeartPulse, ShieldCheck, Wind } from 'lucide-react'
 
 export function SomaticBreathworkPacer() {
   const [isActive, setIsActive] = useState(false)
@@ -82,7 +82,7 @@ export function SomaticBreathworkPacer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Text Column (6 cols) */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--surface2)] border border-[var(--border)] text-xs font-mono uppercase tracking-wider text-[var(--sage)] shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--surface2)] border border-[var(--border)] text-xs font-mono uppercase tracking-wider text-[var(--sage)] shadow-xs">
               <Wind className="w-3.5 h-3.5" />
               <span>Somatic Pacer · Dr. Andrew Weil 4-7-8 Calibration</span>
             </div>
@@ -103,7 +103,7 @@ export function SomaticBreathworkPacer() {
                 </span>
               </div>
               <div className="p-4 rounded-2xl bg-[var(--surface2)] border border-[var(--border)]">
-                <span className="font-bold text-sm text-[var(--ink)] block mb-1">Amydgala Cooldown</span>
+                <span className="font-bold text-sm text-[var(--ink)] block mb-1">Amygdala Cooldown</span>
                 <span className="text-xs text-[var(--ink-secondary)]">
                   4 cycles of 4-7-8 breathing reduce salivary cortisol by up to 23% in clinical trials.
                 </span>
@@ -114,7 +114,7 @@ export function SomaticBreathworkPacer() {
               <button
                 type="button"
                 onClick={() => setIsActive(!isActive)}
-                className="px-6 py-3 rounded-full bg-[var(--ink)] text-[var(--bg)] font-semibold text-xs uppercase tracking-wider hover:bg-[var(--sage)] transition-all flex items-center gap-2 interactive-btn shadow-sm"
+                className="px-6 py-3 rounded-full bg-[var(--ink)] text-[var(--bg)] font-semibold text-xs uppercase tracking-wider hover:bg-[var(--sage)] transition-all flex items-center gap-2 interactive-btn shadow-xs"
               >
                 {isActive ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                 <span>{isActive ? 'Pause Pacer' : 'Start 4-7-8 Breathing'}</span>
@@ -136,17 +136,9 @@ export function SomaticBreathworkPacer() {
           {/* Right Visual Interactive Ring (6 cols) */}
           <div className="lg:col-span-6 flex flex-col items-center justify-center">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center">
-              {/* Outer Glow Halo */}
-              <div
-                className={`absolute inset-0 rounded-full blur-2xl opacity-40 transition-all duration-1000 ${
-                  isActive ? 'scale-110' : 'scale-90'
-                }`}
-                style={{ backgroundColor: current.color }}
-              />
-
               {/* Expanding Animated Ring */}
               <div
-                className={`w-64 h-64 sm:w-72 sm:h-72 rounded-full border-2 flex items-center justify-center p-8 transition-transform duration-1000 ease-out shadow-inner ${
+                className={`w-64 h-64 sm:w-72 sm:h-72 rounded-full border-2 flex items-center justify-center p-8 transition-transform duration-1000 ease-out shadow-xs ${
                   isActive ? current.scale : 'scale-100'
                 }`}
                 style={{
@@ -173,7 +165,7 @@ export function SomaticBreathworkPacer() {
 
             {/* Micro instruction pill */}
             <div className="mt-6 text-center max-w-sm">
-              <p className="text-xs text-[var(--ink-secondary)] italic leading-relaxed">
+              <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
                 {current.description}
               </p>
             </div>
