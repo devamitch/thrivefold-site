@@ -1,182 +1,130 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { Shield, Sparkles, Heart, Activity, ArrowRight, CheckCircle2, Lock, Smartphone, Send } from 'lucide-react'
+import { Sparkles, ShieldCheck, ArrowRight, HeartPulse, Brain, Activity, Lock, Compass, Smile } from 'lucide-react'
 
 export function HeroSection() {
-  const [activeSpace, setActiveSpace] = useState<'women' | 'men' | 'pride'>('women')
-
-  const spaceDetails = {
-    women: {
-      name: "Women's Health",
-      badge: 'Harmony & Hormonal Autonomy',
-      themeClass: 'bg-[#FDF2EE] border-[#E07A5F]/30 text-[#9B2226]',
-      accentBg: '#E07A5F',
-      accentText: '#9B2226',
-      title: 'Cyclical Wisdom & Phase Telemetry',
-      description: 'Menstrual and ovulation rhythm tracking paired with follicular vs. luteal nutrition intelligence and basal temperature analysis — strictly isolated in an on-device encrypted vault.',
-      bullets: [
-        'Follicular & Luteal phase macronutrient planning',
-        'Pelvic floor cadence reminders & BBT temperature log',
-        'Direct HarmonyBloom mindfulness and audio resonance sync',
-      ],
-      link: '/women-health',
-    },
-    men: {
-      name: "Men's Health",
-      badge: 'Strength & Endocrine Grounding',
-      themeClass: 'bg-[#E8F5EE] border-[#52B788]/30 text-[#1B4332]',
-      accentBg: '#52B788',
-      accentText: '#1B4332',
-      title: 'Resilience, Recovery & Vitality',
-      description: 'Testosterone support habits, circadian sun timing, VO2 max progression, and cold recovery tracking paired with non-judgmental stoic reflections.',
-      bullets: [
-        'Circadian light exposure & sleep architecture telemetry',
-        'Strength output, VO2 max & physical recovery score',
-        'Stoic reflection chips & non-judgmental accountability',
-      ],
-      link: '/men-health',
-    },
-    pride: {
-      name: 'Pride & Wellbeing',
-      badge: 'Identity-Affirming Sanctuary',
-      themeClass: 'bg-[#F3E8FF] border-[#7209B7]/30 text-[#4A0E4E]',
-      accentBg: '#7209B7',
-      accentText: '#4A0E4E',
-      title: 'Affirming Care & Milestone Haven',
-      description: 'Hormone replacement therapy (HRT) schedule and dosage reminders, injection site rotation maps, post-op healing markers, and quick panic-lock privacy.',
-      bullets: [
-        'HRT dose alarms & subcutaneous injection rotation tracker',
-        'Dysphoria grounding exercises & post-op milestone logs',
-        'Instant discreet panic lock and alias identity masking',
-      ],
-      link: '/pride-wellbeing',
-    },
-  }
-
-  const current = spaceDetails[activeSpace]
-
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28">
-      {/* Background Soft Ambient Blur */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[var(--surface3)] blur-[120px] pointer-events-none rounded-full opacity-60" />
+    <section id="overview" className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-32 border-b border-[var(--border)]">
+      {/* Subtle organic ambient gradients */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] ambient-glow rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-[450px] h-[350px] ambient-clay-glow rounded-full blur-3xl pointer-events-none -z-10 opacity-60" />
 
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        {/* Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--surface2)] border border-[var(--border-strong)] text-[var(--ink-secondary)] text-xs font-mono font-medium tracking-wide uppercase mb-6">
-          <span className="flex h-2 w-2 rounded-full bg-[var(--rose)] animate-pulse" />
-          <span>Local-First · On-Device AI · Zero Surveillance</span>
-        </div>
-
-        {/* Brand Origami Petal Icon */}
-        <div className="flex justify-center mb-6">
-          <div className="relative group p-3 rounded-2xl bg-[var(--surface)] border border-[var(--border)] thrive-card">
-            <Image
-              src="/favicon.svg"
-              alt="Thrivefold Emblem"
-              width={56}
-              height={56}
-              className="object-contain animate-float"
-              priority
-            />
-          </div>
-        </div>
-
-        {/* Grand Headline */}
-        <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--ink)] leading-[1.1] mb-6">
-          Sovereign Health with <br />
-          <span className="italic font-normal text-[var(--rose)]">
-            Slow, Contemplative
-          </span>{' '}
-          Connection
-        </h1>
-
-        {/* Serene Subtitle */}
-        <p className="mx-auto max-w-2xl text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed mb-10 font-light">
-          Three dedicated spaces for Women, Men, and LGBTQ+ Wellbeing. All health telemetry, cycle logs, and AI classifiers execute on your device — connected through distance-delayed, chip-only postal letters.
-        </p>
-
-        {/* Interactive Space Switcher */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {(['women', 'men', 'pride'] as const).map((space) => (
-            <button
-              key={space}
-              onClick={() => setActiveSpace(space)}
-              className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all border ${
-                activeSpace === space
-                  ? `${spaceDetails[space].themeClass} font-semibold shadow-none border-current`
-                  : 'bg-[var(--surface)] border-[var(--border)] text-[var(--ink-secondary)] hover:text-[var(--ink)] hover:border-[var(--border-strong)]'
-              }`}
-            >
-              {spaceDetails[space].name}
-            </button>
-          ))}
-        </div>
-
-        {/* Dynamic Space Preview Card */}
-        <div className="mx-auto max-w-3xl rounded-3xl p-6 sm:p-8 thrive-card text-left mb-12">
-          <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-            <span className={`px-3 py-1 rounded-full text-xs font-mono font-medium ${current.themeClass}`}>
-              {current.badge}
-            </span>
-            <span className="text-xs font-mono text-[var(--ink-muted)] flex items-center gap-1.5">
-              <Lock className="w-3.5 h-3.5 text-[var(--sage)]" />
-              <span>MMKV Vault Encrypted</span>
-            </span>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+          {/* Eyebrow Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--surface2)] border border-[var(--border)] text-xs font-mono uppercase tracking-wider text-[var(--ink-secondary)] mb-8 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[var(--sage)] animate-pulse" />
+            <span>Sovereign Therapy OS · 100% On-Device Neural Processing</span>
           </div>
 
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[var(--ink)] mb-3">
-            {current.title}
-          </h3>
-          <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed mb-6">
-            {current.description}
+          {/* Main Title with Fraunces Serif Contrast */}
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--ink)] leading-[1.08] mb-6">
+            Your Mind, Reflected with Clarity.{' '}
+            <span className="italic font-normal text-[var(--sage)]">Your Progress,</span>{' '}
+            Guarded in Sanctuary.
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-base sm:text-xl text-[var(--ink-secondary)] leading-relaxed max-w-2xl font-light mb-10">
+            Thrivefold is a private on-device therapy companion and mental health telemetry system. Monitor emotional fluctuations, log somatic sensations, deconstruct cognitive distortions, and track longitudinal therapeutic progress — without sending a single byte to the cloud.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-            {current.bullets.map((b, i) => (
-              <div key={i} className="p-3 rounded-xl bg-[var(--surface2)] border border-[var(--border)] text-xs text-[var(--ink)] flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[var(--sage)] shrink-0 mt-0.5" />
-                <span>{b}</span>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16">
+            <a
+              href="#tracker"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full font-semibold text-sm bg-[var(--ink)] text-[var(--bg)] hover:bg-[var(--sage)] transition-colors flex items-center justify-center gap-2 shadow-sm interactive-btn"
+            >
+              <Activity className="w-4 h-4 text-[var(--sage-light)]" />
+              <span>Launch Live Therapy Tracker</span>
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </a>
+            <a
+              href="#pillars"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full font-medium text-sm border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--border-strong)] text-[var(--ink)] transition-colors flex items-center justify-center gap-2 interactive-btn"
+            >
+              <Brain className="w-4 h-4 text-[var(--lavender)]" />
+              <span>Explore Clinical Pillars</span>
+            </a>
+          </div>
+
+          {/* Live Mock Hero Telemetry Card */}
+          <div className="w-full max-w-3xl p-6 sm:p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-md text-left thrive-card relative overflow-hidden">
+            <div className="flex items-center justify-between pb-6 border-b border-[var(--border)] flex-wrap gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-[var(--sage-container)] flex items-center justify-center text-[var(--sage)]">
+                  <HeartPulse className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)] block">
+                    Active Telemetry Profile
+                  </span>
+                  <span className="font-serif font-bold text-lg text-[var(--ink)]">
+                    Emotional Homeostasis & Nervous System Telemetry
+                  </span>
+                </div>
               </div>
-            ))}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--surface2)] text-[11px] font-mono text-[var(--sage)] border border-[var(--border)]">
+                <Lock className="w-3 h-3 text-[var(--sage)]" />
+                <span>AES-256 Vault Locked</span>
+              </div>
+            </div>
+
+            {/* Metrics Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
+              <div className="p-4 rounded-2xl bg-[var(--surface2)] border border-[var(--border)]">
+                <span className="text-xs text-[var(--ink-muted)] font-mono block mb-1">Current State</span>
+                <span className="text-base font-bold text-[var(--ink)] flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[var(--sage)]" />
+                  Grounded & Clear
+                </span>
+                <span className="text-[11px] text-[var(--ink-secondary)] mt-1 block">
+                  Parasympathetic dominant baseline
+                </span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[var(--surface2)] border border-[var(--border)]">
+                <span className="text-xs text-[var(--ink-muted)] font-mono block mb-1">CBT Deconstruction</span>
+                <span className="text-base font-bold text-[var(--ink)] flex items-center gap-1.5">
+                  <Brain className="w-4 h-4 text-[var(--lavender)]" />
+                  Catastrophizing Reframed
+                </span>
+                <span className="text-[11px] text-[var(--ink-secondary)] mt-1 block">
+                  Identified 1 automatic thought today
+                </span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[var(--surface2)] border border-[var(--border)]">
+                <span className="text-xs text-[var(--ink-muted)] font-mono block mb-1">Therapy Continuity</span>
+                <span className="text-base font-bold text-[var(--ink)] flex items-center gap-1.5">
+                  <Compass className="w-4 h-4 text-[var(--clay)]" />
+                  Session in 4 Days
+                </span>
+                <span className="text-[11px] text-[var(--ink-secondary)] mt-1 block">
+                  3 breakthrough notes prepared
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="flex items-center justify-between pt-4 border-t border-[var(--border)]">
-            <Link
-              href={current.link}
-              className="text-xs font-semibold text-[var(--ink)] hover:underline inline-flex items-center gap-1"
-            >
-              <span>Explore {current.name}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-            <Link
-              href="/slow-correspondence"
-              className="text-xs text-[var(--ink-muted)] hover:text-[var(--ink)] inline-flex items-center gap-1"
-            >
-              <span>View Slow Correspondence Specs</span>
-              <Send className="w-3 h-3" />
-            </Link>
+          {/* Trust Guarantees */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 text-xs font-mono text-[var(--ink-secondary)] text-left w-full max-w-4xl">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-[var(--sage)] shrink-0" />
+              <span>Zero-Cloud Telemetry</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Lock className="w-4 h-4 text-[var(--sage)] shrink-0" />
+              <span>Biometric Keystore</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Brain className="w-4 h-4 text-[var(--sage)] shrink-0" />
+              <span>Local Onnx Classifiers</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-[var(--sage)] shrink-0" />
+              <span>CBT & Somatics Aligned</span>
+            </div>
           </div>
-        </div>
-
-        {/* Action CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/download"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full font-semibold text-sm bg-[var(--ink)] text-[var(--bg)] hover:opacity-90 transition-all flex items-center justify-center gap-2"
-          >
-            <Smartphone className="w-4 h-4" />
-            <span>Download for iOS & Android</span>
-          </Link>
-          <Link
-            href="/beta"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full font-medium text-sm border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--border-strong)] text-[var(--ink)] transition-all flex items-center justify-center gap-2"
-          >
-            <Sparkles className="w-4 h-4 text-[var(--rose)]" />
-            <span>Request TestFlight / APK Access</span>
-          </Link>
         </div>
       </div>
     </section>

@@ -1,41 +1,36 @@
-# Thrivefold — System Architecture & Knowledge for AI Agents & Search Engines
+# Thrivefold — Sovereign Therapy, Mood Monitoring & Progress Tracking
 
 > **Platform**: Thrivefold  
+> **Category**: General Therapy, Mental Health, Somatics & Progress Tracking  
 > **Ecosystem**: Amit Dev Labs (https://devamit.co.in)  
 > **Production URL**: https://thrivefold.devamit.co.in  
 > **Repository**: https://github.com/devamitch/thrivefold-site  
-> **Core Engine**: React Native (Expo 55), MMKV Local Vault, On-Device Classifier, Supabase Zero-Knowledge Sync  
+> **Core Architecture**: Single Page Application, Expo React Native 55, MMKV Local Vault, ONNX Runtime Neural Engine, AES-256-GCM Hardware Keystore  
 
 ---
 
 ## 1. What is Thrivefold?
-Thrivefold is a local-first, privacy-sovereign health, wellbeing, and slow-correspondence ecosystem built on modern Expo React Native for iOS, Android, and Web. Inspired by the calm design language of Setu and the gamified sensory feedback loops of BlinkQuest, Thrivefold delivers an intentional, humane, and deeply private mobile experience.
+Thrivefold is a local-first, privacy-sovereign mental health therapy companion, emotional telemetry monitor, and progress tracking system built on modern Expo React Native for iOS, Android, and Web. It operates as a Single Page Application (SPA) designed to help individuals deconstruct cognitive distortions, calibrate somatic nervous system equilibrium, prepare for clinical therapy sessions, and track emotional recovery velocity over time.
 
-### Three Dedicated Health Spaces:
-1. **Women's Health**: Cycle tracking, luteal/follicular phase nutrition, hormonal wellness, basal body temperature, pelvic floor reminders, and reproductive autonomy.
-2. **Men's Health**: Stamina, hormonal balance, mental resilience, workout telemetry, circadian sun exposure, VO2 max progression, and recovery.
-3. **Pride & LGBTQ+ Wellbeing**: Gender-affirming health milestones, HRT schedule reminders, injection site rotation, identity-safe reflections, mental wellness, and affirming health navigators.
-
----
-
-## 2. Slow Correspondence Engine (Postal Letters)
-Thrivefold replaces instant messaging addiction with the contemplative cadence of pen-pal postal letters.
-- **Chip-Only Composer**: Users construct letters exclusively by selecting curated sentiment cards, health reflections, and wellness inquiries. Zero unstructured text input prevents toxic spam, phone number extraction, and harassment.
-- **Distance-Delayed Delivery**: Letters take hours to days to arrive based on simulated geographical distance, fostering thoughtful, asynchronous contemplation.
-- **Pseudonymous Pen-Pal Discovery**: Match based on shared health interests without revealing real identities.
+### Four Integrated Clinical Pillars:
+1. **Somatic Nervous System Calibration**: Real-time vagus nerve regulation, tension zone mapping, and guided 4-7-8 somatic breathwork pacing.
+2. **CBT & ACT Cognitive Deconstruction**: Capture automatic thoughts, detect 12 clinical cognitive distortions (catastrophizing, all-or-nothing, emotional reasoning), and generate on-device reframing statements.
+3. **Therapy Session Continuity Vault**: Capture breakthroughs between sessions, prepare structured clinical agendas, and export biometrically locked briefs for your licensed therapist.
+4. **Longitudinal Behavioral Momentum**: Measure emotional recovery velocity, sleep-to-mood correlations, and protective micro-habits.
 
 ---
 
-## 3. Zero-Trust Safety & Policy Engine
-- **18+ Adult Age Assurance**: Required for all pen-pal and correspondence features.
-- **7-Day Restricted Trial for Under-25 Cohorts**: Hard quota of 1 intro/day and complete isolation from community directories.
-- **Deterministic Policy Classifier**: Evaluates all interactions on-device before sync.
+## 2. Zero-Cloud Privacy Guarantee
+- 100% on-device MMKV database.
+- Hardware-enforced AES-256-GCM encryption in iOS Secure Enclave / Android Keystore.
+- Zero analytics pixels, zero cloud user databases, zero third-party trackers.
+- Complete irreversible local data destruction upon app deletion.
 
 ---
 
-## 4. Key Links in Ecosystem
+## 3. Ecosystem Portals (Amit Dev Labs)
 - **Neev Sanctuary**: https://neevsanctuary.devamit.co.in
 - **Setu P2P**: https://setu.devamit.co.in
-- **BlinkQuest Eye Wellness**: https://blinkquest.devamit.co.in
+- **BlinkQuest**: https://blinkquest.devamit.co.in
 - **KSHEM Safety**: https://kshem.devamit.co.in
-- **Amit Dev Labs / System Build**: https://devamit.co.in
+- **Devamit Hub**: https://devamit.co.in

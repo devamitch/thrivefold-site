@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: 'Thrivefold',
-  productName: 'Thrivefold: Sovereign Health & Slow Correspondence',
-  tagline: 'Private on-device health with intentional, contemplative correspondence.',
-  secondaryTagline: 'Three dedicated spaces: Women’s Health, Men’s Health, and Pride Wellbeing — bound by offline-first AI and safe pen-pal letters.',
-  description: 'Thrivefold is a local-first health, wellbeing, and slow-correspondence ecosystem built on modern Expo React Native for iOS, Android, and Web. All check-ins and AI classifiers execute on-device with zero surveillance.',
+  productName: 'Thrivefold: Sovereign Therapy, Mood Monitoring & Progress Tracking',
+  tagline: 'Private on-device therapy companion, somatic mood monitoring, and longitudinal progress tracking.',
+  secondaryTagline: 'Track emotional patterns, prepare for clinical therapy sessions, deconstruct cognitive distortions, and monitor somatic progress — completely offline with hardware-enforced zero surveillance.',
+  description: 'Thrivefold is a local-first mental health, therapy companion, and emotional progress tracking platform built on modern Expo React Native for iOS, Android, and Web. All journal entries, mood logs, and clinical reflections execute 100% on-device with zero cloud telemetry.',
   url: 'https://thrivefold.devamit.co.in',
   appPackage: 'com.amit.thrivefold',
   appScheme: 'thrivefold://',
@@ -28,27 +28,14 @@ export const siteConfig = {
 }
 
 export const navItems = [
-  { href: '/women-health', label: "Women's Health" },
-  { href: '/men-health', label: "Men's Health" },
-  { href: '/pride-wellbeing', label: 'Pride & Wellbeing' },
-  { href: '/slow-correspondence', label: 'Slow Letters' },
-  { href: '/features', label: 'Features' },
-  { href: '/how-it-works', label: 'Architecture' },
-  { href: '/download', label: 'Download' },
+  { href: '#tracker', label: 'Interactive Tracker' },
+  { href: '#pillars', label: 'Clinical Pillars' },
+  { href: '#progress', label: 'Progress Telemetry' },
+  { href: '#breathwork', label: 'Somatic Pacer' },
+  { href: '#architecture', label: 'Zero-Cloud Architecture' },
+  { href: '#security', label: 'Privacy & Safety' },
+  { href: '#beta', label: 'Early Access' },
 ]
 
-export const routes = [
-  '/',
-  '/women-health',
-  '/men-health',
-  '/pride-wellbeing',
-  '/slow-correspondence',
-  '/features',
-  '/how-it-works',
-  '/security',
-  '/download',
-  '/beta',
-  '/about',
-  '/privacy',
-  '/terms',
-]
+export const routes = ['/']
+

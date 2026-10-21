@@ -6,42 +6,44 @@
 :root {
   color-scheme: light dark;
 
-  /* Canonical Porcelain Ivory Paper */
-  --bg: #FAFBF9;
-  --paper: #FAFBF9;
+  /* Porcelain Ivory & Ethereal Therapy Sanctuary Canvas */
+  --bg: #FAFBF8;
+  --paper: #FAFBF8;
   --surface: #FFFFFF;
-  --surface2: #F3F5F2;
-  --surface3: #EAF0EB;
-  --surface-glass: rgba(250, 251, 249, 0.94);
+  --surface2: #F3F5F1;
+  --surface3: #EAEFEA;
+  --surface-glass: rgba(250, 251, 248, 0.92);
 
-  /* Deep organic charcoal ink */
-  --ink: #141F1C;
-  --ink-secondary: #3D4946;
-  --ink-muted: #6B7874;
+  /* Deep therapeutic charcoal ink */
+  --ink: #111A18;
+  --ink-secondary: #3B4744;
+  --ink-muted: #6B7A76;
 
-  /* Three Dedicated Experience Theme Tokens */
-  /* 1. Women's Health (Peach / Rose Gold / Crimson) */
-  --rose: #E07A5F;
-  --rose-hover: #C66847;
-  --rose-container: #FDF2EE;
-  --crimson: #9B2226;
+  /* Clinical & Therapeutic Palette */
+  /* Botanical Healing Sage (Grounding & Equilibrium) */
+  --sage: #2D6A4F;
+  --sage-light: #40916C;
+  --sage-container: #EAF4EE;
+  --sage-glow: rgba(45, 106, 79, 0.15);
 
-  /* 2. Men's Health (Deep Pine / Sage / Forest) */
-  --sage: #52B788;
-  --sage-hover: #40916C;
-  --sage-container: #E8F5EE;
+  /* Warm Terracotta & Clay (Empathy & Somatics) */
+  --clay: #D97757;
+  --clay-container: #FDF3EE;
+  --clay-glow: rgba(217, 119, 87, 0.15);
+
+  /* Twilight Amethyst & Lavender (Cognitive Clarity & Sleep) */
+  --lavender: #7058A3;
+  --lavender-container: #F4F1FA;
+  --lavender-glow: rgba(112, 88, 163, 0.15);
+
+  /* Deep Oceanic Pine (Security & Enclave) */
   --pine: #0A1917;
-  --emerald: #2D6A4F;
+  --pine-surface: #142421;
 
-  /* 3. Pride & LGBTQ+ Wellbeing (Indigo / Amethyst / Cyan) */
-  --amethyst: #7209B7;
-  --amethyst-container: #F3E8FF;
-  --cyan: #4CC9F0;
-  --indigo-dark: #120E24;
-
-  /* Flat hairline borders matching Neev & Setu tokens */
-  --border: rgba(14, 30, 27, 0.08);
-  --border-strong: rgba(14, 30, 27, 0.15);
+  /* Hairline precision borders */
+  --border: rgba(17, 26, 24, 0.08);
+  --border-strong: rgba(17, 26, 24, 0.16);
+  --border-glow: rgba(45, 106, 79, 0.2);
 
   --font-serif: 'Fraunces', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -49,23 +51,37 @@
 }
 
 .dark {
-  --bg: #0C1210;
-  --paper: #0C1210;
-  --surface: #141C1A;
-  --surface2: #1D2623;
-  --surface3: #27332F;
-  --surface-glass: rgba(12, 18, 16, 0.92);
+  --bg: #090F0D;
+  --paper: #090F0D;
+  --surface: #101816;
+  --surface2: #16221F;
+  --surface3: #1F2E2A;
+  --surface-glass: rgba(9, 15, 13, 0.92);
 
-  --ink: #F2F5F3;
-  --ink-secondary: #BDC7C3;
-  --ink-muted: #889691;
+  --ink: #F2F5F4;
+  --ink-secondary: #C3CCC9;
+  --ink-muted: #82918D;
 
-  --border: rgba(242, 245, 243, 0.08);
-  --border-strong: rgba(242, 245, 243, 0.16);
+  --border: rgba(242, 245, 244, 0.08);
+  --border-strong: rgba(242, 245, 244, 0.16);
+  --border-glow: rgba(64, 145, 108, 0.3);
 
-  --rose-container: #331C16;
-  --sage-container: #132B20;
-  --amethyst-container: #231238;
+  --sage: #52B788;
+  --sage-light: #74C69D;
+  --sage-container: #132820;
+
+  --clay: #E07A5F;
+  --clay-container: #2E1B15;
+
+  --lavender: #9D88C7;
+  --lavender-container: #221B30;
+
+  --pine-surface: #0E1614;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -74,26 +90,57 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Strict zero-shadow squircle card standard */
+/* Premium Card & Pill Hover Physics (Emil Kowalski / Apple HIG) */
 .thrive-card {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: none !important;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), 
+              border-color 200ms cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .thrive-card:hover {
   border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.06);
 }
 
-/* Subtle micro-animations */
-@keyframes floatGentle {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-4px); }
+/* Tactile button press feedback */
+.interactive-btn {
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1),
+              opacity 160ms ease,
+              background-color 160ms ease;
 }
 
-.animate-float {
-  animation: floatGentle 4s ease-in-out infinite;
+.interactive-btn:active {
+  transform: scale(0.97);
+}
+
+/* Somatic Breath Pulse Animation */
+@keyframes breathPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+.animate-breathe {
+  animation: breathPulse 8s ease-in-out infinite;
+}
+
+/* Soft ambient glow */
+.ambient-glow {
+  background: radial-gradient(circle at 50% 50%, var(--sage-glow) 0%, transparent 70%);
+}
+
+.ambient-clay-glow {
+  background: radial-gradient(circle at 50% 50%, var(--clay-glow) 0%, transparent 70%);
 }

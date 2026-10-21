@@ -1,93 +1,98 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import { siteConfig } from '@/lib/site'
-import { ShieldCheck, Heart, Cpu, Send, Lock } from 'lucide-react'
+import { ShieldCheck, HeartPulse, Brain, Compass, PhoneCall, ArrowUpRight } from 'lucide-react'
 
 export function SiteFooter() {
   return (
     <footer className="w-full border-t border-[var(--border)] bg-[var(--surface)] text-[var(--ink)] pt-16 pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-[var(--border)]">
-          {/* Brand Info */}
+          {/* Brand Column (2 cols) */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl border border-[var(--border)] p-1 flex items-center justify-center bg-[var(--surface2)]">
+              <div className="w-9 h-9 rounded-xl border border-[var(--border)] p-1 flex items-center justify-center bg-[var(--surface2)] shadow-xs">
                 <Image src="/favicon.svg" alt="Thrivefold Logo" width={32} height={32} />
               </div>
               <span className="font-serif font-bold text-xl tracking-tight">Thrivefold</span>
             </div>
-            <p className="text-sm text-[var(--ink-secondary)] leading-relaxed max-w-sm">
-              Local-first on-device AI health and slow correspondence platform for iOS, Android, and Web. Built with calm architecture and zero-surveillance guarantees.
+            <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed max-w-sm font-light">
+              Sovereign on-device therapy companion, somatic mood monitoring, and longitudinal progress tracking. Built with calm architecture and zero cloud surveillance.
             </p>
             <div className="flex items-center gap-2 pt-2 text-xs font-mono text-[var(--ink-muted)]">
               <ShieldCheck className="w-4 h-4 text-[var(--sage)]" />
-              <span>Offline Sovereign · On-Device Neural Processing</span>
+              <span>Offline Sovereign · AES-256 Keystore Hardware Vault</span>
             </div>
           </div>
 
-          {/* Three Spaces */}
+          {/* Quick Anchor Navigation */}
           <div className="space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)]">Dedicated Spaces</h4>
-            <ul className="space-y-2 text-sm text-[var(--ink-secondary)]">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)]">Therapy Navigation</h4>
+            <ul className="space-y-2 text-xs sm:text-sm text-[var(--ink-secondary)]">
               <li>
-                <Link href="/women-health" className="hover:text-[var(--rose)] transition-colors">
-                  Women's Health
-                </Link>
+                <a href="#tracker" className="hover:text-[var(--sage)] transition-colors">
+                  Interactive Mood Tracker
+                </a>
               </li>
               <li>
-                <Link href="/men-health" className="hover:text-[var(--sage)] transition-colors">
-                  Men's Health
-                </Link>
+                <a href="#pillars" className="hover:text-[var(--sage)] transition-colors">
+                  Clinical Pillars
+                </a>
               </li>
               <li>
-                <Link href="/pride-wellbeing" className="hover:text-[var(--amethyst)] transition-colors">
-                  Pride & LGBTQ+
-                </Link>
+                <a href="#progress" className="hover:text-[var(--sage)] transition-colors">
+                  Progress Telemetry
+                </a>
               </li>
               <li>
-                <Link href="/slow-correspondence" className="hover:text-[var(--ink)] transition-colors">
-                  Slow Correspondence
-                </Link>
+                <a href="#breathwork" className="hover:text-[var(--sage)] transition-colors">
+                  Somatic Breathwork Pacer
+                </a>
+              </li>
+              <li>
+                <a href="#architecture" className="hover:text-[var(--sage)] transition-colors">
+                  Zero-Cloud Architecture
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Architecture & Safety */}
+          {/* Legal & Safety */}
           <div className="space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)]">Safety & Tech</h4>
-            <ul className="space-y-2 text-sm text-[var(--ink-secondary)]">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)]">Sovereignty & Safety</h4>
+            <ul className="space-y-2 text-xs sm:text-sm text-[var(--ink-secondary)]">
               <li>
-                <Link href="/how-it-works" className="hover:text-[var(--ink)] transition-colors">
-                  System Architecture
-                </Link>
+                <a href="#security" className="hover:text-[var(--ink)] transition-colors">
+                  Clinical Boundaries
+                </a>
               </li>
               <li>
-                <Link href="/security" className="hover:text-[var(--ink)] transition-colors">
-                  Zero-Trust Engine
-                </Link>
+                <a href="#privacy" className="hover:text-[var(--ink)] transition-colors">
+                  Zero-Knowledge Privacy
+                </a>
               </li>
               <li>
-                <Link href="/features" className="hover:text-[var(--ink)] transition-colors">
-                  Local-First Features
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="hover:text-[var(--ink)] transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-[var(--ink)] transition-colors">
+                <a href="#terms" className="hover:text-[var(--ink)] transition-colors">
                   Terms of Service
-                </Link>
+                </a>
+              </li>
+              <li>
+                <a href="#beta" className="hover:text-[var(--ink)] transition-colors">
+                  Early Access Cohort
+                </a>
+              </li>
+              <li>
+                <a href="tel:988" className="hover:text-[var(--clay)] transition-colors font-medium flex items-center gap-1">
+                  <PhoneCall className="w-3.5 h-3.5 text-[var(--clay)]" />
+                  <span>988 Crisis Hotline (24/7)</span>
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Ecosystem Sister Portals */}
+          {/* Amit Dev Labs Ecosystem */}
           <div className="space-y-3">
             <h4 className="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)]">Amit Dev Labs</h4>
-            <ul className="space-y-2 text-sm text-[var(--ink-secondary)]">
+            <ul className="space-y-2 text-xs sm:text-sm text-[var(--ink-secondary)]">
               <li>
                 <a href={siteConfig.ecosystem.neev} target="_blank" rel="noreferrer" className="hover:text-[var(--ink)] transition-colors flex items-center justify-between">
                   <span>Neev Sanctuary</span>
@@ -124,12 +129,12 @@ export function SiteFooter() {
 
         {/* Bottom Attribution Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
-          <p>© {new Date().getFullYear()} Thrivefold. Engineered by <a href={siteConfig.authorUrl} className="underline hover:text-[var(--ink)] font-medium">{siteConfig.author}</a> under Amit Dev Labs.</p>
+          <p>© {new Date().getFullYear()} Thrivefold. Engineered with care by <a href={siteConfig.authorUrl} target="_blank" rel="noreferrer" className="underline hover:text-[var(--ink)] font-medium">{siteConfig.author}</a> under Amit Dev Labs.</p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-[var(--ink)]">Privacy</Link>
-            <Link href="/terms" className="hover:text-[var(--ink)]">Terms</Link>
-            <Link href="/sitemap.xml" className="hover:text-[var(--ink)]">Sitemap</Link>
-            <Link href="/llms.txt" className="hover:text-[var(--ink)]">llms.txt</Link>
+            <a href="#privacy" className="hover:text-[var(--ink)]">Privacy</a>
+            <a href="#terms" className="hover:text-[var(--ink)]">Terms</a>
+            <a href="/sitemap.xml" className="hover:text-[var(--ink)]">Sitemap</a>
+            <a href="/llms.txt" className="hover:text-[var(--ink)]">llms.txt</a>
           </div>
         </div>
       </div>
