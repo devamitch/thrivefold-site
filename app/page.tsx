@@ -5,7 +5,6 @@ import { SiteHeader } from '@/components/SiteHeader'
 import { HeroSection } from '@/components/HeroSection'
 import { FeatureBento } from '@/components/FeatureBento'
 import { SanctuaryAppShowcase } from '@/components/SanctuaryAppShowcase'
-import { InteractiveTherapyTracker } from '@/components/InteractiveTherapyTracker'
 import { StepsBand } from '@/components/StepsBand'
 import { HardwareSecuritySpecs } from '@/components/HardwareSecuritySpecs'
 import { FaqSection } from '@/components/FaqSection'
@@ -27,8 +26,6 @@ export default function HomePage() {
           <FeatureBento />
 
           <SanctuaryAppShowcase />
-
-          <InteractiveTherapyTracker />
 
           <StepsBand />
 

@@ -6,9 +6,8 @@ import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 const NAV_LINKS = [
   { href: '#features', label: 'Features' },
-  { href: '#pacer', label: 'Somatic Pacer' },
-  { href: '#tracker', label: 'Therapy Tracker' },
-  { href: '#clinical', label: 'Clinical Bridge' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#clinical', label: 'Clinical Flow' },
   { href: '#security', label: 'Security' },
   { href: '#faq', label: 'FAQ' },
 ]
@@ -36,9 +35,9 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-200 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 ${
         scrolled
-          ? 'bg-white/85 shadow-[0_4px_30px_-4px_rgba(25,25,24,0.06)] backdrop-blur-xl'
+          ? 'bg-white/90 backdrop-blur-xl'
           : 'bg-[var(--bg)]/85 backdrop-blur-md'
       }`}
     >
@@ -46,11 +45,11 @@ export function SiteHeader() {
         {/* Brand Link */}
         <a
           href="#top"
-          className="group inline-flex shrink-0 items-center gap-2 sm:gap-2.5 rounded-xl focus-visible:outline-offset-4"
+          className="group inline-flex shrink-0 items-center gap-2.5 rounded-xl focus-visible:outline-offset-4"
           aria-label="Thrivefold Home"
           onClick={closeMenu}
         >
-          <span className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center overflow-hidden rounded-[12px] sm:rounded-[14px] bg-white shadow-xs border border-[var(--border)] p-1">
+          <span className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center overflow-hidden rounded-[12px] bg-white p-1">
             <Image
               src="/favicon.svg"
               alt="Thrivefold Mark"
@@ -81,7 +80,7 @@ export function SiteHeader() {
         <div className="flex shrink-0 items-center gap-2">
           <a
             href="#beta"
-            className="squircle-button inline-flex items-center gap-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-[13px] font-semibold px-4 py-2 sm:min-h-10 sm:px-5 shadow-xs"
+            className="squircle-button inline-flex items-center gap-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-[13px] font-semibold px-4 py-2 sm:min-h-10 sm:px-5"
           >
             <span>Get Beta Access</span>
             <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -103,7 +102,7 @@ export function SiteHeader() {
       {mobileMenuOpen && (
         <nav
           aria-label="Mobile navigation"
-          className="absolute inset-x-0 top-full border-b border-[var(--border)] bg-[var(--surface)] px-5 pb-6 pt-3 shadow-lg md:hidden"
+          className="absolute inset-x-0 top-full bg-[var(--surface)] px-5 pb-6 pt-3 md:hidden"
         >
           <div className="mx-auto flex max-w-[720px] flex-col gap-1">
             {NAV_LINKS.map((link) => (
@@ -111,18 +110,11 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 onClick={closeMenu}
-                className="rounded-xl px-3 py-2.5 text-[15px] font-medium text-[var(--ink)] transition-colors hover:bg-[var(--surface2)]"
+                className="rounded-xl px-4 py-2.5 text-sm font-medium text-[var(--ink)] hover:bg-[var(--surface2)]"
               >
                 {link.label}
               </a>
             ))}
-            <a
-              href="#beta"
-              onClick={closeMenu}
-              className="squircle-button mt-3 flex w-full items-center justify-center gap-1.5 bg-[var(--terracotta)] text-white py-3 text-[14px] font-semibold"
-            >
-              Get Beta Access <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </a>
           </div>
         </nav>
       )}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Brain, Heart, Activity, FileCheck, ArrowUpRight, Lock, Check, Sparkles } from 'lucide-react'
+import { Brain, Heart, Activity, FileCheck, ArrowUpRight, Lock, Check } from 'lucide-react'
 
 const SHOWCASE_TABS = [
   {
@@ -107,8 +107,8 @@ export function SanctuaryAppShowcase() {
         </p>
       </div>
 
-      {/* Tabs */}
-      <div className="mb-6 flex gap-1.5 overflow-x-auto pb-2 border-b border-[var(--border)]" role="tablist">
+      {/* Tabs as clean pill dock */}
+      <div className="mb-8 inline-flex p-1.5 rounded-full bg-[var(--surface2)] gap-1 overflow-x-auto max-w-full" role="tablist">
         {SHOWCASE_TABS.map((tab) => {
           const Icon = tab.icon
           const isSelected = tab.id === activeTabId
@@ -119,10 +119,10 @@ export function SanctuaryAppShowcase() {
               role="tab"
               aria-selected={isSelected}
               onClick={() => setActiveTabId(tab.id)}
-              className={`squircle-button inline-flex shrink-0 items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold transition-all ${
+              className={`squircle-button inline-flex shrink-0 items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
                 isSelected
-                  ? 'bg-[var(--terracotta)] text-white shadow-xs'
-                  : 'text-[var(--ink-secondary)] hover:bg-[var(--surface2)] hover:text-[var(--ink)]'
+                  ? 'bg-white text-[var(--ink)] shadow-xs'
+                  : 'text-[var(--ink-secondary)] hover:text-[var(--ink)]'
               }`}
             >
               <Icon className="h-4 w-4" aria-hidden="true" />
@@ -133,12 +133,12 @@ export function SanctuaryAppShowcase() {
       </div>
 
       {/* Main Split Showcase Card */}
-      <div className="squircle-card overflow-hidden bg-white shadow-xl grid lg:grid-cols-[1.1fr_0.9fr] border border-[var(--border)]">
+      <div className="squircle-card overflow-hidden bg-white grid lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left: Device App Viewport */}
-        <div className="bg-[var(--surface2)] p-6 sm:p-10 flex items-center justify-center min-h-[460px] lg:min-h-[540px]">
-          <div className="w-full max-w-[420px] rounded-[32px] bg-white border border-[rgba(25,25,24,0.08)] shadow-[0_30px_70px_-20px_rgba(25,25,24,0.18)] p-6 text-left space-y-5 animate-fadeIn">
+        <div className="bg-[var(--surface2)] p-6 sm:p-10 flex items-center justify-center min-h-[460px] lg:min-h-[520px]">
+          <div className="w-full max-w-[420px] rounded-[32px] bg-white p-6 text-left space-y-4">
             {/* App Topbar */}
-            <div className="flex items-center justify-between pb-3 border-b border-[var(--border)] text-xs text-[var(--ink-muted)]">
+            <div className="flex items-center justify-between pb-2 text-xs text-[var(--ink-muted)]">
               <span className="font-semibold text-[var(--ink)] flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-[var(--terracotta)]" />
                 {active.screen.header}
@@ -149,8 +149,8 @@ export function SanctuaryAppShowcase() {
             </div>
 
             {/* Content Cards */}
-            <div className="space-y-3.5 text-xs">
-              <div className="p-3.5 rounded-2xl bg-[var(--bg)] border border-[var(--border)]">
+            <div className="space-y-3 text-xs">
+              <div className="p-3.5 rounded-2xl bg-[var(--bg)]">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--ink-muted)] block mb-1">
                   Context & Trigger
                 </span>
@@ -159,7 +159,7 @@ export function SanctuaryAppShowcase() {
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-[var(--surface2)] border border-[var(--border)] space-y-1">
+              <div className="p-3.5 rounded-2xl bg-[var(--surface2)] space-y-1">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--terracotta)] block">
                   Automatic Thought
                 </span>
@@ -168,7 +168,7 @@ export function SanctuaryAppShowcase() {
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-[var(--sage-subtle)] border border-[rgba(125,156,123,0.3)] space-y-1">
+              <div className="p-3.5 rounded-2xl bg-[var(--sage-subtle)] space-y-1">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--sage-strong)] block flex items-center gap-1">
                   <Check className="w-3 h-3" /> Grounded Resolution
                 </span>
@@ -200,16 +200,10 @@ export function SanctuaryAppShowcase() {
           <div className="mt-8 flex items-center gap-4">
             <a
               href="#beta"
-              className="squircle-button inline-flex items-center gap-2 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white px-6 py-3 text-sm font-semibold shadow-xs"
+              className="squircle-button inline-flex items-center gap-2 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white px-6 py-3 text-sm font-semibold"
             >
               <span>Experience in Beta</span>
               <ArrowUpRight className="w-4 h-4" />
-            </a>
-            <a
-              href="#tracker"
-              className="text-xs font-semibold text-[var(--ink-secondary)] hover:text-[var(--ink)] underline underline-offset-4"
-            >
-              Test Interactive Demo ↓
             </a>
           </div>
         </div>

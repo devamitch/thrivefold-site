@@ -53,7 +53,7 @@ export function FaqSection() {
           return (
             <div
               key={idx}
-              className="squircle-card bg-white border border-[var(--border)] overflow-hidden transition-all text-left"
+              className="squircle-card bg-white overflow-hidden transition-all text-left"
             >
               <button
                 type="button"
@@ -70,7 +70,7 @@ export function FaqSection() {
               </button>
 
               {isOpen && (
-                <div className="px-5 pb-6 sm:px-6 sm:pb-7 text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed border-t border-[var(--border)] pt-4 animate-fadeIn">
+                <div className="px-5 pb-6 sm:px-6 sm:pb-7 text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed pt-1 animate-fadeIn">
                   {faq.a}
                 </div>
               )}

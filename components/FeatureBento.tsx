@@ -32,7 +32,7 @@ export function FeatureBento() {
             </p>
           </div>
 
-          <div className="squircle-inner p-4 space-y-2 border border-[var(--border)]">
+          <div className="squircle-inner p-4 space-y-2">
             <div className="flex justify-between items-center text-xs font-semibold text-[var(--ink-secondary)]">
               <span>Distortion Detected</span>
               <span className="text-[var(--terracotta)]">All-or-Nothing Dichotomy</span>
@@ -60,16 +60,16 @@ export function FeatureBento() {
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] flex items-center justify-between text-xs">
+          <div className="p-4 rounded-2xl bg-[var(--bg)] flex items-center justify-between text-xs">
             <div>
               <span className="block font-semibold text-[var(--ink)]">4-7-8 Parasympathetic Pacer</span>
               <span className="text-[11px] text-[var(--ink-muted)]">Decreases cortisol in &lt; 90 seconds</span>
             </div>
             <a
-              href="#pacer"
-              className="squircle-button px-3.5 py-1.5 bg-[var(--terracotta)] text-white text-[11px] font-semibold flex items-center gap-1 shadow-xs"
+              href="#experience"
+              className="squircle-button px-3.5 py-1.5 bg-[var(--terracotta)] text-white text-[11px] font-semibold flex items-center gap-1"
             >
-              <span>Try Pacer</span>
+              <span>Explore</span>
               <ArrowUpRight className="w-3 h-3" />
             </a>
           </div>
@@ -109,7 +109,7 @@ export function FeatureBento() {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[var(--border)] text-center text-xs">
+          <div className="grid grid-cols-3 gap-3 pt-3 text-center text-xs">
             <div className="p-2.5 rounded-xl bg-[var(--bg)]">
               <span className="block font-semibold text-[var(--ink)]">0 Bytes</span>
               <span className="text-[11px] text-[var(--ink-muted)]">Sent to Cloud</span>

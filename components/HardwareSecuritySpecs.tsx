@@ -48,15 +48,15 @@ export function HardwareSecuritySpecs() {
         {/* Comparison Table Card */}
         <div className="squircle-card p-6 sm:p-10 bg-white max-w-[1040px] mx-auto text-left overflow-x-auto">
           <div className="min-w-[600px]">
-            <div className="grid grid-cols-12 pb-4 border-b border-[var(--border)] text-xs font-semibold uppercase tracking-wider text-[var(--ink-muted)]">
+            <div className="grid grid-cols-12 pb-3 text-xs font-semibold uppercase tracking-wider text-[var(--ink-muted)] px-3">
               <div className="col-span-5">Privacy Architecture</div>
               <div className="col-span-4 text-[var(--terracotta)]">Thrivefold Vault</div>
               <div className="col-span-3 text-[var(--ink-secondary)]">Commercial Mental Apps</div>
             </div>
 
-            <div className="divide-y divide-[var(--border)] text-xs sm:text-sm">
+            <div className="space-y-1 text-xs sm:text-sm">
               {comparisons.map((row, idx) => (
-                <div key={idx} className="grid grid-cols-12 py-4 items-center">
+                <div key={idx} className="grid grid-cols-12 py-3.5 px-3 items-center rounded-2xl transition-colors hover:bg-[var(--surface2)]/50">
                   <div className="col-span-5 font-medium text-[var(--ink)] pr-4">
                     {row.feature}
                   </div>
@@ -75,38 +75,38 @@ export function HardwareSecuritySpecs() {
 
         {/* 3 Hardware Specs Pill Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1040px] mx-auto">
-          <div className="squircle-card p-6 bg-white text-left">
-            <div className="w-9 h-9 rounded-full bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)] mb-4">
-              <Cpu className="w-4 h-4" />
+          <div className="squircle-card p-6 sm:p-7 bg-white text-left">
+            <div className="w-10 h-10 rounded-2xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)] mb-4">
+              <Cpu className="w-5 h-5" />
             </div>
-            <h3 className="font-serif text-lg font-medium text-[var(--ink)] mb-1.5">
+            <h3 className="font-serif text-xl font-medium text-[var(--ink)] mb-2">
               Secure Enclave Keystore
             </h3>
-            <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
               Cryptographic keys are generated inside the iOS Secure Enclave or Android Keystore chip. Even a compromised OS cannot extract your encryption keys without biometric authorization.
             </p>
           </div>
 
-          <div className="squircle-card p-6 bg-white text-left">
-            <div className="w-9 h-9 rounded-full bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)] mb-4">
-              <Database className="w-4 h-4" />
+          <div className="squircle-card p-6 sm:p-7 bg-white text-left">
+            <div className="w-10 h-10 rounded-2xl bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)] mb-4">
+              <Database className="w-5 h-5" />
             </div>
-            <h3 className="font-serif text-lg font-medium text-[var(--ink)] mb-1.5">
+            <h3 className="font-serif text-xl font-medium text-[var(--ink)] mb-2">
               MMKV High-Speed Binary
             </h3>
-            <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
               Eliminates SQLite overhead and remote database sync. Direct binary memory mapping allows instant launch, zero lag, and complete offline persistence.
             </p>
           </div>
 
-          <div className="squircle-card p-6 bg-white text-left">
-            <div className="w-9 h-9 rounded-full bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)] mb-4">
-              <WifiOff className="w-4 h-4" />
+          <div className="squircle-card p-6 sm:p-7 bg-white text-left">
+            <div className="w-10 h-10 rounded-2xl bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)] mb-4">
+              <WifiOff className="w-5 h-5" />
             </div>
-            <h3 className="font-serif text-lg font-medium text-[var(--ink)] mb-1.5">
+            <h3 className="font-serif text-xl font-medium text-[var(--ink)] mb-2">
               Zero Telemetry Footprint
             </h3>
-            <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
               Inspect our network traffic: zero HTTP POST requests sent, no advertising SDKs loaded, and zero telemetry pings. What happens in Thrivefold stays strictly on your silicon.
             </p>
           </div>

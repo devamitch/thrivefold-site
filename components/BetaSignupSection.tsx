@@ -22,9 +22,9 @@ export function BetaSignupSection() {
 
   return (
     <section id="beta" className="scroll-mt-24">
-      <div className="squircle-card p-8 sm:p-14 bg-white max-w-[940px] mx-auto text-center border border-[var(--border)] relative overflow-hidden shadow-xl">
+      <div className="squircle-card p-8 sm:p-14 bg-white max-w-[940px] mx-auto text-center relative overflow-hidden">
         {/* Ambient Top Glow */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_top,rgba(215,114,89,0.18),transparent_70%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_top,rgba(215,114,89,0.14),transparent_70%)]" />
 
         <div className="relative z-10 max-w-[620px] mx-auto space-y-6">
           <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--terracotta)] block">
@@ -40,7 +40,7 @@ export function BetaSignupSection() {
           </p>
 
           {submitted ? (
-            <div className="p-6 rounded-2xl bg-[var(--sage-subtle)] border border-[rgba(125,156,123,0.3)] text-left space-y-2 animate-fadeIn">
+            <div className="p-6 rounded-2xl bg-[var(--sage-subtle)] text-left space-y-2 animate-fadeIn">
               <div className="flex items-center gap-2 text-[var(--sage-strong)] font-semibold text-base">
                 <Check className="w-5 h-5" />
                 <span>You&apos;re on the priority invitation list</span>
@@ -52,7 +52,7 @@ export function BetaSignupSection() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4 pt-2">
               {/* Platform Selector Pills */}
-              <div className="inline-flex p-1 rounded-full bg-[var(--surface2)] border border-[var(--border)]">
+              <div className="inline-flex p-1 rounded-full bg-[var(--surface2)]">
                 <button
                   type="button"
                   onClick={() => setPlatform('ios')}
@@ -89,13 +89,13 @@ export function BetaSignupSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address..."
-                    className="w-full pl-11 pr-4 py-3.5 rounded-full bg-[var(--bg)] border border-[var(--border-strong)] text-sm text-[var(--ink)] placeholder:text-[var(--ink-muted)] focus:outline-none focus:border-[var(--terracotta)] transition-colors"
+                    className="w-full pl-11 pr-4 py-3.5 rounded-full bg-[var(--bg)] text-sm text-[var(--ink)] placeholder:text-[var(--ink-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--terracotta)] transition-all"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="squircle-button w-full sm:w-auto shrink-0 px-7 py-3.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-sm disabled:opacity-50"
+                  className="squircle-button w-full sm:w-auto shrink-0 px-7 py-3.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-sm font-semibold flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   <span>{loading ? 'Submitting...' : 'Request Access'}</span>
                   <ArrowRight className="w-4 h-4" />
