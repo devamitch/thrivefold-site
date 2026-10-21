@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="tf-rose" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E07A5F" />
+      <stop offset="100%" stop-color="#9B2226" />
+    </linearGradient>
+    <linearGradient id="tf-sage" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52B788" />
+      <stop offset="100%" stop-color="#2D6A4F" />
+    </linearGradient>
+    <linearGradient id="tf-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7209B7" />
+      <stop offset="100%" stop-color="#4CC9F0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background squircle -->
+  <rect width="120" height="120" rx="28" fill="#0D1514" />
+  
+  <!-- Subtle border -->
+  <rect x="0.5" y="0.5" width="119" height="119" rx="27.5" stroke="rgba(255,255,255,0.12)" fill="none" />
+
+  <!-- Tripartite Origami Leaf Petals -->
+  <!-- Left Petal: Women's Health (Rose/Terracotta) -->
+  <path d="M 60 60 C 40 40 28 50 32 72 C 34 82 45 88 56 78 C 59 74 60 66 60 60 Z" fill="url(#tf-rose)" opacity="0.95" />
+
+  <!-- Right Petal: Men's Health (Sage/Emerald) -->
+  <path d="M 60 60 C 80 40 92 50 88 72 C 86 82 75 88 64 78 C 61 74 60 66 60 60 Z" fill="url(#tf-sage)" opacity="0.95" />
+
+  <!-- Top Center Petal: Pride & LGBTQ+ Wellbeing (Amethyst/Cyan) -->
+  <path d="M 60 60 C 45 42 48 26 60 22 C 72 26 75 42 60 60 Z" fill="url(#tf-violet)" opacity="0.95" />
+
+  <!-- Center Core Fold Spark -->
+  <circle cx="60" cy="60" r="5" fill="#FAFBF9" />
+</svg>
