@@ -140,18 +140,19 @@ section[id] {
   backdrop-filter: blur(18px) saturate(1.15);
 }
 
-/* Setu & BlinkQuest Signature Flat Squircles */
+/* Setu & BlinkQuest Signature Flat Squircles: Zero Shadows, Zero Borders */
 .squircle-card {
   min-width: 0;
   max-width: 100%;
   border-radius: clamp(24px, 3vw, 36px);
   background: var(--surface-card);
-  box-shadow: 0 4px 24px -10px rgba(25, 25, 24, 0.04);
+  box-shadow: none !important;
+  border: none !important;
   transition: transform 220ms ease;
 }
 
 .squircle-card:hover {
-  box-shadow: 0 8px 30px -12px rgba(25, 25, 24, 0.07);
+  box-shadow: none !important;
 }
 
 .squircle-inner {
