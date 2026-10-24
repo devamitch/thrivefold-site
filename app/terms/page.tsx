@@ -1,201 +1,125 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Scale, AlertTriangle, ShieldAlert, Heart, FileCheck, CheckCircle2 } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
+import { siteConfig } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — Thrivefold Sovereign Health Sanctuary',
-  description: 'Terms of Service, community standards, age assurance covenants, and non-emergency medical disclaimers for the Thrivefold health and wellness ecosystem.',
+  title: 'Terms of Service',
+  description: 'The terms for using the Thrivefold app and taking part in circles, plus our medical notice.',
+  alternates: { canonical: `${siteConfig.url}/terms/` },
 }
+
+const SECTIONS = [
+  {
+    id: 'using',
+    title: 'Using Thrivefold',
+    body: [
+      'These terms apply to the Thrivefold app and this website. By using them you agree to these terms.',
+      'You need to be old enough under the law where you live to accept these terms. Thrivefold is currently in beta, so features may change and things may not always work as expected.',
+    ],
+  },
+  {
+    id: 'health',
+    title: 'Health tracking',
+    body: [
+      'Cycle tracking, check-ins, workouts, meal logs and reminders are tools to help you notice patterns and build habits. Cycle predictions are not a form of contraception.',
+      'Medication reminders are a personal log. They are not prescriptions or dosing advice. Follow the instructions of your doctor or pharmacist.',
+      'Stop any workout that causes pain, dizziness or shortness of breath, and check with a doctor before starting a new exercise programme if you have a health condition.',
+    ],
+  },
+  {
+    id: 'circles',
+    title: 'Circles',
+    body: [
+      'Circles are private groups for training, meditation, sports and support that open up as you build a routine.',
+      'Be respectful. Harassment, hate, threats, spam, selling and sharing other people’s personal information are not allowed. We may remove content or accounts that break these rules.',
+      'Support circles are peer groups. They are not therapy and are not run by licensed professionals unless a circle says so.',
+    ],
+  },
+  {
+    id: 'your-content',
+    title: 'Your content',
+    body: [
+      'You own what you record in Thrivefold. You can export your records as HL7 FHIR or delete them from the settings screen at any time.',
+    ],
+  },
+  {
+    id: 'liability',
+    title: 'No warranty and limits on liability',
+    body: [
+      'Thrivefold is provided "as is". To the extent the law allows, Amit Dev Labs is not liable for indirect or consequential losses arising from your use of the app.',
+    ],
+  },
+  {
+    id: 'law',
+    title: 'Governing law',
+    body: ['These terms are governed by the laws of Karnataka, India.'],
+  },
+]
 
 export default function TermsOfServicePage() {
   return (
     <>
       <SiteHeader />
       <main className="min-h-screen bg-[var(--bg)] text-[var(--ink)] pt-28 pb-20 px-4 sm:px-8 lg:px-10">
-        <div className="mx-auto max-w-[880px]">
-          {/* Breadcrumb / Back Link */}
+        <div className="mx-auto max-w-[820px]">
           <Link
             href="/"
-            className="group inline-flex items-center gap-2 text-sm text-[var(--ink-secondary)] hover:text-[var(--terracotta)] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-[var(--ink-secondary)] hover:text-[var(--terracotta)] transition-colors mb-8"
           >
-            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-            <span>Back to Sanctuary</span>
+            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+            <span>Back to home</span>
           </Link>
 
-          {/* Header Card */}
-          <div className="rounded-[28px] border border-[var(--border)] bg-white p-8 sm:p-12 shadow-[var(--shadow-card)] mb-10">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--surface2)] px-3 py-1.5 text-xs font-semibold text-[var(--terracotta)] mb-4">
-              <Scale className="w-4 h-4 text-[var(--terracotta)]" />
-              <span>Terms of Service & Sanctuary Covenant</span>
-            </div>
-
+          <div className="rounded-[28px] bg-[var(--surface)] p-8 sm:p-12 mb-10">
             <h1 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[var(--ink)] mb-4">
-              Humane Software Built on Trust, Accountability, and Safety.
+              Terms of Service
             </h1>
-
             <p className="text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-              These Terms govern your use of the Thrivefold mobile applications, web services, and verified activity circles. By accessing Thrivefold, you enter a mutual covenant of personal safety, respectful peer participation, and local data sovereignty.
+              The rules for using Thrivefold, written as plainly as we can.
             </p>
-
-            <div className="mt-6 pt-6 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
-              <span>Last Revised: October 2026 · Release 1.0</span>
-              <span className="inline-flex items-center gap-1.5 text-[var(--terracotta)] font-medium">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                Human Rights & Safety First
-              </span>
-            </div>
+            <p className="mt-6 text-xs text-[var(--ink-muted)]">Last updated: 25 October 2026</p>
           </div>
 
-          {/* Emergency Distress Alert Box */}
-          <div className="rounded-[24px] border-2 border-[var(--terracotta)]/40 bg-[#FFF7F4] p-6 sm:p-8 mb-8">
-            <div className="flex items-start gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[var(--terracotta)] text-white">
-                <AlertTriangle className="w-5 h-5" />
-              </div>
-              <div className="space-y-2 text-sm sm:text-base leading-relaxed text-[var(--ink)]">
-                <h2 className="font-serif text-lg font-bold text-[#883506]">
-                  Critical Medical & Crisis Services Notice (Non-Emergency Platform)
-                </h2>
-                <p className="text-[var(--ink-secondary)]">
-                  <strong>Thrivefold is NOT an emergency response platform, medical provider, suicide prevention hotline, or licensed psychiatric clinic.</strong>
-                </p>
-                <p className="text-[var(--ink-secondary)]">
-                  If you are contemplating self-harm, suicide, or experiencing acute medical distress, please contact emergency responders immediately:
-                </p>
-                <div className="flex flex-wrap gap-3 pt-2 text-xs sm:text-sm font-semibold">
-                  <span className="px-3 py-1.5 rounded-lg bg-white border border-[var(--terracotta)]/30 text-[#883506]">
-                    USA & Canada: Call or text 988
-                  </span>
-                  <span className="px-3 py-1.5 rounded-lg bg-white border border-[var(--terracotta)]/30 text-[#883506]">
-                    UK: Call 111 or 999
-                  </span>
-                  <span className="px-3 py-1.5 rounded-lg bg-white border border-[var(--terracotta)]/30 text-[#883506]">
-                    International: Contact local emergency services
-                  </span>
-                </div>
-              </div>
+          <section id="medical" className="scroll-mt-24 rounded-[24px] bg-[var(--terracotta-subtle)] p-6 sm:p-8 mb-6">
+            <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--terracotta-strong)] mb-3">
+              Medical notice
+            </h2>
+            <div className="space-y-3 text-[15px] sm:text-base text-[var(--ink-secondary)] leading-relaxed">
+              <p>
+                Thrivefold is a wellbeing and fitness tool. It is not a medical service, does not diagnose or treat
+                any condition and is not an emergency service.
+              </p>
+              <p>
+                If you are thinking about harming yourself or need urgent help, call or text <strong>988</strong> in
+                the US and Canada, call <strong>999</strong> or <strong>111</strong> in the UK, or contact your local
+                emergency services.
+              </p>
             </div>
-          </div>
+          </section>
 
-          {/* Terms Content */}
-          <div className="space-y-8 text-[15px] sm:text-base text-[var(--ink-secondary)] leading-relaxed">
-            {/* Section 1 */}
-            <section className="rounded-[24px] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  1
-                </span>
-                <h2>Adult Age Assurance & Safety Shield</h2>
-              </div>
-              <p className="mb-3">
-                Thrivefold is an intentional sanctuary engineered exclusively for legal adults.
-              </p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  <strong>Mandatory Adult Age Verification:</strong> You represent and warrant that you are a legal adult in your jurisdiction. Minor access is strictly prevented.
-                </li>
-                <li>
-                  <strong>Restricted Protective Shield:</strong> Emerging adult users undergo a mandatory 7-day protective trial period with complete isolation from member discovery directories.
-                </li>
-                <li>
-                  <strong>Zero-Tolerance Exploitation Policy:</strong> Any attempt to solicit minors, harvest personal addresses, or engage in predatory behavior results in immediate account termination, device bans, and reporting to relevant law enforcement authorities.
-                </li>
-              </ul>
-            </section>
+          <div className="space-y-6 text-[15px] sm:text-base text-[var(--ink-secondary)] leading-relaxed">
+            {SECTIONS.map((section) => (
+              <section key={section.id} id={section.id} className="scroll-mt-24 rounded-[24px] bg-[var(--surface)] p-6 sm:p-8">
+                <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">{section.title}</h2>
+                {section.body.map((para) => (
+                  <p key={para} className="mt-3 first:mt-0">
+                    {para}
+                  </p>
+                ))}
+              </section>
+            ))}
 
-            {/* Section 2 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  2
-                </span>
-                <h2>Activity Circles &amp; Community Guidelines</h2>
-              </div>
-              <p className="mb-3">
-                Thrivefold fosters intentional health, fitness, and recovery connections through verified activity circles:
-              </p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  <strong>Progression Gated:</strong> Participation in activity circles (Gym pals, therapy groups, meditation circles, sports hubs) requires Level 3+ verified progression.
-                </li>
-                <li>
-                  <strong>No Commercial Solicitation or Spam:</strong> You may not use Thrivefold activity circles to promote products, solicit investments, share external URLs, or distribute unwanted promotional content.
-                </li>
-                <li>
-                  <strong>Respectful Peer Engagement:</strong> Thrivefold exists to promote health, mutual encouragement, and wellbeing. Harassment, discrimination, or abusive conduct results in immediate account and device revocation.
-                </li>
-              </ul>
-            </section>
-
-            {/* Section 3 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  3
-                </span>
-                <h2>Nature of Health Tracking & Educational Tools</h2>
-              </div>
-              <p className="mb-3">
-                Thrivefold offers self-regulation workbooks across three dedicated pillars:
-              </p>
-              <p className="mb-3">
-                1. <strong>Women&apos;s Health:</strong> Cycle tracking, follicular/luteal nutrition guidance, and pelvic floor pacing are educational references, not certified contraception or obstetric diagnosis.
-              </p>
-              <p className="mb-3">
-                2. <strong>Men&apos;s Health:</strong> Stamina tracking, cold therapy timers, and recovery telemetry are fitness self-monitoring aids, not endocrinology treatment.
-              </p>
+            <section id="contact" className="scroll-mt-24 rounded-[24px] bg-[var(--surface)] p-6 sm:p-8">
+              <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">Contact</h2>
               <p>
-                3. <strong>Pride & Wellbeing:</strong> HRT dose schedules and injection rotation reminders are personal logbooks, not medical prescribing services. Always consult your endocrinologist or primary care physician.
-              </p>
-            </section>
-
-            {/* Section 4 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  4
-                </span>
-                <h2>User Sovereignty & Data Rights</h2>
-              </div>
-              <p className="mb-3">
-                You retain 100% intellectual property ownership over your personal reflections, journal entries, and self-care logs. Because Thrivefold operates on-device, we claim zero license, title, or interest in your local records.
-              </p>
-              <p>
-                You may export your data or execute a total, irreversible purge at any moment directly from the application settings without needing customer service approval.
-              </p>
-            </section>
-
-            {/* Section 5 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  5
-                </span>
-                <h2>Limitation of Liability</h2>
-              </div>
-              <p>
-                TO THE MAXIMUM EXTENT PERMITTED BY LAW, THRIVEFOLD AND AMIT DEV LABS ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTIES OF ANY KIND. WE ARE NOT LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APPLICATION, HEALTH INSIGHTS, COMPUTER VISION TELEMETRY, OR ACTIVITY CIRCLE INTERACTIONS.
-              </p>
-            </section>
-
-            {/* Section 6 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  6
-                </span>
-                <h2>Governing Law & Legal Contact</h2>
-              </div>
-              <p className="mb-3">
-                These Terms shall be governed by and construed in accordance with the laws of Karnataka, India, without regard to conflict of law principles.
-              </p>
-              <p className="font-mono text-xs sm:text-sm bg-[var(--surface2)] p-4 rounded-xl text-[var(--ink)]">
-                Amit Dev Labs · Legal & Terms Compliance<br />
-                Email: amit@devamit.co.in<br />
-                Address: Bengaluru, Karnataka, India<br />
-                Website: https://devamit.co.in
+                Questions about these terms:{' '}
+                <a href={`mailto:${siteConfig.contactEmail}`} className="text-[var(--ink)] underline underline-offset-2">
+                  {siteConfig.contactEmail}
+                </a>
+                . Thrivefold is made by Amit Dev Labs, Bengaluru, Karnataka, India.
               </p>
             </section>
           </div>

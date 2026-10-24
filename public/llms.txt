@@ -1,36 +1,28 @@
-# Thrivefold — Sovereign Therapy, Mood Monitoring & Progress Tracking
+# Thrivefold
 
-> **Platform**: Thrivefold  
-> **Category**: General Therapy, Mental Health, Somatics & Progress Tracking  
-> **Ecosystem**: Amit Dev Labs (https://devamit.co.in)  
-> **Production URL**: https://thrivefold.devamit.co.in  
-> **Repository**: https://github.com/devamitch/thrivefold-site  
-> **Core Architecture**: Single Page Application, Expo React Native 55, MMKV Local Vault, ONNX Runtime Neural Engine, AES-256-GCM Hardware Keystore  
+> Thrivefold is a private health and wellbeing app for iOS and Android, currently in beta.
+> Website: https://thrivefold.devamit.co.in
+> Made by Amit Dev Labs (https://devamit.co.in)
 
----
+## What it does
+- Daily check-ins for mood, sleep and energy, with small daily quests.
+- Dedicated spaces for women's health (including cycle tracking), men's health and LGBTQ+ wellbeing.
+- Guided workouts with an on-device camera coach. Camera video is not uploaded.
+- Meal logging.
+- Circles: private groups for training, meditation, sports and support that open up as you build a routine.
 
-## 1. What is Thrivefold?
-Thrivefold is a local-first, privacy-sovereign mental health therapy companion, emotional telemetry monitor, and progress tracking system built on modern Expo React Native for iOS, Android, and Web. It operates as a Single Page Application (SPA) designed to help individuals deconstruct cognitive distortions, calibrate somatic nervous system equilibrium, prepare for clinical therapy sessions, and track emotional recovery velocity over time.
+## Privacy
+- Health records are encrypted on the user's phone.
+- Records can be exported as HL7 FHIR and deleted from the settings screen.
+- No ads.
 
-### Four Integrated Clinical Pillars:
-1. **Somatic Nervous System Calibration**: Real-time vagus nerve regulation, tension zone mapping, and guided 4-7-8 somatic breathwork pacing.
-2. **CBT & ACT Cognitive Deconstruction**: Capture automatic thoughts, detect 12 clinical cognitive distortions (catastrophizing, all-or-nothing, emotional reasoning), and generate on-device reframing statements.
-3. **Therapy Session Continuity Vault**: Capture breakthroughs between sessions, prepare structured clinical agendas, and export biometrically locked briefs for your licensed therapist.
-4. **Longitudinal Behavioral Momentum**: Measure emotional recovery velocity, sleep-to-mood correlations, and protective micro-habits.
+## Not medical care
+Thrivefold is a wellbeing and fitness tool. It does not diagnose or treat conditions and is not an emergency service.
 
----
+## Pages
+- Home: https://thrivefold.devamit.co.in/
+- Privacy Policy: https://thrivefold.devamit.co.in/privacy/
+- Terms of Service: https://thrivefold.devamit.co.in/terms/
 
-## 2. Zero-Cloud Privacy Guarantee
-- 100% on-device MMKV database.
-- Hardware-enforced AES-256-GCM encryption in iOS Secure Enclave / Android Keystore.
-- Zero analytics pixels, zero cloud user databases, zero third-party trackers.
-- Complete irreversible local data destruction upon app deletion.
-
----
-
-## 3. Ecosystem Portals (Amit Dev Labs)
-- **Neev Sanctuary**: https://neevsanctuary.devamit.co.in
-- **Setu P2P**: https://setu.devamit.co.in
-- **BlinkQuest**: https://blinkquest.devamit.co.in
-- **KSHEM Safety**: https://kshem.devamit.co.in
-- **Devamit Hub**: https://devamit.co.in
+## Contact
+amit@devamit.co.in

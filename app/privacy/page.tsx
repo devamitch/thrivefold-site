@@ -1,199 +1,118 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, ShieldCheck, Lock, EyeOff, Smartphone, Trash2, HeartPulse, FileText } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
+import { siteConfig } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Thrivefold Sovereign Health Sanctuary',
-  description: 'Thrivefold zero-surveillance privacy covenant. Learn how on-device cryptography, local MMKV partitions, and zero-tracking architectures protect your health sovereignty.',
+  title: 'Privacy Policy',
+  description:
+    'How Thrivefold handles your information: health records are encrypted on your phone, can be exported as HL7 FHIR, and can be deleted from settings.',
+  alternates: { canonical: `${siteConfig.url}/privacy/` },
 }
+
+const SECTIONS = [
+  {
+    id: 'on-your-phone',
+    title: 'What stays on your phone',
+    body: [
+      'Your daily check-ins, cycle data, symptoms, workouts, meal logs, quests and personal notes are stored on your phone and encrypted there.',
+      'You do not need to create a cloud backup to use these features.',
+    ],
+  },
+  {
+    id: 'camera',
+    title: 'Camera coach',
+    body: [
+      'The camera coach used in guided workouts runs on your phone. Camera video is processed on the phone and is not uploaded.',
+    ],
+  },
+  {
+    id: 'circles',
+    title: 'Circles',
+    body: [
+      'Circles are private groups for training, meditation, sports and support that open up as you build a routine.',
+      'If you join a circle, the name you choose and anything you post there are visible to that circle’s members. Your health records are not posted to a circle unless you choose to share something yourself.',
+    ],
+  },
+  {
+    id: 'not-collected',
+    title: 'What we do not do',
+    body: [
+      'We do not show ads, and we do not sell or rent your information.',
+      'This website does not use cookies or analytics scripts. Our hosting provider, Cloudflare, processes standard request data such as IP address and browser type to deliver and protect the site.',
+    ],
+  },
+  {
+    id: 'your-data',
+    title: 'Export and delete',
+    body: [
+      'You can export your records from the app in the HL7 FHIR format, for example to share with a clinician.',
+      'You can delete everything Thrivefold has stored on your phone from the settings screen.',
+    ],
+  },
+  {
+    id: 'email',
+    title: 'If you email us',
+    body: [
+      'If you email us to join the beta or ask a question, we keep your email address and message so we can reply and send your invite. Ask us to delete them at any time.',
+    ],
+  },
+  {
+    id: 'changes',
+    title: 'Changes to this policy',
+    body: [
+      'If we change how Thrivefold handles your information, we will update this page and the date at the top before the change takes effect.',
+    ],
+  },
+]
 
 export default function PrivacyPolicyPage() {
   return (
     <>
       <SiteHeader />
       <main className="min-h-screen bg-[var(--bg)] text-[var(--ink)] pt-28 pb-20 px-4 sm:px-8 lg:px-10">
-        <div className="mx-auto max-w-[880px]">
-          {/* Breadcrumb / Back Link */}
+        <div className="mx-auto max-w-[820px]">
           <Link
             href="/"
-            className="group inline-flex items-center gap-2 text-sm text-[var(--ink-secondary)] hover:text-[var(--terracotta)] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-[var(--ink-secondary)] hover:text-[var(--terracotta)] transition-colors mb-8"
           >
-            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-            <span>Back to Sanctuary</span>
+            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+            <span>Back to home</span>
           </Link>
 
-          {/* Header Card */}
-          <div className="rounded-[28px] border border-[var(--border)] bg-white p-8 sm:p-12 shadow-[var(--shadow-card)] mb-10">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--surface2)] px-3 py-1.5 text-xs font-semibold text-[var(--terracotta)] mb-4">
-              <ShieldCheck className="w-4 h-4 text-[var(--terracotta)]" />
-              <span>Zero-Surveillance Privacy Covenant</span>
-            </div>
-
+          <div className="rounded-[28px] bg-[var(--surface)] p-8 sm:p-12 mb-10">
             <h1 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[var(--ink)] mb-4">
-              Your Health and Intimate Thoughts Belong Exclusively to You.
+              Privacy Policy
             </h1>
-
             <p className="text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-              Thrivefold is fundamentally architected to eliminate the surveillance capitalism model of commercial health and therapy apps. We do not hold your health records on central servers, we cannot see your journal entries, and we will never monetize your biology.
+              Thrivefold is a health and wellbeing app. This page explains what information it handles, where that
+              information is kept and what you can do with it.
             </p>
-
-            <div className="mt-6 pt-6 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
-              <span>Effective: October 2026 · Sovereign Edition</span>
-              <span className="inline-flex items-center gap-1.5 text-[var(--sage-strong)] font-medium">
-                <Lock className="w-3.5 h-3.5" />
-                Hardware-Enforced Cryptography
-              </span>
-            </div>
+            <p className="mt-6 text-xs text-[var(--ink-muted)]">Last updated: 25 October 2026</p>
           </div>
 
-          {/* Policy Body */}
-          <div className="space-y-8 text-[15px] sm:text-base text-[var(--ink-secondary)] leading-relaxed">
-            {/* Section 1 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  1
-                </span>
-                <h2>Zero-Trust Local-First Philosophy</h2>
-              </div>
-              <p className="mb-4">
-                Health information, cycle rhythms, hormone therapies, workout telemetry, and emotional reflections belong strictly inside your physical device. Thrivefold operates under a <strong>local-sovereignty paradigm</strong>:
-              </p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  <strong>100% Offline Sovereign:</strong> All daily reflections, trackers, symptom logs, and cognitive check-ins run locally on your phone using high-performance MMKV and SQLite enclaves without internet dependency.
-                </li>
-                <li>
-                  <strong>Zero Cloud Backup Requirement:</strong> You are never forced to synchronize personal metrics to our servers to unlock app functionality.
-                </li>
-                <li>
-                  <strong>Hardware Key Enclave:</strong> On-device encryption keys are anchored directly into Apple Secure Enclave (iOS) and Android Keystore hardware.
-                </li>
-              </ul>
-            </section>
+          <div className="space-y-6 text-[15px] sm:text-base text-[var(--ink-secondary)] leading-relaxed">
+            {SECTIONS.map((section) => (
+              <section key={section.id} id={section.id} className="scroll-mt-24 rounded-[24px] bg-[var(--surface)] p-6 sm:p-8">
+                <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">{section.title}</h2>
+                {section.body.map((para) => (
+                  <p key={para} className="mt-3 first:mt-0">
+                    {para}
+                  </p>
+                ))}
+              </section>
+            ))}
 
-            {/* Section 2 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  2
-                </span>
-                <h2>Three Dedicated Sanctuary Data Partitions</h2>
-              </div>
-              <p className="mb-4">
-                Thrivefold separates data across three specialized pillars to ensure relevant isolation and strict privacy:
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                <div className="p-4 rounded-xl bg-[#FFF8F5] border border-[#E07A5F]/20">
-                  <h3 className="font-semibold text-sm text-[#9B2226] mb-1">Women&apos;s Health</h3>
-                  <p className="text-xs text-[var(--ink-secondary)]">Menstrual dates, luteal/follicular nutrition, basal body temp, and pelvic floor records stored strictly in local memory partitions.</p>
-                </div>
-                <div className="p-4 rounded-xl bg-[#F4F9F5] border border-[#2D6A4F]/20">
-                  <h3 className="font-semibold text-sm text-[#2D6A4F] mb-1">Men&apos;s Health</h3>
-                  <p className="text-xs text-[var(--ink-secondary)]">Strength, recovery scores, VO2 max telemetry, and stoic mental fortitude records kept local on hardware.</p>
-                </div>
-                <div className="p-4 rounded-xl bg-[#F7F3FA] border border-[#7209B7]/20">
-                  <h3 className="font-semibold text-sm text-[#7209B7] mb-1">Pride & Wellbeing</h3>
-                  <p className="text-xs text-[var(--ink-secondary)]">HRT schedules, injection site rotations, and identity reflections protected behind biometric quick-panic concealment.</p>
-                </div>
-              </div>
-              <p className="text-xs text-[var(--ink-muted)]">
-                None of the metrics from any of the three pillars are aggregated, indexed, or shared with third-party medical data brokers.
-              </p>
-            </section>
-
-            {/* Section 3 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  3
-                </span>
-                <h2>Activity Circles &amp; Peer Support Privacy</h2>
-              </div>
-              <p className="mb-4">
-                Our activity circles connect members around shared health, fitness, and recovery goals with strict privacy boundaries:
-              </p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  <strong>Progression-Gated (Level 3+):</strong> Activity circles (Gym buddies, therapy groups, meditation circles, sports hubs) require verified Level 3+ progression, keeping communities focused, intentional, and protected from spam.
-                </li>
-                <li>
-                  <strong>Pseudonymous Identity:</strong> Participants interact via self-selected sanctuary aliases. Your real legal name, email address, and exact home address are never exposed.
-                </li>
-                <li>
-                  <strong>Coarse Regional Matching:</strong> Location proximity is computed strictly using coarse, voluntary regional centroids, never background GPS or continuous tracking.
-                </li>
-              </ul>
-            </section>
-
-            {/* Section 4 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  4
-                </span>
-                <h2>On-Device Computer Vision & Posture Telemetry</h2>
-              </div>
-              <p className="mb-4">
-                Thrivefold utilizes on-device Google MediaPipe pose landmarkers for somatic breath tracking and physical alignment verification.
-              </p>
+            <section id="contact" className="scroll-mt-24 rounded-[24px] bg-[var(--surface)] p-6 sm:p-8">
+              <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">Contact</h2>
               <p>
-                <strong>Zero Camera Cloud Streaming:</strong> Camera frames are processed strictly in volatile device RAM in real time. No images, video streams, or biometric face meshes are ever saved to disk or transmitted across the internet.
-              </p>
-            </section>
-
-            {/* Section 5 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  5
-                </span>
-                <h2>Zero Third-Party Advertising & Tracking SDKs</h2>
-              </div>
-              <p>
-                We do not include third-party marketing trackers (no Meta Pixel, no Google Ads SDK, no AppsFlyer, no Adjust, no data brokers). We do not monetize your data through advertising. Our business is sustained exclusively by voluntary supporter subscriptions and private enterprise licensing.
-              </p>
-            </section>
-
-            {/* Section 6 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  6
-                </span>
-                <h2>Sovereign Data Export & One-Tap Irreversible Purge</h2>
-              </div>
-              <p className="mb-3">
-                In strict compliance with GDPR, CCPA, and digital human rights frameworks:
-              </p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  <strong>Complete JSON Export:</strong> You can download a structured, human-readable export of all your check-ins, journal entries, and activity history at any time.
-                </li>
-                <li>
-                  <strong>One-Tap Instant Purge:</strong> Tapping &quot;Wipe Sanctuary&quot; in Settings executes an immediate cryptographic wipe of all on-device MMKV databases and triggers a CASCADE delete across any private enclaves. This action is final and unrecoverable.
-                </li>
-              </ul>
-            </section>
-
-            {/* Section 7 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
-              <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
-                  7
-                </span>
-                <h2>Contact & Data Protection Officer</h2>
-              </div>
-              <p className="mb-2">
-                If you have questions regarding this Privacy Covenant or our on-device cryptographic architecture, please reach out directly:
-              </p>
-              <p className="font-mono text-xs sm:text-sm bg-[var(--surface2)] p-4 rounded-xl text-[var(--ink)]">
-                Amit Dev Labs · Data Protection & Cryptographic Sovereignty<br />
-                Email: amit@devamit.co.in<br />
-                Address: Bengaluru, Karnataka, India<br />
-                Web: https://devamit.co.in
+                Questions about this policy or your information:{' '}
+                <a href={`mailto:${siteConfig.contactEmail}`} className="text-[var(--ink)] underline underline-offset-2">
+                  {siteConfig.contactEmail}
+                </a>
+                . Thrivefold is made by Amit Dev Labs, Bengaluru, Karnataka, India.
               </p>
             </section>
           </div>
