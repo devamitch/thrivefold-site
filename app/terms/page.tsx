@@ -6,7 +6,7 @@ import { SiteFooter } from '@/components/SiteFooter'
 
 export const metadata: Metadata = {
   title: 'Terms of Service — Thrivefold Sovereign Health Sanctuary',
-  description: 'Terms of Service, community standards, age assurance covenants, and non-emergency medical disclaimers for the Thrivefold health and slow-correspondence ecosystem.',
+  description: 'Terms of Service, community standards, age assurance covenants, and non-emergency medical disclaimers for the Thrivefold health and wellness ecosystem.',
 }
 
 export default function TermsOfServicePage() {
@@ -36,7 +36,7 @@ export default function TermsOfServicePage() {
             </h1>
 
             <p className="text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-              These Terms govern your use of the Thrivefold mobile applications, web services, and pen-pal slow correspondence network. By accessing Thrivefold, you enter a mutual covenant of personal safety, respectful asynchronous correspondence, and local data sovereignty.
+              These Terms govern your use of the Thrivefold mobile applications, web services, and verified activity circles. By accessing Thrivefold, you enter a mutual covenant of personal safety, respectful peer participation, and local data sovereignty.
             </p>
 
             <div className="mt-6 pt-6 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
@@ -97,7 +97,7 @@ export default function TermsOfServicePage() {
                   <strong>Mandatory 18+ Verification:</strong> You represent and warrant that you are at least 18 years of age. Minor access is strictly forbidden.
                 </li>
                 <li>
-                  <strong>Restricted Trial for Under-25 Cohorts:</strong> Users aged 18 to 24 undergo a mandatory 7-day protective trial period with a hard cap of 1 intro letter per day and complete isolation from public member discovery directories.
+                  <strong>Restricted Trial for Under-25 Cohorts:</strong> Users aged 18 to 24 undergo a mandatory 7-day protective trial period with complete isolation from public member discovery directories.
                 </li>
                 <li>
                   <strong>Zero-Tolerance Exploitation Policy:</strong> Any attempt to solicit minors, harvest personal addresses, or engage in predatory behavior results in immediate account termination, device bans, and reporting to relevant law enforcement authorities.
@@ -111,20 +111,20 @@ export default function TermsOfServicePage() {
                 <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
                   2
                 </span>
-                <h2>Slow Correspondence Community Guidelines</h2>
+                <h2>Activity Circles &amp; Community Guidelines</h2>
               </div>
               <p className="mb-3">
-                Thrivefold replaces instant messaging addiction with thoughtful, slow correspondence:
+                Thrivefold fosters intentional health, fitness, and recovery connections through verified activity circles:
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>
-                  <strong>Chip-Only Composition:</strong> All letters must be constructed exclusively from approved sentiment cards and reflection chips. Custom unstructured free text that circumvents this safeguard is disallowed.
+                  <strong>Progression Gated:</strong> Participation in activity circles (Gym pals, therapy groups, meditation circles, sports hubs) requires Level 3+ verified progression.
                 </li>
                 <li>
-                  <strong>No Commercial Solicitation or Spam:</strong> You may not use Thrivefold letters to promote products, solicit investments, share external URLs, or distribute unwanted promotional content.
+                  <strong>No Commercial Solicitation or Spam:</strong> You may not use Thrivefold activity circles to promote products, solicit investments, share external URLs, or distribute unwanted promotional content.
                 </li>
                 <li>
-                  <strong>Respectful Asynchronous Exchange:</strong> Letters travel with intentional distance delays (4 to 72 hours). Pestering or attempting to bypass transit delays undermines the platform covenant.
+                  <strong>Respectful Peer Engagement:</strong> Thrivefold exists to promote health, mutual encouragement, and wellbeing. Harassment, discrimination, or abusive conduct results in immediate account and device revocation.
                 </li>
               </ul>
             </section>
@@ -176,7 +176,7 @@ export default function TermsOfServicePage() {
                 <h2>Limitation of Liability</h2>
               </div>
               <p>
-                TO THE MAXIMUM EXTENT PERMITTED BY LAW, THRIVEFOLD AND AMIT DEV LABS ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTIES OF ANY KIND. WE ARE NOT LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APPLICATION, HEALTH INSIGHTS, COMPUTER VISION TELEMETRY, OR CORRESPONDENCE INTERACTIONS.
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, THRIVEFOLD AND AMIT DEV LABS ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTIES OF ANY KIND. WE ARE NOT LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APPLICATION, HEALTH INSIGHTS, COMPUTER VISION TELEMETRY, OR ACTIVITY CIRCLE INTERACTIONS.
               </p>
             </section>
 

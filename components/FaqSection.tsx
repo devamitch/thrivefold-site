@@ -9,12 +9,12 @@ const FAQS = [
     a: 'Thrivefold features three dedicated health sanctuaries: Women’s Health (menstrual & ovulation cycle days, follicular vs. luteal nutrition, basal body temperature, pelvic floor reminders), Men’s Health (testosterone support habits, circadian sun exposure, VO2 max telemetry, cold recovery, stoic reflections), and Pride & LGBTQ+ Wellbeing (hormone replacement therapy schedule, injection site rotation, affirming care milestones, quick panic lock). You select your primary sanctuary during onboarding and can seamlessly switch or adjust your experience at any time with total data isolation.',
   },
   {
-    q: 'How does Slow Correspondence work, and why is there no free-form chat?',
-    a: 'Traditional messaging platforms create urgency, dopamine dependency, spam, and unsolicited harassment. Thrivefold replaces instant messaging with the unhurried cadence of postal letters. Letters are composed exclusively using curated sentiment cards and collectible digital stamps (max 5 cards per letter). Delivery time is mathematically calculated using the Haversine formula based on physical distance (ranging from 4 hours for local exchanges up to 72 hours for transcontinental post). This eliminates harassment, prevents toxic impulsive messaging, and fosters genuine intentional connection.',
+    q: 'How do Activity & Support Circles work, and how are they unlocked?',
+    a: 'Activity circles (Gym buddies, guided Therapy & Meditation Circles, and Aerobics or Sports Hubs) are progression-gated and unlock as users reach Level 3+ milestones. This ensures high-intent, respectful communities without spam, public exposure, or harassment. Members find local peers sharing similar health and fitness goals under strict privacy covenants.',
   },
   {
-    q: 'What is the 18+ Adult Age Assurance and under-25 pilot safety shield?',
-    a: 'To guarantee absolute community safety, all social correspondence and affinity circle discovery is strictly gated behind an 18+ adult age assurance verification. Additionally, participants under 25 are shielded by a protective 7-day trial period: during this introductory week, users are limited to a maximum of 1 new pen-pal intro per day and are completely isolated from public community directories to prevent bad-actor manipulation.',
+    q: 'What are the community safety safeguards and age protections?',
+    a: 'All community activity discovery and group participation require 18+ adult age assurance verification. Users under 25 receive additional introductory safety protections, preventing unvetted solicitations and ensuring a curated, safe peer environment.',
   },
   {
     q: 'How does on-device MediaPipe telemetry work without exposing my camera?',
@@ -22,11 +22,11 @@ const FAQS = [
   },
   {
     q: 'Is Thrivefold a replacement for professional healthcare or therapy?',
-    a: 'No. Thrivefold is an evidence-based self-care, lifestyle, and slow-correspondence companion. It is strictly non-diagnostic and does not prescribe medicine or replace licensed therapists or physicians. If you are experiencing an acute emotional or mental health crisis, please call or text 988 immediately (in the US & Canada) or contact your nearest emergency services.',
+    a: 'No. Thrivefold is an evidence-based personal wellness, lifestyle, and fitness companion. It is strictly non-diagnostic and does not prescribe medicine or replace licensed therapists or physicians. If you are experiencing an acute emotional or mental health crisis, please call or text 988 immediately (in the US & Canada) or contact your nearest emergency services.',
   },
   {
     q: 'What is the commercial pricing model? Is the core app truly free for life?',
-    a: 'Yes. Our core sanctuary is $0 Free-For-Life: you receive 100% offline personal health tracking, local AI insights, encrypted MMKV memory vault with JSON export, and standard slow postal letter exchange (up to 3 simultaneous in-transit letters). For members who want expanded outbox capacity (up to 10 simultaneous letters), quarterly artist-commissioned collectible digital stamps, and optional cross-device end-to-end encrypted backup, we offer Correspondence Plus for $4.99/month ($39.99/year). We never host ads or broker data.',
+    a: 'Yes. Our core sanctuary is $0 Free-For-Life: you receive 100% offline personal health tracking, local AI insights, encrypted MMKV memory vault with JSON export, and access to wellness routines and workouts. For members who want expanded analytics, quarterly wellness packs, and optional cross-device end-to-end encrypted backup, we offer Sanctuary Plus for $4.99/month ($39.99/year). We never host ads or broker data.',
   },
 ]
 
@@ -47,7 +47,7 @@ export function FaqSection() {
           Everything you need to know about <span className="italic text-[var(--terracotta)]">sovereign wellbeing.</span>
         </h2>
         <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-          Clear, straightforward answers about our three health sanctuaries, slow letter correspondence, and zero-compromise hardware privacy.
+          Clear, straightforward answers about our three health sanctuaries, activity circles, and zero-compromise hardware privacy.
         </p>
       </div>
 

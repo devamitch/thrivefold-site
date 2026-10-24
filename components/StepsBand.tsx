@@ -38,7 +38,7 @@ export function StepsBand() {
           A calm, intentional rhythm for <span className="italic text-[var(--terracotta)]">mindful living.</span>
         </h2>
         <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-          From daily physiological check-ins to unhurried postal correspondence, Thrivefold protects your attention, your boundaries, and your private data.
+          From daily physiological check-ins to verified activity and fitness circles, Thrivefold protects your attention, your boundaries, and your private data.
         </p>
       </div>
 

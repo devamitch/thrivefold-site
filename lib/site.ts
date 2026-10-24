@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: 'Thrivefold',
-  productName: 'Thrivefold: Sovereign Health Ecosystem, Tripartite Wellness & Slow Correspondence',
-  tagline: 'Three dedicated health sanctuaries and intentional slow postal correspondence — 100% on-device with zero surveillance.',
-  secondaryTagline: 'Women’s cycle & hormonal wellness, Men’s stamina & recovery, Pride & gender-affirming care, and contemplative postal pen-pal letters — completely local-first with hardware-enforced cryptography.',
-  description: 'Thrivefold is a local-first health, wellbeing, and slow-correspondence ecosystem built on modern Expo React Native for iOS, Android, and Web. Features three dedicated sanctuaries (Women’s, Men’s, Pride), distance-delayed chip letters, on-device MediaPipe pose estimation, and zero cloud telemetry.',
+  productName: 'Thrivefold: Sovereign Health Sanctuary & Tripartite Wellness',
+  tagline: 'Three dedicated health sanctuaries and verified activity circles — 100% on-device with zero surveillance.',
+  secondaryTagline: 'Women’s cycle & hormonal wellness, Men’s stamina & recovery, Pride & affirming care, and verified fitness & therapy hubs — completely local-first with hardware-enforced cryptography.',
+  description: 'Thrivefold is a local-first health and wellbeing ecosystem built on modern Expo React Native for iOS, Android, and Web. Features three dedicated sanctuaries (Women’s, Men’s, Pride), on-device MediaPipe pose estimation, verified activity & therapy circles, and zero cloud telemetry.',
   url: 'https://thrivefold.devamit.co.in',
   appPackage: 'com.amit.thrivefold',
   appScheme: 'thrivefold://',
@@ -29,7 +29,7 @@ export const siteConfig = {
 
 export const navItems = [
   { href: '#pillars', label: 'Health Pillars' },
-  { href: '#correspondence', label: 'Slow Letters' },
+  { href: '#circles', label: 'Activity Circles' },
   { href: '#telemetry', label: 'On-Device Tech' },
   { href: '#security', label: 'Hardware Enclave' },
   { href: '#faq', label: 'FAQ' },

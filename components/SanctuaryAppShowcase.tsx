@@ -5,7 +5,7 @@ import {
   Sparkles,
   Heart,
   Activity,
-  Mail,
+  Users,
   ShieldCheck,
   Lock,
   ArrowUpRight,
@@ -113,25 +113,25 @@ const SHOWCASE_TABS: ShowcaseTab[] = [
     },
   },
   {
-    id: 'correspondence',
-    label: 'Slow Letters',
-    icon: Mail,
-    tag: 'Card & Chip-Only Postal Exchange',
-    title: 'Reconnect through the calm cadence of slow mail.',
-    body: 'Replaces toxic instant messaging and endless doomscrolling with the contemplative pacing of postal letters. Letters are composed purely from curated sentiment cards and collectible stamps, traveling across real distances with intentional delays (4 to 72 hours).',
-    colorBadgeBg: 'bg-[#FAF6EE]',
-    colorBadgeText: 'text-[#883506]',
+    id: 'circles',
+    label: 'Activity Circles',
+    icon: Users,
+    tag: 'Progression-Gated (Level 3+)',
+    title: 'Find trusted gym pals, meditation circles, and sports hubs.',
+    body: 'Unlocked at Level 3+ milestones. Connect with vetted peers for morning gym circuits, guided meditation sessions, therapy groups, and local athletics—free from public directories, unvetted chats, or surveillance.',
+    colorBadgeBg: 'bg-[#E8F5F3]',
+    colorBadgeText: 'text-[#2A9D8F]',
     screen: {
-      header: 'Postal Outbox · In Transit',
-      badge: 'Golden Ginkgo Stamp',
-      accentColor: '#883506',
-      accentBg: 'bg-[#FAF6EE]',
-      topContext: 'Distance Transit: 2,100 km (Interstate)',
-      mainHeading: 'Haversine Transit Delay · 18h Remaining',
-      mainText: 'Selected Cards: [1] “Woke up feeling deeply rested and energized” · [2] “What gentle ritual anchors your evening routine?”',
-      secondaryHeading: 'Zero-Harassment Protection',
-      secondaryText: 'Constructed exclusively with verified sentiment cards. No unsolicited messages, phone numbers, or spam possible.',
-      footerLabel: 'Sealed & Dispatched with Intention',
+      header: 'Activity Circles · Verified Peer Hubs',
+      badge: 'Level 3+ Gated',
+      accentColor: '#2A9D8F',
+      accentBg: 'bg-[#E8F5F3]',
+      topContext: 'Active Circles: 3 · Verified Peers nearby',
+      mainHeading: 'Downtown Strength & Conditioning Hub',
+      mainText: 'Scheduled: 6:30 AM Circuit Training · 4 members confirmed · Sanctuary code of conduct active',
+      secondaryHeading: 'Peer Privacy Guard',
+      secondaryText: 'Pseudonymous aliases only. Exact home locations, phone numbers, and private biometrics are never shared.',
+      footerLabel: 'Next Session: Tomorrow 6:30 AM',
       securityBadge: '18+ Verified · E2E Pseudonymous',
     },
   },
@@ -154,7 +154,7 @@ export function SanctuaryAppShowcase() {
           </h2>
         </div>
         <p className="max-w-[400px] text-sm leading-relaxed text-[var(--ink-secondary)] sm:text-right sm:text-base">
-          Explore the four dedicated interface views powering Thrivefold’s three health sanctuaries and slow-correspondence postal letters.
+          Explore the four dedicated interface views powering Thrivefold’s three health sanctuaries and verified activity circles.
         </p>
       </div>
 

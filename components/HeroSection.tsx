@@ -1,8 +1,8 @@
-import { ArrowRight, Check, Heart, Brain, Lock, ShieldCheck, Mail, Sparkles, Calendar, Zap, Activity } from 'lucide-react'
+import { ArrowRight, Check, Heart, Brain, Lock, ShieldCheck, Sparkles, Calendar, Zap, Activity, Users } from 'lucide-react'
 
 const PROMISES = [
   'Three Dedicated Sanctuaries',
-  'Slow Postal Correspondence',
+  'Verified Activity & Therapy Circles',
   '100% On-Device Sovereign Vault',
   'Hardware Enclave Encrypted',
 ]
@@ -30,12 +30,12 @@ export function HeroSection() {
 
           {/* Heading */}
           <h1 className="text-balance font-serif text-[clamp(2.75rem,7.2vw,5.5rem)] font-medium leading-[1.03] tracking-[-0.04em] text-[var(--ink)]">
-            A quiet sanctuary for health &amp; slow letters, <span className="italic text-[var(--terracotta)]">measured privately.</span>
+            A quiet sanctuary for health &amp; fitness, <span className="italic text-[var(--terracotta)]">measured privately.</span>
           </h1>
 
           {/* Description */}
           <p className="mt-7 max-w-[560px] text-[17px] leading-relaxed text-[var(--ink-secondary)] sm:text-[19px]">
-            Commercial wellness apps surveil your most intimate data. Thrivefold runs completely on your own hardware: three dedicated health sanctuaries (Women’s cycle, Men’s stamina, Pride &amp; affirming care) paired with contemplative, distance-delayed postal letter correspondence.
+            Commercial wellness apps surveil your most intimate data. Thrivefold runs completely on your own hardware: three dedicated health sanctuaries (Women’s cycle, Men’s stamina, Pride &amp; affirming care) paired with progression-gated activity circles (Gym pals, Therapy groups, Meditation, Sports &amp; Aerobics hubs).
           </p>
 
           {/* Action Buttons */}
@@ -97,21 +97,21 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Right Tilted Card: Slow Postal Correspondence */}
-          <div className="absolute right-[2%] top-[18%] w-[54%] rotate-[6deg] rounded-[26px] bg-white p-4 sm:p-5 text-left space-y-2.5 transition-transform duration-300 hover:rotate-0 hover:z-20 shadow-[0_12px_32px_-12px_rgba(25,25,24,0.06)] border border-[#B45309]/20">
+          {/* Right Tilted Card: Verified Activity Circles */}
+          <div className="absolute right-[2%] top-[18%] w-[54%] rotate-[6deg] rounded-[26px] bg-white p-4 sm:p-5 text-left space-y-2.5 transition-transform duration-300 hover:rotate-0 hover:z-20 shadow-[0_12px_32px_-12px_rgba(25,25,24,0.06)] border border-[#2A9D8F]/20">
             <div className="flex items-center justify-between text-xs pb-1.5">
               <span className="font-semibold text-[var(--ink)] flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#883506]" />
-                Slow Postal
+                <Activity className="w-3.5 h-3.5 text-[#2A9D8F]" />
+                Activity Circles
               </span>
-              <span className="text-[10px] font-semibold text-[#883506] bg-[#FAF6EE] px-2 py-0.5 rounded-full">18h Transit</span>
+              <span className="text-[10px] font-semibold text-[#2A9D8F] bg-[#E8F5F3] px-2 py-0.5 rounded-full">Level 3+ Gated</span>
             </div>
-            <p className="text-xs text-[var(--ink)] font-serif italic">
-              &ldquo;Woke up feeling deeply rested. What gentle ritual anchors your evening?&rdquo;
+            <p className="text-xs text-[var(--ink)] font-serif">
+              &ldquo;Gym buddy matched for 6:30 AM strength circuit at local facility.&rdquo;
             </p>
             <div className="flex items-center justify-between text-[10px] text-[var(--ink-muted)] pt-1">
-              <span>Golden Ginkgo Stamp</span>
-              <span className="font-semibold text-[#883506]">Haversine Paced</span>
+              <span>Therapy &amp; Sports Hubs</span>
+              <span className="font-semibold text-[#2A9D8F]">Verified Match</span>
             </div>
           </div>
 

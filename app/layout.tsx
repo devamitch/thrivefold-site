@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Thrivefold — Sovereign Health Sanctuary, Tripartite Wellness & Slow Correspondence',
+    default: 'Thrivefold — Sovereign Health Sanctuary & Tripartite Wellness',
     template: '%s · Thrivefold',
   },
   description: siteConfig.description,
@@ -39,9 +39,11 @@ export const metadata: Metadata = {
     'Womens Health Cycle',
     'Mens Health Stamina',
     'Pride LGBTQ Wellbeing',
-    'Slow Correspondence',
-    'Postal Letters',
-    'Chip-only Letter Composer',
+    'HIPAA Compliant Health Privacy',
+    'Gym Pal Finding',
+    'Therapy Group Discovery',
+    'Meditation Circles',
+    'Aerobics and Sports Hubs',
     'MediaPipe Pose Telemetry',
     'On-Device AI',
     'Offline Health Vault',
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
   },
   openGraph: {
-    title: 'Thrivefold — Sovereign Health Sanctuary, Tripartite Wellness & Slow Correspondence',
+    title: 'Thrivefold — Sovereign Health Sanctuary & Tripartite Wellness',
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: 'Thrivefold',
@@ -71,7 +73,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Thrivefold — Sovereign Health Sanctuary & Slow Correspondence',
+    title: 'Thrivefold — Sovereign Health Sanctuary & Tripartite Wellness',
     description: siteConfig.description,
     creator: '@devamitch',
     images: ['/icon-512.png'],

@@ -62,7 +62,7 @@ export function PrivacyTermsCovenantBand() {
               </h3>
             </div>
             <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-              Learn about our strict 18+ adult age assurance gate, under-25 7-day introductory trial shield, chip-only correspondence anti-harassment rules, and transparent subscription terms.
+              Learn about our strict 18+ adult age assurance gate, under-25 7-day introductory trial shield, progression-gated activity circles, anti-harassment covenants, and transparent subscription terms.
             </p>
           </div>
 

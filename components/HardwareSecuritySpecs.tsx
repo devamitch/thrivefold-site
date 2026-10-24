@@ -8,8 +8,8 @@ export function HardwareSecuritySpecs() {
       commercial: 'Uploaded to cloud; sold to data brokers & insurers',
     },
     {
-      feature: 'Pen-Pal Messaging Safety',
-      thrivefold: 'Curated sentiment chips · 0 toxic chat',
+      feature: 'Activity & Peer Connections',
+      thrivefold: 'Level 3+ gated circles · 0 public directories',
       commercial: 'Unfiltered text, unsolicited images, stalking risk',
     },
     {
@@ -40,7 +40,7 @@ export function HardwareSecuritySpecs() {
           Your intimate health is <span className="italic text-[var(--terracotta)]">non-negotiable.</span>
         </h2>
         <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-          Commercial health and period-tracking apps monetize user vulnerabilities or leak intimate reproductive data during breaches. Thrivefold is built on hardware sovereignty: your biology and letters never leave your phone.
+          Commercial health and period-tracking apps monetize user vulnerabilities or leak intimate reproductive data during breaches. Thrivefold is built on hardware sovereignty: your biology and personal records never leave your phone.
         </p>
       </div>
 

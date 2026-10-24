@@ -110,20 +110,20 @@ export default function PrivacyPolicyPage() {
                 <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
                   3
                 </span>
-                <h2>Slow Correspondence & Postal Letter Privacy</h2>
+                <h2>Activity Circles &amp; Peer Support Privacy</h2>
               </div>
               <p className="mb-4">
-                Our pen-pal postal exchange replaces addictive, toxic chat with contemplative asynchronous correspondence:
+                Our activity circles connect members around shared health, fitness, and recovery goals with strict privacy boundaries:
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>
-                  <strong>Chip-Only Composer:</strong> Letters are assembled using curated reflection chips, preventing phone number dissemination, address leaks, photo transfers, or verbal abuse.
+                  <strong>Progression-Gated (Level 3+):</strong> Activity circles (Gym buddies, therapy groups, meditation circles, sports hubs) require verified Level 3+ progression, keeping communities focused, intentional, and protected from spam.
                 </li>
                 <li>
-                  <strong>Pseudonymous Identity:</strong> Pen-pals interact via self-selected sanctuary aliases. Your real legal name, email address, and exact GPS coordinates are never exposed.
+                  <strong>Pseudonymous Identity:</strong> Participants interact via self-selected sanctuary aliases. Your real legal name, email address, and exact home address are never exposed.
                 </li>
                 <li>
-                  <strong>Distance Calculation:</strong> Delivery delays (4 to 72 hours) are computed using coarse, low-precision regional centroids (hundreds of square kilometers wide), never exact device telemetry.
+                  <strong>Coarse Regional Matching:</strong> Location proximity is computed strictly using coarse, voluntary regional centroids, never background GPS or continuous tracking.
                 </li>
               </ul>
             </section>
@@ -170,10 +170,10 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>
-                  <strong>Complete JSON Export:</strong> You can download a structured, human-readable export of all your check-ins, journal entries, and correspondence history at any time.
+                  <strong>Complete JSON Export:</strong> You can download a structured, human-readable export of all your check-ins, journal entries, and activity history at any time.
                 </li>
                 <li>
-                  <strong>One-Tap Instant Purge:</strong> Tapping &quot;Wipe Sanctuary&quot; in Settings executes an immediate cryptographic wipe of all on-device MMKV databases and triggers a CASCADE delete across any private letter enclaves. This action is final and unrecoverable.
+                  <strong>One-Tap Instant Purge:</strong> Tapping &quot;Wipe Sanctuary&quot; in Settings executes an immediate cryptographic wipe of all on-device MMKV databases and triggers a CASCADE delete across any private enclaves. This action is final and unrecoverable.
                 </li>
               </ul>
             </section>

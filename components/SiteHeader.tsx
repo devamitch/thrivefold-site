@@ -7,7 +7,7 @@ import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 const NAV_LINKS = [
   { href: '/#pillars', label: 'Health Pillars', isAnchor: true },
-  { href: '/#correspondence', label: 'Slow Letters', isAnchor: true },
+  { href: '/#circles', label: 'Activity Circles', isAnchor: true },
   { href: '/#telemetry', label: 'On-Device Tech', isAnchor: true },
   { href: '/#security', label: 'Security', isAnchor: true },
   { href: '/#covenant', label: 'Covenant', isAnchor: true },

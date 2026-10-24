@@ -34,7 +34,7 @@ export function SiteFooter() {
             </Link>
 
             <p className="text-sm text-[var(--ink-secondary)] leading-relaxed max-w-sm">
-              Sovereign health sanctuary running strictly on your personal hardware. Three dedicated pillars (Women&apos;s Cycle, Men&apos;s Stamina, Pride &amp; Affirming Care) alongside contemplative, asynchronous slow postal correspondence.
+              Sovereign health sanctuary running strictly on your personal hardware. Three dedicated pillars (Women&apos;s Cycle, Men&apos;s Stamina, Pride &amp; Affirming Care) alongside verified wellness &amp; activity circles.
             </p>
 
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface2)] text-xs text-[var(--ink-secondary)]">
@@ -52,8 +52,8 @@ export function SiteFooter() {
               <a href="/#pillars" className="hover:text-[var(--terracotta)] transition-colors">
                 Three Health Pillars
               </a>
-              <a href="/#correspondence" className="hover:text-[var(--terracotta)] transition-colors">
-                Slow Letter Correspondence
+              <a href="/#circles" className="hover:text-[var(--terracotta)] transition-colors">
+                Activity &amp; Support Circles
               </a>
               <a href="/#telemetry" className="hover:text-[var(--terracotta)] transition-colors">
                 On-Device Pose Telemetry

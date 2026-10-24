@@ -1,4 +1,4 @@
-import { Brain, Heart, FileText, Shield, ArrowUpRight, Mail, Sparkles, Activity, Lock } from 'lucide-react'
+import { Brain, Heart, FileText, Shield, ArrowUpRight, Users, Sparkles, Activity, Lock } from 'lucide-react'
 
 export function FeatureBento() {
   return (
@@ -12,7 +12,7 @@ export function FeatureBento() {
           Three dedicated sanctuaries, <span className="italic text-[var(--terracotta)]">grounded in private biology.</span>
         </h2>
         <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-          Generic wellness apps reduce complex human health into a one-size-fits-all feed. Thrivefold delivers isolated health sanctuaries paired with contemplative slow-correspondence postal letters.
+          Generic wellness apps reduce complex human health into a one-size-fits-all feed. Thrivefold delivers isolated health sanctuaries paired with progression-gated activity circles and HIPAA-grade local-first privacy.
         </p>
       </div>
 
@@ -48,27 +48,27 @@ export function FeatureBento() {
           </div>
         </div>
 
-        {/* Card 2: Slow Postal Correspondence (5 cols) */}
-        <div id="correspondence" className="md:col-span-5 squircle-card p-7 sm:p-9 bg-white flex flex-col justify-between text-left">
+        {/* Card 2: Verified Activity Circles (5 cols) */}
+        <div id="circles" className="md:col-span-5 squircle-card p-7 sm:p-9 bg-white flex flex-col justify-between text-left">
           <div>
             <div className="w-10 h-10 rounded-2xl bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)] mb-6">
-              <Mail className="w-5 h-5" />
+              <Users className="w-5 h-5" />
             </div>
             <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">
-              Slow Postal Correspondence
+              Verified Activity Circles
             </h3>
             <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed mb-6">
-              No toxic instant messaging, no harassment, no pressure. Letters are built purely from sentiment cards and travel across real distances with intentional delays (4 to 72 hours).
+              Gated at Level 3+ progression. Find verified Gym Buddies, guided Therapy &amp; Meditation Circles, and local Aerobics or Sports Hubs tailored to your wellness goals—free from public directories, unvetted chats, or surveillance.
             </p>
           </div>
 
           <div className="p-4 rounded-2xl bg-[var(--bg)] flex items-center justify-between text-xs">
             <div>
-              <span className="block font-semibold text-[var(--ink)]">Distance-Delayed Transit</span>
-              <span className="text-[11px] text-[var(--ink-muted)]">Stamp collection &amp; zero-toxic chip composer</span>
+              <span className="block font-semibold text-[var(--ink)]">Level 3+ Progression Gated</span>
+              <span className="text-[11px] text-[var(--ink-muted)]">Gym pals · Therapy · Meditation · Sports hubs</span>
             </div>
             <a
-              href="#experience"
+              href="#beta"
               className="squircle-button px-3.5 py-1.5 bg-[var(--terracotta)] text-white text-[11px] font-semibold flex items-center gap-1"
             >
               <span>Explore</span>
@@ -107,7 +107,7 @@ export function FeatureBento() {
               Zero Cloud Detour · Hardware Enclave
             </h3>
             <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed mb-6">
-              No remote servers. No tracking pixels. No risk of corporate data brokers. All health logs, letters, and reflections are stored locally using high-speed MMKV partitions encrypted with AES-256 keys held in your device&apos;s Secure Keystore.
+              No remote servers. No tracking pixels. No risk of corporate data brokers. All health logs, activity records, and reflections are stored locally using high-speed MMKV partitions encrypted with AES-256 keys held in your device&apos;s Secure Keystore.
             </p>
           </div>
 
