@@ -6,7 +6,7 @@
 :root {
   color-scheme: light;
 
-  /* Setu & BlinkQuest Signature Palette: Warm Paper & Porcelain Sanctuary */
+  /* Warm paper palette */
   --bg: #FAF7F2;
   --paper: #FAF7F2;
   --surface: #FFFFFF;
@@ -140,7 +140,7 @@ section[id] {
   backdrop-filter: blur(18px) saturate(1.15);
 }
 
-/* Setu & BlinkQuest Signature Flat Squircles: Zero Shadows, Zero Borders */
+/* Flat squircles: no shadows, no borders */
 .squircle-card {
   min-width: 0;
   max-width: 100%;

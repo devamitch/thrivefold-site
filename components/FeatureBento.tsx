@@ -1,130 +1,110 @@
-import { Brain, Heart, FileText, Shield, ArrowUpRight, Users, Sparkles, Activity, Lock } from 'lucide-react'
+import { Activity, CalendarCheck, Heart, Lock, Salad, Users } from 'lucide-react'
+
+const SPACES = [
+  {
+    name: 'Women’s health',
+    text: 'Cycle tracking, symptoms, energy and sleep across your phases.',
+    color: 'text-[var(--terracotta-strong)]',
+  },
+  {
+    name: 'Men’s health',
+    text: 'Strength, recovery, sleep and habits that support them.',
+    color: 'text-[var(--sage-strong)]',
+  },
+  {
+    name: 'LGBTQ+ wellbeing',
+    text: 'Medication reminders, personal notes and an affirming space.',
+    color: 'text-[var(--ink)]',
+  },
+]
 
 export function FeatureBento() {
   return (
     <section id="features" className="scroll-mt-24">
-      {/* Section Header */}
       <div className="mx-auto max-w-[720px] text-center mb-12 sm:mb-16">
         <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--terracotta)] block mb-3">
-          Sovereign Health Architecture
+          Features
         </span>
         <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-[-0.03em] text-[var(--ink)] leading-tight">
-          Three dedicated sanctuaries, <span className="italic text-[var(--terracotta)]">grounded in private biology.</span>
+          Everyday health tools, <span className="italic text-[var(--terracotta)]">in one app.</span>
         </h2>
         <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-          Generic wellness apps reduce complex human health into a one-size-fits-all feed. Thrivefold delivers isolated health sanctuaries paired with progression-gated activity circles and HIPAA-grade local-first privacy.
+          Pick the space that fits you, then use the parts you need. You can change spaces at any time.
         </p>
       </div>
 
-      {/* Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        {/* Card 1: Three Dedicated Sanctuaries (7 cols) */}
-        <div className="md:col-span-7 squircle-card p-7 sm:p-9 bg-white flex flex-col justify-between text-left">
+        <div className="md:col-span-7 squircle-card p-7 sm:p-9 flex flex-col justify-between text-left">
           <div>
             <div className="w-10 h-10 rounded-2xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)] mb-6">
-              <Sparkles className="w-5 h-5" />
+              <Heart className="w-5 h-5" aria-hidden="true" />
             </div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">
-              Tripartite Health Specialization
-            </h3>
+            <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">Three health spaces</h3>
             <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed mb-6">
-              Choose your dedicated journey with customized colorways, trackers, and telemetry:
+              Each space has its own trackers and guidance.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-2">
-            <div className="squircle-inner p-3.5 bg-[#FFF8F5] border border-[#E07A5F]/20">
-              <span className="block font-semibold text-xs text-[#9B2226]">Women&apos;s Health</span>
-              <span className="text-[11px] text-[var(--ink-secondary)]">Cycle phases, follicular/luteal nutrition &amp; pelvic floor.</span>
-            </div>
-            <div className="squircle-inner p-3.5 bg-[#F4F9F5] border border-[#2D6A4F]/20">
-              <span className="block font-semibold text-xs text-[#2D6A4F]">Men&apos;s Health</span>
-              <span className="text-[11px] text-[var(--ink-secondary)]">Strength, stamina telemetry, cold recovery &amp; stoic focus.</span>
-            </div>
-            <div className="squircle-inner p-3.5 bg-[#F7F3FA] border border-[#7209B7]/20">
-              <span className="block font-semibold text-xs text-[#7209B7]">Pride &amp; Affirming</span>
-              <span className="text-[11px] text-[var(--ink-secondary)]">HRT reminders, injection site logging &amp; safe haven.</span>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {SPACES.map((s) => (
+              <div key={s.name} className="squircle-inner p-3.5">
+                <span className={`block font-semibold text-xs ${s.color}`}>{s.name}</span>
+                <span className="text-[12px] text-[var(--ink-secondary)]">{s.text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Card 2: Verified Activity Circles (5 cols) */}
-        <div id="circles" className="md:col-span-5 squircle-card p-7 sm:p-9 bg-white flex flex-col justify-between text-left">
-          <div>
-            <div className="w-10 h-10 rounded-2xl bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)] mb-6">
-              <Users className="w-5 h-5" />
-            </div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">
-              Verified Activity Circles
-            </h3>
-            <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed mb-6">
-              Gated at Level 3+ progression. Find verified Gym Buddies, guided Therapy &amp; Meditation Circles, and local Aerobics or Sports Hubs tailored to your wellness goals—free from public directories, unvetted chats, or surveillance.
-            </p>
+        <div className="md:col-span-5 squircle-card p-7 sm:p-9 text-left">
+          <div className="w-10 h-10 rounded-2xl bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)] mb-6">
+            <CalendarCheck className="w-5 h-5" aria-hidden="true" />
           </div>
-
-          <div className="p-4 rounded-2xl bg-[var(--bg)] flex items-center justify-between text-xs">
-            <div>
-              <span className="block font-semibold text-[var(--ink)]">Level 3+ Progression Gated</span>
-              <span className="text-[11px] text-[var(--ink-muted)]">Gym pals · Therapy · Meditation · Sports hubs</span>
-            </div>
-            <a
-              href="#beta"
-              className="squircle-button px-3.5 py-1.5 bg-[var(--terracotta)] text-white text-[11px] font-semibold flex items-center gap-1"
-            >
-              <span>Explore</span>
-              <ArrowUpRight className="w-3 h-3" />
-            </a>
-          </div>
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">Check-ins and quests</h3>
+          <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed">
+            A short daily check-in for mood, sleep and energy, plus small quests that help you build a routine
+            one day at a time.
+          </p>
         </div>
 
-        {/* Card 3: Somatic Pose & MediaPipe Telemetry (5 cols) */}
-        <div id="telemetry" className="md:col-span-5 squircle-card p-7 sm:p-9 bg-white flex flex-col justify-between text-left">
-          <div>
-            <div className="w-10 h-10 rounded-2xl bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)] mb-6">
-              <Activity className="w-5 h-5" />
-            </div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">
-              On-Device Posture Telemetry
-            </h3>
-            <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed mb-6">
-              Real-time somatic posture and breath guidance powered by Google MediaPipe running directly on your phone. Camera frames process in volatile RAM—zero images or video ever leave your device.
-            </p>
+        <div className="md:col-span-5 squircle-card p-7 sm:p-9 text-left">
+          <div className="w-10 h-10 rounded-2xl bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)] mb-6">
+            <Activity className="w-5 h-5" aria-hidden="true" />
           </div>
-
-          <div className="p-3.5 rounded-2xl bg-[var(--surface2)] text-xs text-[var(--ink)] flex items-center justify-between font-medium">
-            <span>MediaPipe Pose Landmarker</span>
-            <span className="text-[var(--terracotta)] font-semibold">100% In-Memory / No Cloud</span>
-          </div>
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">Guided workouts</h3>
+          <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed">
+            Follow a workout while the camera coach gives feedback on your form. It runs on your phone,
+            and the camera video is not uploaded.
+          </p>
         </div>
 
-        {/* Card 4: Hardware Enclave Sovereignty (7 cols) */}
-        <div id="security" className="md:col-span-7 squircle-card p-7 sm:p-9 bg-white flex flex-col justify-between text-left">
-          <div>
-            <div className="w-10 h-10 rounded-2xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)] mb-6">
-              <Shield className="w-5 h-5" />
-            </div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">
-              Zero Cloud Detour · Hardware Enclave
-            </h3>
-            <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed mb-6">
-              No remote servers. No tracking pixels. No risk of corporate data brokers. All health logs, activity records, and reflections are stored locally using high-speed MMKV partitions encrypted with AES-256 keys held in your device&apos;s Secure Keystore.
-            </p>
+        <div className="md:col-span-7 squircle-card p-7 sm:p-9 text-left">
+          <div className="w-10 h-10 rounded-2xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)] mb-6">
+            <Salad className="w-5 h-5" aria-hidden="true" />
           </div>
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">Meal logging</h3>
+          <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed">
+            Log what you eat in a few taps and see how meals line up with your energy, sleep and training.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-3 gap-3 pt-3 text-center text-xs">
-            <div className="p-2.5 rounded-xl bg-[var(--bg)]">
-              <span className="block font-semibold text-[var(--ink)]">0 Bytes</span>
-              <span className="text-[11px] text-[var(--ink-muted)]">Sent to Ad Networks</span>
-            </div>
-            <div className="p-2.5 rounded-xl bg-[var(--bg)]">
-              <span className="block font-semibold text-[var(--ink)]">AES-256</span>
-              <span className="text-[11px] text-[var(--ink-muted)]">Hardware Keystore</span>
-            </div>
-            <div className="p-2.5 rounded-xl bg-[var(--bg)]">
-              <span className="block font-semibold text-[var(--ink)]">One-Tap</span>
-              <span className="text-[11px] text-[var(--ink-muted)]">Instant Sovereign Wipe</span>
-            </div>
+        <div id="circles" className="md:col-span-7 squircle-card p-7 sm:p-9 text-left scroll-mt-24">
+          <div className="w-10 h-10 rounded-2xl bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)] mb-6">
+            <Users className="w-5 h-5" aria-hidden="true" />
           </div>
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">Circles</h3>
+          <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed">
+            Private groups for training, meditation, sports and support that open up as you build a routine.
+          </p>
+        </div>
+
+        <div className="md:col-span-5 squircle-card p-7 sm:p-9 text-left">
+          <div className="w-10 h-10 rounded-2xl bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)] mb-6">
+            <Lock className="w-5 h-5" aria-hidden="true" />
+          </div>
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[var(--ink)] mb-3">Your records</h3>
+          <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed">
+            Encrypted on your phone. Export them as HL7 FHIR to share with a clinician, or delete them from
+            settings.
+          </p>
         </div>
       </div>
     </section>

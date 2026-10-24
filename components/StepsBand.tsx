@@ -1,71 +1,57 @@
-import { Sparkles, Activity, Mail, ShieldCheck } from 'lucide-react'
+import { CalendarCheck, Compass, Dumbbell, Users } from 'lucide-react'
 
 const STEPS = [
   {
     step: '01',
-    title: 'Choose Sanctuary',
-    description: 'Select between Women’s Health, Men’s Health, or Pride & LGBTQ+ Wellbeing. Each sanctuary boots into an isolated colorway and personalized biometric trackers.',
-    icon: Sparkles,
+    title: 'Pick your space',
+    description: 'Choose women’s health, men’s health or LGBTQ+ wellbeing. You can switch later.',
+    icon: Compass,
   },
   {
     step: '02',
-    title: 'Log On-Device Telemetry',
-    description: 'Check in with cycle phases, workout recovery, or posture pacing via Google MediaPipe. Camera frames process in volatile RAM—zero images or video ever leave your phone.',
-    icon: Activity,
+    title: 'Check in each day',
+    description: 'Note your mood, sleep and energy in under a minute, and take on a small daily quest.',
+    icon: CalendarCheck,
   },
   {
     step: '03',
-    title: 'Exchange Slow Letters',
-    description: 'Construct letters exclusively using curated sentiment cards and collectible stamps. Letters travel across physical geographic distances with a peaceful 4 to 72 hour transit delay.',
-    icon: Mail,
+    title: 'Train and eat well',
+    description: 'Follow guided workouts with the camera coach and log meals as you go.',
+    icon: Dumbbell,
   },
   {
     step: '04',
-    title: 'Own Your Vault',
-    description: 'All reflections, telemetry, and letters are stored in high-speed MMKV partitions encrypted with AES-256 keys. Export full JSON or execute a one-tap wipe at any time.',
-    icon: ShieldCheck,
+    title: 'Join a circle',
+    description: 'As your routine builds, private groups for training, meditation, sports and support open up.',
+    icon: Users,
   },
 ]
 
 export function StepsBand() {
   return (
-    <section id="flow" className="scroll-mt-24">
+    <section id="how" className="scroll-mt-24">
       <div className="mx-auto max-w-[720px] text-center mb-12 sm:mb-16">
         <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--terracotta)] block mb-3">
-          Sovereign Progression
+          How it works
         </span>
         <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-[-0.03em] text-[var(--ink)] leading-tight">
-          A calm, intentional rhythm for <span className="italic text-[var(--terracotta)]">mindful living.</span>
+          Small steps, <span className="italic text-[var(--terracotta)]">every day.</span>
         </h2>
-        <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-          From daily physiological check-ins to verified activity and fitness circles, Thrivefold protects your attention, your boundaries, and your private data.
-        </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {STEPS.map((s) => {
           const Icon = s.icon
           return (
-            <div
-              key={s.step}
-              className="squircle-card p-6 sm:p-7 bg-white text-left flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <span className="font-serif text-2xl font-semibold text-[var(--terracotta)]">
-                    {s.step}
-                  </span>
-                  <div className="w-9 h-9 rounded-full bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)]">
-                    <Icon className="w-4 h-4" />
-                  </div>
+            <div key={s.step} className="squircle-card p-6 sm:p-7 text-left">
+              <div className="flex items-center justify-between mb-5">
+                <span className="font-serif text-2xl font-semibold text-[var(--terracotta)]">{s.step}</span>
+                <div className="w-9 h-9 rounded-full bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)]">
+                  <Icon className="w-4 h-4" aria-hidden="true" />
                 </div>
-                <h3 className="font-serif text-xl font-medium text-[var(--ink)] mb-2.5">
-                  {s.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-                  {s.description}
-                </p>
               </div>
+              <h3 className="font-serif text-xl font-medium text-[var(--ink)] mb-2.5">{s.title}</h3>
+              <p className="text-sm text-[var(--ink-secondary)] leading-relaxed">{s.description}</p>
             </div>
           )
         })}

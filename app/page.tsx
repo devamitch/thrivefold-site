@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <SmoothScrollProvider>
       <SiteHeader />
-      <main id="top" className="min-h-screen bg-[var(--bg)] text-[var(--ink)]">
+      <main className="min-h-screen bg-[var(--bg)] text-[var(--ink)]">
         <HeroSection />
 
         <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-24 px-4 pb-24 sm:gap-32 sm:px-8 lg:px-10">

@@ -1,111 +1,66 @@
 import Link from 'next/link'
-import { Lock, Scale, AlertCircle, ArrowUpRight, ShieldCheck, HeartHandshake } from 'lucide-react'
+import { AlertCircle, ArrowUpRight, Lock, Scale } from 'lucide-react'
+
+const CARDS = [
+  {
+    icon: Lock,
+    title: 'Privacy Policy',
+    text: 'What Thrivefold stores, where it is stored, and how to export or delete it.',
+    href: '/privacy/',
+    cta: 'Read the privacy policy',
+  },
+  {
+    icon: Scale,
+    title: 'Terms of Service',
+    text: 'The rules for using the app and taking part in circles.',
+    href: '/terms/',
+    cta: 'Read the terms',
+  },
+  {
+    icon: AlertCircle,
+    title: 'Medical notice',
+    text: 'Thrivefold is a wellbeing tool, not medical care. In a crisis, call or text 988 (US and Canada) or your local emergency number.',
+    href: '/terms/#medical',
+    cta: 'Read the notice',
+  },
+]
 
 export function PrivacyTermsCovenantBand() {
   return (
-    <section id="covenant" className="scroll-mt-24">
+    <section id="legal" className="scroll-mt-24">
       <div className="mx-auto max-w-[720px] text-center mb-12 sm:mb-16">
         <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--terracotta)] block mb-3">
-          Sovereign Covenant
+          The fine print
         </span>
         <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-[-0.03em] text-[var(--ink)] leading-tight">
-          Transparent terms. <span className="italic text-[var(--terracotta)]">Uncompromising privacy.</span>
+          Plain terms, <span className="italic text-[var(--terracotta)]">clearly written.</span>
         </h2>
-        <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-          We believe true health requires absolute legal and cryptographic sovereignty. Review our foundational covenants and safety protocols.
-        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1140px] mx-auto text-left">
-        {/* Card 1: Privacy Policy */}
-        <div className="squircle-card p-7 sm:p-8 bg-white flex flex-col justify-between">
-          <div className="space-y-4">
-            <div className="w-10 h-10 rounded-2xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)]">
-              <Lock className="w-5 h-5" />
+        {CARDS.map((c) => {
+          const Icon = c.icon
+          return (
+            <div key={c.title} className="squircle-card p-7 sm:p-8 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-2xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)]">
+                  <Icon className="w-5 h-5" aria-hidden="true" />
+                </div>
+                <h3 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)]">{c.title}</h3>
+                <p className="text-sm text-[var(--ink-secondary)] leading-relaxed">{c.text}</p>
+              </div>
+              <div className="pt-6">
+                <Link
+                  href={c.href}
+                  className="squircle-button inline-flex items-center gap-2 bg-[var(--surface2)] hover:bg-[var(--terracotta)] hover:text-white text-[var(--ink)] text-xs font-semibold px-4 py-2.5 transition-colors"
+                >
+                  <span>{c.cta}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
+              </div>
             </div>
-            <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--terracotta)] block">
-                Local-First Covenant
-              </span>
-              <h3 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mt-1">
-                Privacy Policy
-              </h3>
-            </div>
-            <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-              Explore our 7-section local sovereignty architecture: zero cloud storage for reproductive cycles, in-memory MediaPipe pose processing, zero ad trackers, and 1-tap instant purge.
-            </p>
-          </div>
-
-          <div className="pt-6">
-            <Link
-              href="/privacy"
-              className="squircle-button inline-flex items-center gap-2 bg-[var(--surface2)] hover:bg-[var(--terracotta)] hover:text-white text-[var(--ink)] text-xs font-semibold px-4 py-2.5 transition-all"
-            >
-              <span>Read Privacy Policy</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Card 2: Terms of Service */}
-        <div className="squircle-card p-7 sm:p-8 bg-white flex flex-col justify-between">
-          <div className="space-y-4">
-            <div className="w-10 h-10 rounded-2xl bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)]">
-              <Scale className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--ink-muted)] block">
-                Community Rules
-              </span>
-              <h3 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mt-1">
-                Terms of Service
-              </h3>
-            </div>
-            <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-              Learn about our sovereign adult age assurance protocols, introductory trial protective shield, progression-gated activity circles, anti-harassment covenants, and transparent terms.
-            </p>
-          </div>
-
-          <div className="pt-6">
-            <Link
-              href="/terms"
-              className="squircle-button inline-flex items-center gap-2 bg-[var(--surface2)] hover:bg-[var(--terracotta)] hover:text-white text-[var(--ink)] text-xs font-semibold px-4 py-2.5 transition-all"
-            >
-              <span>Read Terms of Service</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Card 3: Crisis & Medical Notice */}
-        <div className="squircle-card p-7 sm:p-8 bg-white flex flex-col justify-between">
-          <div className="space-y-4">
-            <div className="w-10 h-10 rounded-2xl bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)]">
-              <AlertCircle className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--sage-strong)] block">
-                Safety &amp; Support
-              </span>
-              <h3 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mt-1">
-                Crisis &amp; Care Disclaimer
-              </h3>
-            </div>
-            <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-              Thrivefold is an intentional lifestyle companion and not a clinical diagnostic tool. If you are experiencing acute distress, access immediate 24/7 crisis hotlines (988 in US/CA).
-            </p>
-          </div>
-
-          <div className="pt-6">
-            <Link
-              href="/terms#emergency"
-              className="squircle-button inline-flex items-center gap-2 bg-[var(--surface2)] hover:bg-[var(--terracotta)] hover:text-white text-[var(--ink)] text-xs font-semibold px-4 py-2.5 transition-all"
-            >
-              <span>View Crisis Protocols</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
+          )
+        })}
       </div>
     </section>
   )
