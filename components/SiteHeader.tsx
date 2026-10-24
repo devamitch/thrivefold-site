@@ -52,13 +52,14 @@ export function SiteHeader() {
           aria-label="Thrivefold Home"
           onClick={closeMenu}
         >
-          <span className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center overflow-hidden rounded-[12px] bg-white p-1 shadow-xs border border-[var(--border)]">
+          <span className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center overflow-hidden rounded-[12px] shadow-xs transition-transform group-hover:scale-105">
             <Image
-              src="/favicon.svg"
-              alt="Thrivefold Mark"
-              width={32}
-              height={32}
-              className="h-full w-full object-contain"
+              src="/logo.svg"
+              alt="Thrivefold"
+              width={40}
+              height={40}
+              priority
+              className="h-full w-full object-contain rounded-[12px]"
             />
           </span>
           <span className="font-serif text-[1.25rem] sm:text-[1.35rem] font-semibold tracking-[-0.03em] text-[var(--ink)]">
