@@ -54,7 +54,7 @@ export function SiteHeader() {
         >
           <span className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center overflow-hidden rounded-[12px] shadow-xs transition-transform group-hover:scale-105">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Thrivefold"
               width={40}
               height={40}

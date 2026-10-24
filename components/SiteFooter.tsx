@@ -21,7 +21,7 @@ export function SiteFooter() {
             <Link href="/" className="inline-flex items-center gap-2.5 group">
               <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-[14px] shadow-xs transition-transform group-hover:scale-105">
                 <Image
-                  src="/logo.svg"
+                  src="/logo.png"
                   alt="Thrivefold"
                   width={40}
                   height={40}

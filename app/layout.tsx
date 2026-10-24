@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Thrivefold — Sovereign Therapy, Mood Monitoring & Progress Tracking',
+    default: 'Thrivefold — Sovereign Health Sanctuary, Tripartite Wellness & Slow Correspondence',
     template: '%s · Thrivefold',
   },
   description: siteConfig.description,
@@ -35,16 +35,17 @@ export const metadata: Metadata = {
   publisher: 'Amit Dev Labs',
   keywords: [
     'Thrivefold',
-    'Therapy Companion',
-    'Mood Tracker',
-    'Mental Health Progress',
-    'Emotional Telemetry',
-    'Somatic Grounding',
-    'CBT Distortion Log',
-    'Therapy Session Prep',
-    'Clinical Progress Tracking',
+    'Sovereign Health',
+    'Womens Health Cycle',
+    'Mens Health Stamina',
+    'Pride LGBTQ Wellbeing',
+    'Slow Correspondence',
+    'Postal Letters',
+    'Chip-only Letter Composer',
+    'MediaPipe Pose Telemetry',
     'On-Device AI',
-    'Offline Mental Health Vault',
+    'Offline Health Vault',
+    'MMKV Encryption',
     'Zero Knowledge Privacy',
     'Amit Dev Labs',
     'devamitch',
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
   },
   openGraph: {
-    title: 'Thrivefold — Sovereign Therapy, Mood Monitoring & Progress Tracking',
+    title: 'Thrivefold — Sovereign Health Sanctuary, Tripartite Wellness & Slow Correspondence',
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: 'Thrivefold',
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
         url: '/icon-512.png',
         width: 512,
         height: 512,
-        alt: 'Thrivefold Therapy Logo',
+        alt: 'Thrivefold Master Emblem',
       },
     ],
     locale: 'en_US',
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Thrivefold — Sovereign Therapy & Mood Monitoring',
+    title: 'Thrivefold — Sovereign Health Sanctuary & Slow Correspondence',
     description: siteConfig.description,
     creator: '@devamitch',
     images: ['/icon-512.png'],
@@ -137,9 +138,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fraunces.variable} ${jakarta.variable}`}>
       <head>
-        {/* Explicit Googlebot & Browser Favicon Hierarchy */}
+        {/* Explicit Googlebot & Browser Favicon Hierarchy without SVG */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
