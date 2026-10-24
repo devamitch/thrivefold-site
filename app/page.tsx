@@ -7,6 +7,7 @@ import { FeatureBento } from '@/components/FeatureBento'
 import { SanctuaryAppShowcase } from '@/components/SanctuaryAppShowcase'
 import { StepsBand } from '@/components/StepsBand'
 import { HardwareSecuritySpecs } from '@/components/HardwareSecuritySpecs'
+import { PrivacyTermsCovenantBand } from '@/components/PrivacyTermsCovenantBand'
 import { FaqSection } from '@/components/FaqSection'
 import { BetaSignupSection } from '@/components/BetaSignupSection'
 import { SiteFooter } from '@/components/SiteFooter'
@@ -30,6 +31,8 @@ export default function HomePage() {
           <StepsBand />
 
           <HardwareSecuritySpecs />
+
+          <PrivacyTermsCovenantBand />
 
           <FaqSection />
 

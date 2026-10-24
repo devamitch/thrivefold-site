@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: 'Thrivefold',
-  productName: 'Thrivefold: Sovereign Therapy, Mood Monitoring & Progress Tracking',
-  tagline: 'Private on-device therapy companion, somatic mood monitoring, and longitudinal progress tracking.',
-  secondaryTagline: 'Track emotional patterns, prepare for clinical therapy sessions, deconstruct cognitive distortions, and monitor somatic progress — completely offline with hardware-enforced zero surveillance.',
-  description: 'Thrivefold is a local-first mental health, therapy companion, and emotional progress tracking platform built on modern Expo React Native for iOS, Android, and Web. All journal entries, mood logs, and clinical reflections execute 100% on-device with zero cloud telemetry.',
+  productName: 'Thrivefold: Sovereign Health Ecosystem, Tripartite Wellness & Slow Correspondence',
+  tagline: 'Three dedicated health sanctuaries and intentional slow postal correspondence — 100% on-device with zero surveillance.',
+  secondaryTagline: 'Women’s cycle & hormonal wellness, Men’s stamina & recovery, Pride & gender-affirming care, and contemplative postal pen-pal letters — completely local-first with hardware-enforced cryptography.',
+  description: 'Thrivefold is a local-first health, wellbeing, and slow-correspondence ecosystem built on modern Expo React Native for iOS, Android, and Web. Features three dedicated sanctuaries (Women’s, Men’s, Pride), distance-delayed chip letters, on-device MediaPipe pose estimation, and zero cloud telemetry.',
   url: 'https://thrivefold.devamit.co.in',
   appPackage: 'com.amit.thrivefold',
   appScheme: 'thrivefold://',
@@ -28,13 +28,13 @@ export const siteConfig = {
 }
 
 export const navItems = [
-  { href: '#principles', label: 'Principles' },
-  { href: '#pacer', label: 'Somatic Pacer' },
-  { href: '#ledger', label: 'Clinical Ledger' },
-  { href: '#security', label: 'Hardware Specs' },
-  { href: '#beta', label: 'Early Access' },
+  { href: '#pillars', label: 'Health Pillars' },
+  { href: '#correspondence', label: 'Slow Letters' },
+  { href: '#telemetry', label: 'On-Device Tech' },
+  { href: '#security', label: 'Hardware Enclave' },
+  { href: '#faq', label: 'FAQ' },
 ]
 
-export const routes = ['/']
+export const routes = ['/', '/privacy', '/terms']
 
 

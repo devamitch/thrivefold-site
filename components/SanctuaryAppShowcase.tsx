@@ -1,93 +1,144 @@
 'use client'
 
 import { useState } from 'react'
-import { Brain, Heart, Activity, FileCheck, ArrowUpRight, Lock, Check } from 'lucide-react'
+import {
+  Sparkles,
+  Heart,
+  Activity,
+  Mail,
+  ShieldCheck,
+  Lock,
+  ArrowUpRight,
+  Check,
+  Compass,
+  Calendar,
+  Zap,
+  Clock,
+  Send,
+  EyeOff,
+} from 'lucide-react'
 
-const SHOWCASE_TABS = [
+interface ShowcaseTab {
+  id: string
+  label: string
+  icon: typeof Sparkles
+  tag: string
+  title: string
+  body: string
+  colorBadgeBg: string
+  colorBadgeText: string
+  screen: {
+    header: string
+    badge: string
+    accentColor: string
+    accentBg: string
+    topContext: string
+    mainHeading: string
+    mainText: string
+    secondaryHeading: string
+    secondaryText: string
+    footerLabel: string
+    securityBadge: string
+  }
+}
+
+const SHOWCASE_TABS: ShowcaseTab[] = [
   {
-    id: 'cognitive',
-    label: 'Cognitive Reframe',
-    icon: Brain,
-    tag: 'Cognitive Behavioral Therapy',
-    title: 'Transform automatic anxiety into grounded clarity.',
-    body: 'When emotional distress spikes, your brain defaults to ancient survival heuristics: catastrophizing, mind-reading, and emotional reasoning. Thrivefold deconstructs the thought step-by-step on your phone—without uploading your vulnerability to any remote server.',
+    id: 'womens',
+    label: "Women's Health",
+    icon: Calendar,
+    tag: 'Cycle & Hormonal Rhythm',
+    title: 'Harmonize with your natural biological seasons.',
+    body: 'Track follicular and luteal phases, basal body temperature, and pelvic floor vitality. Thrivefold tailors micronutrient recommendations to your hormonal cycle without ever transmitting reproductive health data to remote servers, insurers, or data brokers.',
+    colorBadgeBg: 'bg-[#FFF8F5]',
+    colorBadgeText: 'text-[#9B2226]',
     screen: {
-      header: 'Cognitive Shift · Enclave Vault',
-      badge: 'CBT Protocol',
-      content: {
-        trigger: 'Presentation Q&A Feedback',
-        distortion: 'Catastrophizing & Black/White Thinking',
-        thought: '“They asked so many questions—I must have looked completely incompetent and lost all credibility.”',
-        evidence: 'Questions demonstrate active engagement. In previous reviews, difficult questions led to project greenlights.',
-        reframe: 'Inquiry is not condemnation. Intellectual scrutiny is how my colleagues collaborate, not an evaluation of my worth.',
-        valenceShift: '+42% Emotional Equilibrium',
-      },
+      header: 'Cycle Sanctuary · Local-First',
+      badge: 'Luteal Phase · Day 21',
+      accentColor: '#9B2226',
+      accentBg: 'bg-[#FFF8F5]',
+      topContext: 'Phase Guidance: Progesterone Peak',
+      mainHeading: 'Follicular & Luteal Nutrition',
+      mainText: 'Complex root vegetables, pumpkin seeds, and magnesium recommended today to support progesterone synthesis and evening sleep quality.',
+      secondaryHeading: 'Somatic Recovery Protocol',
+      secondaryText: 'Gentle pelvic floor release & 15-minute restorative lumbar breathing pacing.',
+      footerLabel: 'Basal Temp: 98.2°F · Steady',
+      securityBadge: 'Hardware Enclave Encrypted',
     },
   },
   {
-    id: 'somatic',
-    label: 'Somatic Pacer',
+    id: 'mens',
+    label: "Men's Health",
+    icon: Zap,
+    tag: 'Vigor, Stamina & Recovery',
+    title: 'Build physical fortitude with stoic clarity.',
+    body: 'Monitor circadian morning sun exposure, cold immersion recovery, and cardiovascular stamina. Anchor your daily focus with non-judgmental stoic reflection chips and prostate wellness reminders kept strictly on your local hardware.',
+    colorBadgeBg: 'bg-[#F4F9F5]',
+    colorBadgeText: 'text-[#2D6A4F]',
+    screen: {
+      header: 'Vigor Telemetry · On-Device',
+      badge: 'Circadian Sun · 14-Day Streak',
+      accentColor: '#2D6A4F',
+      accentBg: 'bg-[#F4F9F5]',
+      topContext: 'Morning Protocol Complete',
+      mainHeading: 'Circadian & Cold Recovery',
+      mainText: '15 min direct outdoor sunlight logged + 3 min cold recovery immersion. Parasympathetic HRV normalized to 72 ms.',
+      secondaryHeading: 'Stoic Anchor Chip',
+      secondaryText: '“You have power over your mind—not outside events. Realize this, and you will find strength.” — Marcus Aurelius',
+      footerLabel: 'VO2 Max Progression: +2.4%',
+      securityBadge: 'MMKV Binary · Zero Cloud Pings',
+    },
+  },
+  {
+    id: 'pride',
+    label: 'Pride & Affirming',
     icon: Heart,
-    tag: 'Polyvagal Regulation',
-    title: 'Signal physical safety to your nervous system.',
-    body: 'Anxiety is physical before it is cognitive. High heart rate variability and shallow thoracic breathing keep your amygdala on high alert. The on-device somatic pacer uses Dr. Andrew Weil’s 4-7-8 method and physiological sighs to re-engage your parasympathetic vagal brake.',
+    tag: 'Affirming Care & Safe Haven',
+    title: 'A safe, affirming haven for identity and care.',
+    body: 'Manage hormone replacement therapy (HRT) schedules, track subcutaneous injection site rotations, and navigate gender-affirming milestones. Protected with a one-touch biometric panic lock and zero-identifying health terminology.',
+    colorBadgeBg: 'bg-[#F7F3FA]',
+    colorBadgeText: 'text-[#7209B7]',
     screen: {
-      header: 'Vagus Nerve Pacer · Offline',
-      badge: '4-7-8 Parasympathetic',
-      content: {
-        trigger: 'Acute Cardiac Elevation Detected',
-        distortion: 'Sympathetic Hypervigilance',
-        thought: '“Chest tightness and shallow breath triggering spiral.”',
-        evidence: '4s Inhale · 7s Rest · 8s Prolonged Oral Exhalation.',
-        reframe: 'Vagal tone restored: Heart rate shifted from 94 bpm to 68 bpm. Physical tension released in trapezius and jaw.',
-        valenceShift: 'Autonomic Baseline Recovered',
-      },
+      header: 'Affirming Sanctuary · Identity Shield',
+      badge: 'HRT Schedule Active',
+      accentColor: '#7209B7',
+      accentBg: 'bg-[#F7F3FA]',
+      topContext: 'Care Protocol: Bi-Weekly Rotation',
+      mainHeading: 'Subcutaneous Site Tracker',
+      mainText: 'Right Thigh logged for today. Next rotation: Left Deltoid in 7 days. Scar tissue minimization sequence balanced.',
+      secondaryHeading: 'Affirming Grounding Reframe',
+      secondaryText: '“You are whole, valued, and in sovereign ownership of your body, your rhythm, and your journey today.”',
+      footerLabel: 'Next Milestone: 60 Days Affirmation',
+      securityBadge: 'Biometric Panic Lock Armed',
     },
   },
   {
-    id: 'telemetry',
-    label: 'Emotional Telemetry',
-    icon: Activity,
-    tag: 'Circadian Mood Spectrum',
-    title: 'Uncover hidden patterns across your week.',
-    body: 'Track emotional valence, somatic energy, and sleep equilibrium with clean, intuitive micro-check-ins. Over weeks, Thrivefold reveals correlation between work contexts, physiological fatigue, and recurring cognitive traps.',
+    id: 'correspondence',
+    label: 'Slow Letters',
+    icon: Mail,
+    tag: 'Card & Chip-Only Postal Exchange',
+    title: 'Reconnect through the calm cadence of slow mail.',
+    body: 'Replaces toxic instant messaging and endless doomscrolling with the contemplative pacing of postal letters. Letters are composed purely from curated sentiment cards and collectible stamps, traveling across real distances with intentional delays (4 to 72 hours).',
+    colorBadgeBg: 'bg-[#FAF6EE]',
+    colorBadgeText: 'text-[#883506]',
     screen: {
-      header: 'Weekly Telemetry · On-Device',
-      badge: '7-Day Longitudinal',
-      content: {
-        trigger: 'Mid-Week Work Cycle',
-        distortion: 'Pattern Analysis',
-        thought: '“Consistent fatigue spike on Thursday mornings preceding presentations.”',
-        evidence: 'Correlates with sub-6-hour sleep cycles and delayed evening screen exposure.',
-        reframe: 'Adjust Thursday morning routines: Schedule 15 minutes of somatic breathwork and light mobility before opening Slack.',
-        valenceShift: 'Predictive Equilibrium Insight',
-      },
-    },
-  },
-  {
-    id: 'clinical',
-    label: 'Clinical Session Bridge',
-    icon: FileCheck,
-    tag: 'Therapist Collaboration',
-    title: 'Make every 50-minute session count.',
-    body: 'Clients often forget their most critical breakthroughs by the time their weekly therapy session arrives. Thrivefold compiles a concise, respectful summary of your week—highlighting triggers, reframes, and pending questions to discuss with your therapist.',
-    screen: {
-      header: 'Therapist Brief · Print & PDF',
-      badge: 'Encrypted Export',
-      content: {
-        trigger: 'Weekly Therapy Agenda',
-        distortion: 'Session Preparation',
-        thought: '“3 major cognitive shifts logged this week.”',
-        evidence: '1. Imposter syndrome trigger resolved. 2. Somatic chest tightness regulated. 3. Boundary setting with team.',
-        reframe: 'Agenda item for Dr. Vance: Explore origin of perfectionism when handling ambiguous feedback.',
-        valenceShift: 'Ready for Thursday 10:00 AM',
-      },
+      header: 'Postal Outbox · In Transit',
+      badge: 'Golden Ginkgo Stamp',
+      accentColor: '#883506',
+      accentBg: 'bg-[#FAF6EE]',
+      topContext: 'Distance Transit: 2,100 km (Interstate)',
+      mainHeading: 'Haversine Transit Delay · 18h Remaining',
+      mainText: 'Selected Cards: [1] “Woke up feeling deeply rested and energized” · [2] “What gentle ritual anchors your evening routine?”',
+      secondaryHeading: 'Zero-Harassment Protection',
+      secondaryText: 'Constructed exclusively with verified sentiment cards. No unsolicited messages, phone numbers, or spam possible.',
+      footerLabel: 'Sealed & Dispatched with Intention',
+      securityBadge: '18+ Verified · E2E Pseudonymous',
     },
   },
 ]
 
 export function SanctuaryAppShowcase() {
-  const [activeTabId, setActiveTabId] = useState('cognitive')
+  const [activeTabId, setActiveTabId] = useState('womens')
   const active = SHOWCASE_TABS.find((t) => t.id === activeTabId) ?? SHOWCASE_TABS[0]
 
   return (
@@ -103,7 +154,7 @@ export function SanctuaryAppShowcase() {
           </h2>
         </div>
         <p className="max-w-[400px] text-sm leading-relaxed text-[var(--ink-secondary)] sm:text-right sm:text-base">
-          Explore the real interface views powering Thrivefold’s cognitive reframing and somatic regulation.
+          Explore the four dedicated interface views powering Thrivefold’s three health sanctuaries and slow-correspondence postal letters.
         </p>
       </div>
 
@@ -135,15 +186,15 @@ export function SanctuaryAppShowcase() {
       {/* Main Split Showcase Card */}
       <div className="squircle-card overflow-hidden bg-white grid lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left: Device App Viewport */}
-        <div className="bg-[var(--surface2)] p-6 sm:p-10 flex items-center justify-center min-h-[460px] lg:min-h-[520px]">
-          <div className="w-full max-w-[420px] rounded-[32px] bg-white p-6 text-left space-y-4">
+        <div className="bg-[var(--surface2)] p-6 sm:p-10 flex items-center justify-center min-h-[480px] lg:min-h-[540px]">
+          <div className="w-full max-w-[420px] rounded-[32px] bg-white p-6 text-left space-y-4 shadow-sm border border-[var(--border)]">
             {/* App Topbar */}
-            <div className="flex items-center justify-between pb-2 text-xs text-[var(--ink-muted)]">
+            <div className="flex items-center justify-between pb-2 text-xs text-[var(--ink-muted)] border-b border-[var(--border)]">
               <span className="font-semibold text-[var(--ink)] flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-[var(--terracotta)]" />
                 {active.screen.header}
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-[var(--terracotta-subtle)] text-[var(--terracotta-strong)]">
+              <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-semibold ${active.colorBadgeBg} ${active.colorBadgeText}`}>
                 {active.screen.badge}
               </span>
             </div>
@@ -152,34 +203,38 @@ export function SanctuaryAppShowcase() {
             <div className="space-y-3 text-xs">
               <div className="p-3.5 rounded-2xl bg-[var(--bg)]">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--ink-muted)] block mb-1">
-                  Context & Trigger
+                  Active Sanctuary State
                 </span>
                 <span className="font-medium text-[var(--ink)]">
-                  {active.screen.content.trigger}
+                  {active.screen.topContext}
                 </span>
+              </div>
+
+              <div className={`p-4 rounded-2xl ${active.screen.accentBg} space-y-1.5`}>
+                <span className="text-[10px] font-semibold uppercase tracking-wider block" style={{ color: active.screen.accentColor }}>
+                  {active.screen.mainHeading}
+                </span>
+                <p className="font-serif italic text-xs sm:text-[13px] text-[var(--ink)] leading-snug">
+                  &ldquo;{active.screen.mainText}&rdquo;
+                </p>
               </div>
 
               <div className="p-3.5 rounded-2xl bg-[var(--surface2)] space-y-1">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--terracotta)] block">
-                  Automatic Thought
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--ink)] block flex items-center gap-1">
+                  <Check className="w-3 h-3 text-[var(--sage-strong)]" />
+                  {active.screen.secondaryHeading}
                 </span>
-                <p className="font-serif italic text-sm text-[var(--ink)] leading-snug">
-                  {active.screen.content.thought}
+                <p className="text-xs text-[var(--ink-secondary)] leading-relaxed font-normal">
+                  {active.screen.secondaryText}
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-[var(--sage-subtle)] space-y-1">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--sage-strong)] block flex items-center gap-1">
-                  <Check className="w-3 h-3" /> Grounded Resolution
+              <div className="pt-2 flex items-center justify-between text-[11px] text-[var(--ink-secondary)] border-t border-[var(--border)]">
+                <span className="font-medium text-[var(--ink)]">{active.screen.footerLabel}</span>
+                <span className="text-[var(--terracotta-strong)] font-semibold flex items-center gap-1">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[var(--sage-strong)]" />
+                  {active.screen.securityBadge}
                 </span>
-                <p className="text-xs text-[var(--ink)] leading-relaxed font-medium">
-                  {active.screen.content.reframe}
-                </p>
-              </div>
-
-              <div className="pt-2 flex items-center justify-between text-[11px] text-[var(--ink-secondary)]">
-                <span className="font-medium">{active.screen.content.valenceShift}</span>
-                <span className="text-[var(--terracotta-strong)] font-semibold">Face ID Encrypted</span>
               </div>
             </div>
           </div>
@@ -187,7 +242,7 @@ export function SanctuaryAppShowcase() {
 
         {/* Right: Editorial Narrative */}
         <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-14 text-left">
-          <span className="inline-flex w-fit rounded-full bg-[var(--terracotta-subtle)] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--terracotta-strong)]">
+          <span className={`inline-flex w-fit rounded-full px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] ${active.colorBadgeBg} ${active.colorBadgeText}`}>
             {active.tag}
           </span>
           <h3 className="mt-5 font-serif text-2xl sm:text-4xl font-medium leading-[1.12] tracking-[-0.03em] text-[var(--ink)]">

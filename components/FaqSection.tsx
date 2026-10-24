@@ -5,24 +5,28 @@ import { ChevronDown } from 'lucide-react'
 
 const FAQS = [
   {
-    q: 'Is Thrivefold a replacement for professional therapy?',
-    a: 'No. Thrivefold is designed as an evidence-based companion to enhance and support your work with a licensed mental health professional. It helps you track cognitive distortions, regulate your nervous system between appointments, and organize thoughts so your clinical hours are as focused and productive as possible.',
+    q: 'What are the Three Health Sanctuaries and can I switch between them?',
+    a: 'Thrivefold features three dedicated health sanctuaries: Women’s Health (menstrual & ovulation cycle days, follicular vs. luteal nutrition, basal body temperature, pelvic floor reminders), Men’s Health (testosterone support habits, circadian sun exposure, VO2 max telemetry, cold recovery, stoic reflections), and Pride & LGBTQ+ Wellbeing (hormone replacement therapy schedule, injection site rotation, affirming care milestones, quick panic lock). You select your primary sanctuary during onboarding and can seamlessly switch or adjust your experience at any time with total data isolation.',
   },
   {
-    q: 'How does Thrivefold guarantee zero cloud detour?',
-    a: 'Thrivefold contains no user registration systems, no database servers, and no analytics SDKs. All notes, emotional tracking logs, and somatic exercises are stored strictly on your phone’s local flash memory via MMKV binary stores. Cryptographic keys are protected by your device’s hardware Secure Enclave or Android Keystore.',
+    q: 'How does Slow Correspondence work, and why is there no free-form chat?',
+    a: 'Traditional messaging platforms create urgency, dopamine dependency, spam, and unsolicited harassment. Thrivefold replaces instant messaging with the unhurried cadence of postal letters. Letters are composed exclusively using curated sentiment cards and collectible digital stamps (max 5 cards per letter). Delivery time is mathematically calculated using the Haversine formula based on physical distance (ranging from 4 hours for local exchanges up to 72 hours for transcontinental post). This eliminates harassment, prevents toxic impulsive messaging, and fosters genuine intentional connection.',
   },
   {
-    q: 'Can I export my notes for my therapist?',
-    a: 'Yes. With a single tap, Thrivefold can compile a clean, respectful clinical session brief formatted for CBT, ACT, or psychodynamic modalities. You can export it as an encrypted PDF or printed document to review directly during your appointment.',
+    q: 'What is the 18+ Adult Age Assurance and under-25 pilot safety shield?',
+    a: 'To guarantee absolute community safety, all social correspondence and affinity circle discovery is strictly gated behind an 18+ adult age assurance verification. Additionally, participants under 25 are shielded by a protective 7-day trial period: during this introductory week, users are limited to a maximum of 1 new pen-pal intro per day and are completely isolated from public community directories to prevent bad-actor manipulation.',
   },
   {
-    q: 'Does Thrivefold work completely offline?',
-    a: 'Yes, 100%. Thrivefold requires zero internet connectivity to function. You can practice breathwork, log cognitive distortions, and review past progress while in Airplane Mode, in remote locations, or with cellular data disabled.',
+    q: 'How does on-device MediaPipe telemetry work without exposing my camera?',
+    a: 'Our posture, alignment, and mindful breathing exercises are powered by Google MediaPipe running directly on your phone’s local CPU/GPU/NPU. Camera frames are processed strictly in volatile device RAM as landmark coordinate vectors. Zero photos, video streams, or camera frames are ever written to persistent disk or transmitted over the network.',
   },
   {
-    q: 'Is Thrivefold free to use?',
-    a: 'The full on-device vault is completely free for all approved closed beta testers. Our goal is to ensure the core sovereign sanctuary remains accessible and uncompromising on privacy.',
+    q: 'Is Thrivefold a replacement for professional healthcare or therapy?',
+    a: 'No. Thrivefold is an evidence-based self-care, lifestyle, and slow-correspondence companion. It is strictly non-diagnostic and does not prescribe medicine or replace licensed therapists or physicians. If you are experiencing an acute emotional or mental health crisis, please call or text 988 immediately (in the US & Canada) or contact your nearest emergency services.',
+  },
+  {
+    q: 'What is the commercial pricing model? Is the core app truly free for life?',
+    a: 'Yes. Our core sanctuary is $0 Free-For-Life: you receive 100% offline personal health tracking, local AI insights, encrypted MMKV memory vault with JSON export, and standard slow postal letter exchange (up to 3 simultaneous in-transit letters). For members who want expanded outbox capacity (up to 10 simultaneous letters), quarterly artist-commissioned collectible digital stamps, and optional cross-device end-to-end encrypted backup, we offer Correspondence Plus for $4.99/month ($39.99/year). We never host ads or broker data.',
   },
 ]
 
@@ -40,10 +44,10 @@ export function FaqSection() {
           Frequently Asked Questions
         </span>
         <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-[-0.03em] text-[var(--ink)] leading-tight">
-          Everything you need to know about <span className="italic text-[var(--terracotta)]">sovereign therapy.</span>
+          Everything you need to know about <span className="italic text-[var(--terracotta)]">sovereign wellbeing.</span>
         </h2>
         <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-          Clear, straightforward answers about how Thrivefold safeguards your mental health reflections.
+          Clear, straightforward answers about our three health sanctuaries, slow letter correspondence, and zero-compromise hardware privacy.
         </p>
       </div>
 
