@@ -19,7 +19,7 @@ export function SiteFooter() {
           {/* Brand Info (4 cols) */}
           <div className="md:col-span-4 space-y-4">
             <Link href="/" className="inline-flex items-center gap-2.5 group">
-              <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-[14px] shadow-xs transition-transform group-hover:scale-105">
+              <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-[14px] transition-transform group-hover:scale-105">
                 <Image
                   src="/logo.png"
                   alt="Thrivefold"
@@ -88,7 +88,7 @@ export function SiteFooter() {
                 Crisis &amp; Medical Disclaimer
               </a>
               <a href="/terms#age-shield" className="hover:text-[var(--terracotta)] transition-colors">
-                18+ Adult Safety Shield
+                Age-Assurance &amp; Safety Shield
               </a>
               <a href="/privacy#data-purge" className="hover:text-[var(--terracotta)] transition-colors">
                 One-Tap Sovereign Wipe
@@ -115,7 +115,7 @@ export function SiteFooter() {
         </div>
 
         {/* Legal & Medical Disclaimer Colophon */}
-        <div className="pt-6 border-t border-[var(--border)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
+        <div className="pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
           <p>
             © {new Date().getFullYear()} Thrivefold · An <a href="https://devamit.co.in" target="_blank" rel="noopener noreferrer" className="text-[var(--ink)] hover:text-[var(--terracotta)] font-medium underline underline-offset-2">Amit Dev Labs</a> Sovereign Project.
           </p>

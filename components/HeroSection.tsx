@@ -75,7 +75,7 @@ export function HeroSection() {
           <div className="absolute inset-[10%] -z-10 rounded-full bg-[radial-gradient(circle,rgba(215,114,89,0.20),transparent_65%)] blur-2xl" />
 
           {/* Left Tilted Card: Women's Health & Cycle Rhythm */}
-          <div className="absolute left-[2%] top-[14%] w-[54%] -rotate-[6deg] rounded-[26px] bg-white p-4 sm:p-5 text-left space-y-2.5 transition-transform duration-300 hover:rotate-0 hover:z-20 shadow-[0_12px_32px_-12px_rgba(25,25,24,0.06)] border border-[#E07A5F]/20">
+          <div className="absolute left-[2%] top-[14%] w-[54%] -rotate-[6deg] rounded-[26px] bg-white p-4 sm:p-5 text-left space-y-2.5 transition-transform duration-300 hover:rotate-0 hover:z-20">
             <div className="flex items-center justify-between text-xs pb-1.5">
               <span className="font-semibold text-[var(--ink)] flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-[#9B2226]" />
@@ -98,7 +98,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Tilted Card: Verified Activity Circles */}
-          <div className="absolute right-[2%] top-[18%] w-[54%] rotate-[6deg] rounded-[26px] bg-white p-4 sm:p-5 text-left space-y-2.5 transition-transform duration-300 hover:rotate-0 hover:z-20 shadow-[0_12px_32px_-12px_rgba(25,25,24,0.06)] border border-[#2A9D8F]/20">
+          <div className="absolute right-[2%] top-[18%] w-[54%] rotate-[6deg] rounded-[26px] bg-white p-4 sm:p-5 text-left space-y-2.5 transition-transform duration-300 hover:rotate-0 hover:z-20">
             <div className="flex items-center justify-between text-xs pb-1.5">
               <span className="font-semibold text-[var(--ink)] flex items-center gap-1.5">
                 <Activity className="w-3.5 h-3.5 text-[#2A9D8F]" />
@@ -116,7 +116,7 @@ export function HeroSection() {
           </div>
 
           {/* Center Spotlight Enclave Card */}
-          <div className="absolute left-1/2 top-0 z-10 w-[74%] sm:w-[76%] -translate-x-1/2 rounded-[32px] sm:rounded-[36px] bg-white p-5 sm:p-6 text-left space-y-3.5 shadow-[0_16px_40px_-14px_rgba(25,25,24,0.08)] border border-[var(--border)]">
+          <div className="absolute left-1/2 top-0 z-10 w-[74%] sm:w-[76%] -translate-x-1/2 rounded-[32px] sm:rounded-[36px] bg-white p-5 sm:p-6 text-left space-y-3.5">
             {/* Header */}
             <div className="flex items-center justify-between pb-1">
               <div className="flex items-center gap-2">

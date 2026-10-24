@@ -82,22 +82,22 @@ export default function TermsOfServicePage() {
           {/* Terms Content */}
           <div className="space-y-8 text-[15px] sm:text-base text-[var(--ink-secondary)] leading-relaxed">
             {/* Section 1 */}
-            <section className="rounded-[24px] border border-[var(--border)] bg-white p-6 sm:p-8">
+            <section className="rounded-[24px] bg-white p-6 sm:p-8">
               <div className="flex items-center gap-3 text-lg font-serif font-semibold text-[var(--ink)] mb-4">
                 <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface2)] text-[var(--terracotta)] text-sm font-sans">
                   1
                 </span>
-                <h2>Strict 18+ Age Assurance & Safety Shield</h2>
+                <h2>Adult Age Assurance & Safety Shield</h2>
               </div>
               <p className="mb-3">
-                Thrivefold is an intentional sanctuary engineered exclusively for adults aged 18 and older.
+                Thrivefold is an intentional sanctuary engineered exclusively for legal adults.
               </p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>
-                  <strong>Mandatory 18+ Verification:</strong> You represent and warrant that you are at least 18 years of age. Minor access is strictly forbidden.
+                  <strong>Mandatory Adult Age Verification:</strong> You represent and warrant that you are a legal adult in your jurisdiction. Minor access is strictly prevented.
                 </li>
                 <li>
-                  <strong>Restricted Trial for Under-25 Cohorts:</strong> Users aged 18 to 24 undergo a mandatory 7-day protective trial period with complete isolation from public member discovery directories.
+                  <strong>Restricted Protective Shield:</strong> Emerging adult users undergo a mandatory 7-day protective trial period with complete isolation from member discovery directories.
                 </li>
                 <li>
                   <strong>Zero-Tolerance Exploitation Policy:</strong> Any attempt to solicit minors, harvest personal addresses, or engage in predatory behavior results in immediate account termination, device bans, and reporting to relevant law enforcement authorities.

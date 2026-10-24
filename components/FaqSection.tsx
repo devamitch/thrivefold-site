@@ -14,7 +14,7 @@ const FAQS = [
   },
   {
     q: 'What are the community safety safeguards and age protections?',
-    a: 'All community activity discovery and group participation require 18+ adult age assurance verification. Users under 25 receive additional introductory safety protections, preventing unvetted solicitations and ensuring a curated, safe peer environment.',
+    a: 'All community activity discovery and group participation require verified adult age assurance. Emerging adults receive additional introductory safety protections, preventing unvetted solicitations and ensuring a curated, safe peer environment.',
   },
   {
     q: 'How does on-device MediaPipe telemetry work without exposing my camera?',

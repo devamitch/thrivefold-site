@@ -18,7 +18,7 @@ export function PrivacyTermsCovenantBand() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1140px] mx-auto text-left">
         {/* Card 1: Privacy Policy */}
-        <div className="squircle-card p-7 sm:p-8 bg-white flex flex-col justify-between border border-[var(--border)]">
+        <div className="squircle-card p-7 sm:p-8 bg-white flex flex-col justify-between">
           <div className="space-y-4">
             <div className="w-10 h-10 rounded-2xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)]">
               <Lock className="w-5 h-5" />
@@ -48,7 +48,7 @@ export function PrivacyTermsCovenantBand() {
         </div>
 
         {/* Card 2: Terms of Service */}
-        <div className="squircle-card p-7 sm:p-8 bg-white flex flex-col justify-between border border-[var(--border)]">
+        <div className="squircle-card p-7 sm:p-8 bg-white flex flex-col justify-between">
           <div className="space-y-4">
             <div className="w-10 h-10 rounded-2xl bg-[var(--surface2)] flex items-center justify-center text-[var(--ink)]">
               <Scale className="w-5 h-5" />
@@ -62,7 +62,7 @@ export function PrivacyTermsCovenantBand() {
               </h3>
             </div>
             <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-              Learn about our strict 18+ adult age assurance gate, under-25 7-day introductory trial shield, progression-gated activity circles, anti-harassment covenants, and transparent subscription terms.
+              Learn about our sovereign adult age assurance protocols, introductory trial protective shield, progression-gated activity circles, anti-harassment covenants, and transparent terms.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ export function PrivacyTermsCovenantBand() {
         </div>
 
         {/* Card 3: Crisis & Medical Notice */}
-        <div className="squircle-card p-7 sm:p-8 bg-white flex flex-col justify-between border border-[var(--border)]">
+        <div className="squircle-card p-7 sm:p-8 bg-white flex flex-col justify-between">
           <div className="space-y-4">
             <div className="w-10 h-10 rounded-2xl bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)]">
               <AlertCircle className="w-5 h-5" />

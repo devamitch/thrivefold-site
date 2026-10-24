@@ -40,7 +40,7 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-xl border-b border-[var(--border)]'
+          ? 'bg-white/95 backdrop-blur-xl'
           : 'bg-[var(--bg)]/85 backdrop-blur-md'
       }`}
     >
@@ -52,7 +52,7 @@ export function SiteHeader() {
           aria-label="Thrivefold Home"
           onClick={closeMenu}
         >
-          <span className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center overflow-hidden rounded-[12px] shadow-xs transition-transform group-hover:scale-105">
+          <span className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center overflow-hidden rounded-[12px] transition-transform group-hover:scale-105">
             <Image
               src="/logo.png"
               alt="Thrivefold"
@@ -119,7 +119,7 @@ export function SiteHeader() {
       {mobileMenuOpen && (
         <nav
           aria-label="Mobile navigation"
-          className="absolute inset-x-0 top-full bg-[var(--surface)] px-5 pb-6 pt-3 md:hidden border-b border-[var(--border)] shadow-md"
+          className="absolute inset-x-0 top-full bg-[var(--surface)] px-5 pb-6 pt-3 md:hidden"
         >
           <div className="mx-auto flex max-w-[720px] flex-col gap-1">
             {NAV_LINKS.map((link) => {

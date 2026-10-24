@@ -132,7 +132,7 @@ const SHOWCASE_TABS: ShowcaseTab[] = [
       secondaryHeading: 'Peer Privacy Guard',
       secondaryText: 'Pseudonymous aliases only. Exact home locations, phone numbers, and private biometrics are never shared.',
       footerLabel: 'Next Session: Tomorrow 6:30 AM',
-      securityBadge: '18+ Verified · E2E Pseudonymous',
+      securityBadge: 'Verified Adult · E2E Pseudonymous',
     },
   },
 ]
@@ -172,7 +172,7 @@ export function SanctuaryAppShowcase() {
               onClick={() => setActiveTabId(tab.id)}
               className={`squircle-button inline-flex shrink-0 items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
                 isSelected
-                  ? 'bg-white text-[var(--ink)] shadow-xs'
+                  ? 'bg-white text-[var(--ink)]'
                   : 'text-[var(--ink-secondary)] hover:text-[var(--ink)]'
               }`}
             >
@@ -187,9 +187,9 @@ export function SanctuaryAppShowcase() {
       <div className="squircle-card overflow-hidden bg-white grid lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left: Device App Viewport */}
         <div className="bg-[var(--surface2)] p-6 sm:p-10 flex items-center justify-center min-h-[480px] lg:min-h-[540px]">
-          <div className="w-full max-w-[420px] rounded-[32px] bg-white p-6 text-left space-y-4 shadow-sm border border-[var(--border)]">
+          <div className="w-full max-w-[420px] rounded-[32px] bg-white p-6 text-left space-y-4">
             {/* App Topbar */}
-            <div className="flex items-center justify-between pb-2 text-xs text-[var(--ink-muted)] border-b border-[var(--border)]">
+            <div className="flex items-center justify-between pb-2 text-xs text-[var(--ink-muted)]">
               <span className="font-semibold text-[var(--ink)] flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-[var(--terracotta)]" />
                 {active.screen.header}
@@ -229,7 +229,7 @@ export function SanctuaryAppShowcase() {
                 </p>
               </div>
 
-              <div className="pt-2 flex items-center justify-between text-[11px] text-[var(--ink-secondary)] border-t border-[var(--border)]">
+              <div className="pt-2 flex items-center justify-between text-[11px] text-[var(--ink-secondary)]">
                 <span className="font-medium text-[var(--ink)]">{active.screen.footerLabel}</span>
                 <span className="text-[var(--terracotta-strong)] font-semibold flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-[var(--sage-strong)]" />

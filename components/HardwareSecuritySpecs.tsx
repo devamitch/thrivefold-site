@@ -19,7 +19,7 @@ export function HardwareSecuritySpecs() {
     },
     {
       feature: 'Identity & Age Assurance',
-      thrivefold: '18+ cryptographic token (0 ID images saved)',
+      thrivefold: 'Zero-knowledge verification token (0 ID images saved)',
       commercial: 'Permanent profile databases, cookies, phone tracking',
     },
     {
@@ -48,7 +48,7 @@ export function HardwareSecuritySpecs() {
         {/* Comparison Table Card */}
         <div className="squircle-card p-6 sm:p-10 bg-white max-w-[1040px] mx-auto text-left overflow-x-auto">
           <div className="min-w-[640px]">
-            <div className="grid grid-cols-12 pb-3 text-xs font-semibold uppercase tracking-wider text-[var(--ink-muted)] px-3 border-b border-[var(--border)]">
+            <div className="grid grid-cols-12 pb-3 text-xs font-semibold uppercase tracking-wider text-[var(--ink-muted)] px-3">
               <div className="col-span-5">Privacy Architecture</div>
               <div className="col-span-4 text-[var(--terracotta)] font-bold">Thrivefold Sovereign Vault</div>
               <div className="col-span-3 text-[var(--ink-secondary)]">Commercial Wellness Apps</div>
