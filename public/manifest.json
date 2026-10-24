@@ -1,10 +1,10 @@
 {
-  "name": "Thrivefold — Private Health & Slow Correspondence",
+  "name": "Thrivefold",
   "short_name": "Thrivefold",
-  "description": "Local-first on-device AI health and slow-correspondence ecosystem for iOS, Android, and Web. Three dedicated spaces: Women's Health, Men's Health, and Pride Wellbeing.",
+  "description": "Private health and wellbeing tracking. Records are encrypted on your phone.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FAFBF9",
+  "background_color": "#FAF7F2",
   "theme_color": "#0D1514",
   "orientation": "portrait-primary",
   "icons": [
@@ -38,7 +38,7 @@
     },
     {
       "src": "/icon-512.png",
-      "sizes": "512x512",
+      "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any maskable"
     }

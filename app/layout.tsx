@@ -16,7 +16,7 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const viewport: Viewport = {
-  themeColor: '#0D1514',
+  themeColor: '#FAF7F2',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Thrivefold — Sovereign Health Sanctuary & Tripartite Wellness',
+    default: siteConfig.title,
     template: '%s · Thrivefold',
   },
   description: siteConfig.description,
@@ -35,59 +35,45 @@ export const metadata: Metadata = {
   publisher: 'Amit Dev Labs',
   keywords: [
     'Thrivefold',
-    'Sovereign Health',
-    'Womens Health Cycle',
-    'Mens Health Stamina',
-    'Pride LGBTQ Wellbeing',
-    'HIPAA Compliant Health Privacy',
-    'Gym Pal Finding',
-    'Therapy Group Discovery',
-    'Meditation Circles',
-    'Aerobics and Sports Hubs',
-    'MediaPipe Pose Telemetry',
-    'On-Device AI',
-    'Offline Health Vault',
-    'MMKV Encryption',
-    'Zero Knowledge Privacy',
-    'Amit Dev Labs',
-    'devamitch',
+    'private health app',
+    'cycle tracking',
+    'women’s health',
+    'men’s health',
+    'LGBTQ+ wellbeing',
+    'daily check-in',
+    'guided workouts',
+    'meal logging',
+    'support groups',
   ],
-  alternates: {
-    canonical: siteConfig.url,
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
+  manifest: '/manifest.json',
   openGraph: {
-    title: 'Thrivefold — Sovereign Health Sanctuary & Tripartite Wellness',
+    title: siteConfig.title,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: 'Thrivefold',
-    images: [
-      {
-        url: '/icon-512.png',
-        width: 512,
-        height: 512,
-        alt: 'Thrivefold Master Emblem',
-      },
-    ],
+    images: [{ url: '/icon-512.png', width: 1024, height: 1024, alt: 'Thrivefold logo' }],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Thrivefold — Sovereign Health Sanctuary & Tripartite Wellness',
+    card: 'summary',
+    title: siteConfig.title,
     description: siteConfig.description,
-    creator: '@devamitch',
     images: ['/icon-512.png'],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 }
 
@@ -104,7 +90,7 @@ export default function RootLayout({
         '@id': 'https://thrivefold.devamit.co.in/#software',
         name: 'Thrivefold',
         applicationCategory: 'HealthApplication',
-        operatingSystem: 'iOS, Android, Web',
+        operatingSystem: 'iOS, Android',
         description: siteConfig.description,
         url: siteConfig.url,
         author: {
@@ -112,18 +98,13 @@ export default function RootLayout({
           name: siteConfig.author,
           url: siteConfig.authorUrl,
         },
-        offers: {
-          '@type': 'Offer',
-          price: '0.00',
-          priceCurrency: 'USD',
-        },
       },
       {
         '@type': 'Organization',
         '@id': 'https://thrivefold.devamit.co.in/#organization',
         name: 'Amit Dev Labs',
         url: 'https://devamit.co.in',
-        logo: 'https://thrivefold.devamit.co.in/icon-512.png',
+        logo: 'https://thrivefold.devamit.co.in/logo.png',
       },
       {
         '@type': 'WebSite',
@@ -140,23 +121,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fraunces.variable} ${jakarta.variable}`}>
       <head>
-        {/* Explicit Googlebot & Browser Favicon Hierarchy without SVG */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-title" content="Thrivefold" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-
-        {/* Discovery Links for Agents and Crawlers */}
-        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
-        <link rel="alternate" type="text/plain" href="/agents.txt" title="Agent Instructions" />
-
         {/* Structured JSON-LD */}
         <script
           type="application/ld+json"
