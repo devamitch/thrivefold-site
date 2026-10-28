@@ -59,29 +59,34 @@ export function PermissionSafetyMatrix() {
           Zero Telemetry · Full Transparency
         </span>
         <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-[-0.03em] text-[var(--ink)] leading-tight">
-          Permission & Data Safety <span className="italic text-[var(--terracotta)]">Matrix.</span>
+          Permission &amp; Data Safety <span className="italic text-[var(--terracotta)]">Matrix.</span>
         </h2>
         <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
           We believe privacy policies should be unambiguous. Every sensor and permission requested by Thrivefold is accounted for below.
         </p>
       </div>
 
-      <div className="squircle-card overflow-hidden p-5 sm:p-8 text-left bg-[var(--surface)]">
+      <div className="squircle-card overflow-hidden p-6 sm:p-10 text-left bg-[var(--surface)]">
         <div className="overflow-x-auto -mx-2 px-2">
           <table className="w-full text-left text-xs sm:text-sm min-w-[560px]">
             <thead>
-              <tr className="border-b border-[var(--border)] text-[var(--ink-muted)] text-[11px] uppercase tracking-wider">
-                <th className="pb-3.5 pr-4 font-semibold">Permission / Data Scope</th>
-                <th className="pb-3.5 px-4 font-semibold">User Purpose</th>
-                <th className="pb-3.5 px-4 font-semibold">Where Stored</th>
-                <th className="pb-3.5 px-3 text-center font-semibold">Remote DB</th>
-                <th className="pb-3.5 pl-3 text-center font-semibold">Sold/Shared</th>
+              <tr className="text-[var(--ink-muted)] text-[11px] uppercase tracking-wider">
+                <th className="pb-4 pr-4 font-semibold">Permission / Data Scope</th>
+                <th className="pb-4 px-4 font-semibold">User Purpose</th>
+                <th className="pb-4 px-4 font-semibold">Where Stored</th>
+                <th className="pb-4 px-3 text-center font-semibold">Remote DB</th>
+                <th className="pb-4 pl-3 text-center font-semibold">Sold/Shared</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[var(--border)]">
-              {PERMISSION_ROWS.map((row) => (
-                <tr key={row.permission} className="hover:bg-[var(--surface2)]/40 transition-colors">
-                  <td className="py-4 pr-4">
+            <tbody>
+              {PERMISSION_ROWS.map((row, idx) => (
+                <tr
+                  key={row.permission}
+                  className={`transition-colors rounded-2xl ${
+                    idx % 2 === 1 ? 'bg-[var(--surface2)]/50' : 'bg-transparent'
+                  }`}
+                >
+                  <td className="py-4 pr-4 pl-3 rounded-l-2xl">
                     <span className="font-semibold text-[var(--ink)] block">{row.permission}</span>
                     <code className="text-[10px] font-mono text-[var(--ink-muted)] block mt-0.5 break-all">
                       {row.scope}
@@ -98,7 +103,7 @@ export function PermissionSafetyMatrix() {
                       <X className="w-3.5 h-3.5" aria-label="Never stored remotely" />
                     </span>
                   </td>
-                  <td className="py-4 pl-3 text-center">
+                  <td className="py-4 pl-3 pr-3 text-center rounded-r-2xl">
                     <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[var(--sage-subtle)] text-[var(--sage-strong)]">
                       <X className="w-3.5 h-3.5" aria-label="Never sold or shared" />
                     </span>
@@ -109,7 +114,7 @@ export function PermissionSafetyMatrix() {
           </table>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-[var(--border)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
+        <div className="mt-8 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
           <p>
             * You can revoke any permission at any time in Android Settings &gt; Apps &gt; Thrivefold &gt; Permissions.
           </p>

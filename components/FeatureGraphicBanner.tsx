@@ -26,7 +26,7 @@ const PILLARS = [
 export function FeatureGraphicBanner() {
   return (
     <section className="relative overflow-hidden my-2 sm:my-4">
-      <div className="squircle-card overflow-hidden p-0 bg-[var(--surface)] border border-[var(--border)] shadow-xl">
+      <div className="squircle-card overflow-hidden p-0 bg-[var(--surface)]">
         {/* The Authentic 1024x500 Feature Graphic Banner */}
         <div className="relative w-full aspect-[2.05/1] overflow-hidden bg-[#EAE4DC]">
           <img
@@ -42,12 +42,12 @@ export function FeatureGraphicBanner() {
           <div className="absolute inset-x-0 bottom-0 h-12 sm:h-16 bg-gradient-to-t from-black/35 to-transparent pointer-events-none" />
         </div>
 
-        {/* 4 Pillars Strip under the graphic */}
-        <div className="p-5 sm:p-8 bg-[var(--surface)] text-left grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-[var(--border)]">
-          {PILLARS.map((p, idx) => {
+        {/* 4 Pillars Strip under the graphic - clean borderless flow */}
+        <div className="p-6 sm:p-8 bg-[var(--surface)] text-left grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
+          {PILLARS.map((p) => {
             const Icon = p.icon
             return (
-              <div key={p.title} className={`flex items-start gap-3 ${idx > 0 ? 'pt-3 sm:pt-0 sm:pl-4' : ''}`}>
+              <div key={p.title} className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)] shrink-0">
                   <Icon className="w-4 h-4" />
                 </div>

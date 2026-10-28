@@ -74,7 +74,7 @@ export default function TermsOfServicePage() {
             <span>Back to Thrivefold Home</span>
           </Link>
 
-          <div className="rounded-[28px] bg-[var(--surface)] p-8 sm:p-12 mb-10 border border-[var(--border)]">
+          <div className="rounded-[28px] bg-[var(--surface)] p-8 sm:p-12 mb-10 shadow-xs">
             <h1 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[var(--ink)] mb-4">
               Terms of Service
             </h1>
@@ -84,7 +84,7 @@ export default function TermsOfServicePage() {
             <p className="mt-6 text-xs text-[var(--ink-muted)]">Last updated: 28 October 2026</p>
           </div>
 
-          <section id="medical" className="scroll-mt-24 rounded-[24px] bg-[var(--terracotta-subtle)] p-6 sm:p-8 mb-8 border border-[var(--terracotta)]/20">
+          <section id="medical" className="scroll-mt-24 rounded-[24px] bg-[var(--terracotta-subtle)] p-6 sm:p-8 mb-8 shadow-xs">
             <div className="flex items-center gap-2.5 mb-3">
               <AlertCircle className="w-5 h-5 text-[var(--terracotta-strong)] shrink-0" />
               <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--terracotta-strong)]">
@@ -103,7 +103,7 @@ export default function TermsOfServicePage() {
 
           <div className="space-y-6 text-[15px] sm:text-base text-[var(--ink-secondary)] leading-relaxed text-left">
             {SECTIONS.map((section) => (
-              <section key={section.id} id={section.id} className="scroll-mt-24 rounded-[24px] bg-[var(--surface)] p-6 sm:p-8 border border-[var(--border)]">
+              <section key={section.id} id={section.id} className="scroll-mt-24 rounded-[24px] bg-[var(--surface)] p-6 sm:p-8 shadow-xs">
                 <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">{section.title}</h2>
                 {section.body.map((para) => (
                   <p key={para} className="mt-3 first:mt-0">
@@ -113,7 +113,7 @@ export default function TermsOfServicePage() {
               </section>
             ))}
 
-            <section id="contact" className="scroll-mt-24 rounded-[24px] bg-[var(--surface)] p-6 sm:p-8 border border-[var(--border)]">
+            <section id="contact" className="scroll-mt-24 rounded-[24px] bg-[var(--surface)] p-6 sm:p-8 shadow-xs">
               <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">Contact</h2>
               <p>
                 Questions regarding these terms may be directed to:{' '}

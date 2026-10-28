@@ -168,23 +168,17 @@ export function ScreensGallery() {
 
       {/* Spotlight Showcase View */}
       <div className="squircle-card overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-5 sm:p-10 lg:p-12 text-left bg-[var(--surface)]">
-        {/* Device Frame with Real Screenshot */}
+        {/* Clean Showcase Screenshot - No nested bezels, no artificial notches */}
         <div className="lg:col-span-5 flex justify-center items-center">
-          <div className="relative w-full max-w-[250px] sm:max-w-[300px] rounded-[42px] p-2.5 sm:p-3 bg-[var(--ink)] shadow-2xl ring-1 ring-black/10">
-            {/* Phone Notch / Dynamic Island simulation */}
-            <div className="absolute top-4 sm:top-5 left-1/2 -translate-x-1/2 w-24 sm:w-28 h-3.5 sm:h-4 rounded-full bg-black z-20" />
-            <div className="relative rounded-[32px] overflow-hidden bg-black aspect-[9/19.5]">
-              <img
-                src={currentScreen.image}
-                alt={`${currentScreen.title} screen capture`}
-                width={1080}
-                height={1920}
-                decoding="async"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Ambient glare reflection */}
-            <div className="pointer-events-none absolute inset-0 rounded-[42px] ring-1 ring-white/10" />
+          <div className="relative w-full max-w-[280px] sm:max-w-[330px] rounded-[28px] overflow-hidden shadow-2xl transition-all duration-300 bg-transparent">
+            <img
+              src={currentScreen.image}
+              alt={`${currentScreen.title} screen capture`}
+              width={1080}
+              height={1920}
+              decoding="async"
+              className="w-full h-auto block rounded-[28px]"
+            />
           </div>
         </div>
 
@@ -257,11 +251,11 @@ export function ScreensGallery() {
               onClick={() => setActiveScreenId(s.id)}
               className={`rounded-2xl p-2.5 text-left transition-all group ${
                 isSelected
-                  ? 'bg-white ring-2 ring-[var(--terracotta)]'
+                  ? 'bg-white shadow-md scale-[1.02]'
                   : 'bg-[var(--surface2)]/60 hover:bg-white'
               }`}
             >
-              <div className="aspect-[9/16] rounded-xl overflow-hidden bg-black mb-2 shadow-xs">
+              <div className="aspect-[9/16] rounded-xl overflow-hidden bg-transparent mb-2 shadow-xs">
                 <img
                   src={s.image}
                   alt={s.title}
@@ -269,7 +263,7 @@ export function ScreensGallery() {
                   height={533}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <span className="block text-[11px] font-semibold text-[var(--ink)] truncate">

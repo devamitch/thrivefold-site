@@ -3,7 +3,7 @@ import { ArrowUpRight, ShieldCheck } from 'lucide-react'
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[var(--surface)] text-[var(--ink)] mt-24 border-t border-[var(--border)]">
+    <footer className="bg-[var(--surface)] text-[var(--ink)] mt-24">
       {/* Crisis Help Banner */}
       <div className="bg-[var(--surface2)] px-4 py-4 text-center">
         <p className="text-xs sm:text-sm text-[var(--ink-secondary)]">
@@ -98,7 +98,7 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Credits & Legal Links */}
-        <div className="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
+        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
           <p>
             © {new Date().getFullYear()} Thrivefold. AnvayKosh ecosystem flagship by{' '}
             <a

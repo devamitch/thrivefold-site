@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ShieldCheck, Zap, Lock, Sparkles } from 'lucide-react'
+import { ArrowRight, Check, ShieldCheck, Zap } from 'lucide-react'
 
 const PROMISES = [
   'Health Connect on-device sync',
@@ -18,7 +18,7 @@ export function HeroSection() {
           {/* Badge */}
           <a
             href="#health-connect"
-            className="mb-6 inline-flex flex-wrap items-center gap-2 rounded-full bg-[var(--surface)] py-1.5 pl-1.5 pr-4 text-xs sm:text-[13px] font-medium text-[var(--ink-secondary)] shadow-xs transition-colors hover:bg-[var(--surface2)]"
+            className="mb-6 inline-flex flex-wrap items-center gap-2 rounded-full bg-[var(--surface)] py-1.5 pl-1.5 pr-4 text-xs sm:text-[13px] font-medium text-[var(--ink-secondary)] transition-colors hover:bg-[var(--surface2)]"
           >
             <span className="rounded-full bg-[var(--sage-strong)] px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.08em] text-white">
               Health Connect
@@ -68,13 +68,13 @@ export function HeroSection() {
           </ul>
         </div>
 
-        {/* Real Mobile Device Showcase with Authentic App Screenshot */}
-        <div className="relative mx-auto flex items-center justify-center w-full max-w-[380px] sm:max-w-[420px] px-2">
+        {/* Authentic Sanctuary Presentation Card - Zero artificial phone bezels, Zero borders */}
+        <div className="relative mx-auto flex items-center justify-center w-full max-w-[380px] sm:max-w-[430px] lg:max-w-[470px]">
           {/* Background Ambient Glow */}
-          <div className="absolute -inset-4 bg-gradient-to-tr from-[var(--terracotta-subtle)] to-[var(--sage-subtle)] rounded-full blur-3xl opacity-60 -z-10" />
+          <div className="absolute -inset-6 bg-gradient-to-tr from-[var(--terracotta-subtle)] via-transparent to-[var(--sage-subtle)] rounded-[48px] blur-3xl opacity-70 -z-10" />
 
-          {/* Floating Badge 1 - Left (only on xl screens to avoid viewport overflow) */}
-          <div className="hidden xl:flex absolute -left-10 top-16 z-20 items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-md">
+          {/* Floating Pill 1 - Top Left */}
+          <div className="hidden xl:flex absolute -left-8 top-12 z-20 items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-md backdrop-blur-md">
             <div className="w-8 h-8 rounded-xl bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)]">
               <ShieldCheck className="w-4 h-4" />
             </div>
@@ -84,8 +84,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Floating Badge 2 - Right (only on xl screens to avoid viewport overflow) */}
-          <div className="hidden xl:flex absolute -right-10 bottom-20 z-20 items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-md">
+          {/* Floating Pill 2 - Bottom Right */}
+          <div className="hidden xl:flex absolute -right-8 bottom-16 z-20 items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-md backdrop-blur-md">
             <div className="w-8 h-8 rounded-xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)]">
               <Zap className="w-4 h-4" />
             </div>
@@ -95,25 +95,17 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Phone Frame */}
-          <div className="relative w-full max-w-[280px] sm:max-w-[310px] rounded-[42px] p-2.5 sm:p-3 bg-[var(--ink)] shadow-2xl ring-1 ring-black/20">
-            {/* Speaker & Sensor Notch */}
-            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-3.5 rounded-full bg-black z-20" />
-            
-            <div className="relative rounded-[32px] overflow-hidden bg-black aspect-[9/19.5]">
-              <img
-                src="/screenshots/01_wellbeing.png"
-                alt="Thrivefold Daily Wellbeing and Vitality screen"
-                width={1080}
-                height={1920}
-                priority="true"
-                decoding="async"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Inner Glare Border */}
-            <div className="pointer-events-none absolute inset-0 rounded-[42px] ring-1 ring-white/10" />
+          {/* Clean Aesthetic Poster Display - Natural 9:16 Aspect, Zero fake notch/borders */}
+          <div className="relative w-full rounded-[36px] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01]">
+            <img
+              src="/screenshots/home_poster.jpg"
+              alt="Thrivefold: Your wellbeing, all in one place. Track, Move, Understand, Grow."
+              width={576}
+              height={1024}
+              priority="true"
+              decoding="async"
+              className="w-full h-auto object-cover rounded-[36px]"
+            />
           </div>
         </div>
       </div>

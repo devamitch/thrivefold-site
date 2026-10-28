@@ -158,21 +158,18 @@ export function SanctuaryAppShowcase() {
 
       {/* Card Content with Real Screenshot */}
       <div className="squircle-card overflow-hidden grid lg:grid-cols-[1fr_1.1fr] bg-[var(--surface)] text-left">
-        {/* Real Screenshot Preview */}
-        <div className="bg-[var(--surface2)] p-4 sm:p-10 flex items-center justify-center min-h-[360px] sm:min-h-[460px]">
-          <div className="relative w-full max-w-[240px] sm:max-w-[290px] rounded-[38px] p-2 sm:p-2.5 bg-[var(--ink)] shadow-2xl ring-1 ring-black/10">
-            <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-20 h-3.5 rounded-full bg-black z-20" />
-            <div className="relative rounded-[30px] overflow-hidden bg-black aspect-[9/19.5]">
-              <img
-                src={active.image}
-                alt={`${active.title} interface capture`}
-                width={1080}
-                height={1920}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
-              />
-            </div>
+        {/* Clean Screenshot Display - No nested phone frames, no fake notches */}
+        <div className="bg-[var(--surface2)] p-6 sm:p-10 flex items-center justify-center min-h-[360px] sm:min-h-[460px]">
+          <div className="relative w-full max-w-[260px] sm:max-w-[310px] rounded-[28px] overflow-hidden shadow-2xl transition-all duration-300 bg-transparent">
+            <img
+              src={active.image}
+              alt={`${active.title} interface capture`}
+              width={1080}
+              height={1920}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto block rounded-[28px]"
+            />
           </div>
         </div>
 

@@ -76,7 +76,7 @@ export function FeatureBento() {
               Reads your daily steps, sleep stages, and workout sessions directly through Health Connect. Used strictly on-device to power gamified routines without any remote cloud backend.
             </p>
           </div>
-          <div className="pt-4 mt-4 border-t border-[var(--border)]">
+          <div className="pt-4 mt-2">
             <a
               href="#health-connect"
               className="text-xs font-semibold text-[var(--sage-strong)] hover:underline underline-offset-2 flex items-center gap-1.5"

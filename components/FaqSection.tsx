@@ -73,7 +73,7 @@ export function FaqSection() {
               </button>
               <div
                 hidden={!isOpen}
-                className="px-5 pb-6 sm:px-6 sm:pb-7 text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed pt-1 border-t border-[var(--border)]/60"
+                className="px-5 pb-6 sm:px-6 sm:pb-7 text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed pt-2"
               >
                 {faq.a}
               </div>

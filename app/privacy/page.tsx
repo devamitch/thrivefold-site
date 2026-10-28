@@ -65,9 +65,9 @@ export default function PrivacyPolicyPage() {
             <span>Back to Thrivefold Home</span>
           </Link>
 
-          {/* Header Card */}
-          <div className="rounded-[32px] bg-[var(--surface)] p-8 sm:p-12 mb-10 border border-[var(--border)] shadow-xs">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--sage-subtle)] text-[var(--sage-strong)] text-xs font-semibold uppercase tracking-wider mb-4">
+          {/* Header Card - Zero Borders */}
+          <div className="rounded-[36px] bg-[var(--surface)] p-8 sm:p-12 mb-10 text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--sage-subtle)] text-[var(--sage-strong)] text-xs font-semibold uppercase tracking-wider mb-4">
               <ShieldCheck className="w-4 h-4" />
               <span>Step 3: Privacy Policy &amp; Final Review</span>
             </div>
@@ -77,15 +77,15 @@ export default function PrivacyPolicyPage() {
             <p className="text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
               This Privacy Policy explains how Thrivefold handles Health Connect data, device sensor permissions, camera landmark processing, and user records. Our sovereign architecture guarantees that your health data stays on your device.
             </p>
-            <div className="mt-6 pt-6 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
+            <div className="mt-8 pt-4 flex flex-wrap items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
               <span><strong>Effective Date:</strong> 28 October 2026</span>
               <span><strong>Canonical URL:</strong> <a href="https://thrivefold.devamit.co.in/privacy" className="text-[var(--terracotta)] underline">https://thrivefold.devamit.co.in/privacy</a></span>
             </div>
           </div>
 
           <div className="space-y-8 text-[15px] sm:text-base text-[var(--ink-secondary)] leading-relaxed text-left">
-            {/* Core Declaration Box - Prominently Displayed */}
-            <section id="health-connect-declaration" className="scroll-mt-24 rounded-[28px] bg-gradient-to-br from-white via-[var(--surface)] to-[var(--surface2)]/50 p-6 sm:p-10 border-2 border-[var(--terracotta)]/40 shadow-sm">
+            {/* Core Declaration Box - Clean Borderless Squircle */}
+            <section id="health-connect-declaration" className="scroll-mt-24 rounded-[32px] bg-[var(--surface)] p-7 sm:p-10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-2xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)] shrink-0">
                   <ShieldCheck className="w-5 h-5" />
@@ -100,23 +100,23 @@ export default function PrivacyPolicyPage() {
                 </div>
               </div>
 
-              {/* The Exact User-Required Text */}
-              <div className="p-6 rounded-2xl bg-[var(--bg)] border-l-4 border-[var(--terracotta)] my-4">
+              {/* The Exact User-Required Text in Soft Surface Pill */}
+              <div className="p-6 sm:p-8 rounded-3xl bg-[var(--surface2)] my-5">
                 <p className="text-base sm:text-lg font-serif italic text-[var(--ink)] leading-relaxed">
                   “Thrivefold utilizes Health Connect and device sensor permissions strictly on-device to read user activity, step count, sleep, and fitness matrices. This data is processed locally within gamified wellbeing routines to provide real-time self-care motivation. No raw health metrics or personal health data are sold, shared, or persisted to remote backend databases.”
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-xs sm:text-sm">
-                <div className="flex items-start gap-2 text-[var(--ink)] font-medium">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs sm:text-sm">
+                <div className="squircle-inner p-4 flex items-start gap-2.5 text-[var(--ink)] font-medium">
                   <CheckCircle2 className="w-4 h-4 text-[var(--sage-strong)] shrink-0 mt-0.5" />
                   <span>Processed 100% on-device</span>
                 </div>
-                <div className="flex items-start gap-2 text-[var(--ink)] font-medium">
+                <div className="squircle-inner p-4 flex items-start gap-2.5 text-[var(--ink)] font-medium">
                   <EyeOff className="w-4 h-4 text-[var(--sage-strong)] shrink-0 mt-0.5" />
                   <span>Zero advertising or data sales</span>
                 </div>
-                <div className="flex items-start gap-2 text-[var(--ink)] font-medium">
+                <div className="squircle-inner p-4 flex items-start gap-2.5 text-[var(--ink)] font-medium">
                   <Database className="w-4 h-4 text-[var(--sage-strong)] shrink-0 mt-0.5" />
                   <span>No remote health databases</span>
                 </div>
@@ -124,7 +124,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* Health Connect Specific Permissions Table */}
-            <section id="permissions-breakdown" className="scroll-mt-24 rounded-[28px] bg-[var(--surface)] p-6 sm:p-8 border border-[var(--border)]">
+            <section id="permissions-breakdown" className="scroll-mt-24 rounded-[32px] bg-[var(--surface)] p-7 sm:p-9">
               <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">
                 1. Permissions &amp; Data Types Requested
               </h2>
@@ -132,17 +132,17 @@ export default function PrivacyPolicyPage() {
                 In strict adherence to the Google Play Health Apps Policy, Thrivefold requests access exclusively to health and sensor data required to deliver core self-care routines:
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 {HEALTH_CONNECT_DECLARATIONS.map((item) => (
-                  <div key={item.permission} className="p-4 sm:p-5 rounded-2xl bg-[var(--surface2)]/60 border border-[var(--border)] space-y-2">
+                  <div key={item.permission} className="p-5 rounded-2xl bg-[var(--surface2)] space-y-2">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="font-semibold text-sm sm:text-base text-[var(--ink)]">{item.label}</span>
-                      <code className="text-[11px] font-mono px-2 py-0.5 rounded bg-white text-[var(--ink-muted)]">
+                      <code className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-white text-[var(--ink-muted)]">
                         {item.permission}
                       </code>
                     </div>
                     <p className="text-xs sm:text-sm text-[var(--ink-secondary)]">{item.purpose}</p>
-                    <p className="text-xs font-medium text-[var(--sage-strong)] flex items-center gap-1.5">
+                    <p className="text-xs font-medium text-[var(--sage-strong)] flex items-center gap-1.5 pt-1">
                       <Lock className="w-3.5 h-3.5" />
                       <span>{item.storage}</span>
                     </p>
@@ -152,7 +152,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* Camera Pose Coach Security */}
-            <section id="camera-coach" className="scroll-mt-24 rounded-[28px] bg-[var(--surface)] p-6 sm:p-8 border border-[var(--border)]">
+            <section id="camera-coach" className="scroll-mt-24 rounded-[32px] bg-[var(--surface)] p-7 sm:p-9">
               <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">
                 2. On-Device Camera Pose Coach &amp; Biomechanics
               </h2>
@@ -173,7 +173,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* What We Store & Where */}
-            <section id="local-storage" className="scroll-mt-24 rounded-[28px] bg-[var(--surface)] p-6 sm:p-8 border border-[var(--border)]">
+            <section id="local-storage" className="scroll-mt-24 rounded-[32px] bg-[var(--surface)] p-7 sm:p-9">
               <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">
                 3. What Stays on Your Device &amp; How It Is Encrypted
               </h2>
@@ -192,7 +192,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* What We Never Do */}
-            <section id="prohibitions" className="scroll-mt-24 rounded-[28px] bg-[var(--surface)] p-6 sm:p-8 border border-[var(--border)]">
+            <section id="prohibitions" className="scroll-mt-24 rounded-[32px] bg-[var(--surface)] p-7 sm:p-9">
               <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">
                 4. What We Do NOT Do (Zero Telemetry Guarantee)
               </h2>
@@ -213,7 +213,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* Export and Deletion Rights */}
-            <section id="user-rights" className="scroll-mt-24 rounded-[28px] bg-[var(--surface)] p-6 sm:p-8 border border-[var(--border)]">
+            <section id="user-rights" className="scroll-mt-24 rounded-[32px] bg-[var(--surface)] p-7 sm:p-9">
               <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">
                 5. User Rights: Export, Revocation &amp; Deletion
               </h2>
@@ -251,7 +251,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* Medical Disclaimer */}
-            <section id="medical-disclaimer" className="scroll-mt-24 rounded-[28px] bg-[var(--terracotta-subtle)] p-6 sm:p-8 border border-[var(--terracotta)]/20">
+            <section id="medical-disclaimer" className="scroll-mt-24 rounded-[32px] bg-[var(--terracotta-subtle)] p-7 sm:p-9">
               <div className="flex items-center gap-2 mb-3">
                 <AlertCircle className="w-5 h-5 text-[var(--terracotta-strong)]" />
                 <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--terracotta-strong)]">
@@ -267,14 +267,14 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* Contact Details */}
-            <section id="contact" className="scroll-mt-24 rounded-[28px] bg-[var(--surface)] p-6 sm:p-8 border border-[var(--border)]">
+            <section id="contact" className="scroll-mt-24 rounded-[32px] bg-[var(--surface)] p-7 sm:p-9">
               <h2 className="font-serif text-xl sm:text-2xl font-medium text-[var(--ink)] mb-3">
                 7. Developer Contact &amp; Governance
               </h2>
               <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed">
                 If you have questions, feedback, or requests concerning this Privacy Policy or your data rights, please contact our team directly:
               </p>
-              <div className="mt-4 p-4 rounded-2xl bg-[var(--bg)] text-xs sm:text-sm space-y-1 text-[var(--ink)]">
+              <div className="mt-4 p-5 rounded-2xl bg-[var(--surface2)] text-xs sm:text-sm space-y-1 text-[var(--ink)]">
                 <p><strong>Entity:</strong> Amit Dev Labs</p>
                 <p><strong>Lead Developer:</strong> Amit Chakraborty</p>
                 <p><strong>Contact Email:</strong> <a href={`mailto:${siteConfig.contactEmail}`} className="text-[var(--terracotta)] underline">{siteConfig.contactEmail}</a></p>
