@@ -5,28 +5,32 @@ import { ChevronDown } from 'lucide-react'
 
 const FAQS = [
   {
-    q: 'Who is Thrivefold for?',
-    a: 'Anyone who wants a simple, private way to look after their health. There are dedicated spaces for women’s health (including cycle tracking), men’s health and LGBTQ+ wellbeing. You pick one when you start and can switch at any time.',
+    q: 'How does Thrivefold utilize Health Connect and device sensor permissions?',
+    a: 'Thrivefold utilizes Health Connect and device sensor permissions strictly on-device to read user activity, step count, sleep, and fitness matrices. This data is processed locally within gamified wellbeing routines to provide real-time self-care motivation. No raw health metrics or personal health data are sold, shared, or persisted to remote backend databases.',
   },
   {
-    q: 'Where is my data stored?',
-    a: 'Your check-ins, cycle data, workouts and meal logs are stored on your phone and encrypted there. You can export them as HL7 FHIR or delete them from the settings screen.',
+    q: 'How does the on-device camera pose coach work?',
+    a: 'During guided movement workouts, the camera coach observes body alignment using 33 skeletal landmarks in real time to guide your cadence and posture. All computer vision models run locally on your phone using volatile device RAM. Camera frames are never recorded, saved to storage, or transmitted over any network.',
   },
   {
-    q: 'How does the camera coach work?',
-    a: 'During a guided workout, the camera coach looks at your movement and gives feedback on your form. It runs on your phone, and the camera video is not uploaded.',
+    q: 'Where is my health data stored?',
+    a: 'Your check-ins, cycle data, workout logs, sleep metrics, and personal notes are stored locally on your device and encrypted using hardware Keystore AES-256 keys. We do not operate remote databases that store your biometric logs. You can export everything in HL7 FHIR or wipe all local data in one tap from settings.',
   },
   {
-    q: 'What are circles?',
-    a: 'Circles are private groups for training, meditation, sports and support that open up as you build a routine. Anything you post in a circle is visible to the members of that circle.',
+    q: 'Are any health metrics sold, shared, or used for advertising?',
+    a: 'Never. Thrivefold contains zero third-party advertising trackers, zero telemetrySDKs, and zero commercial data broker partnerships. We never sell, rent, or monetize your health information under any circumstances.',
   },
   {
-    q: 'Is Thrivefold medical care?',
-    a: 'No. Thrivefold is a wellbeing and fitness tool. It does not diagnose conditions, prescribe treatment or replace a doctor or therapist. If you are in crisis, call or text 988 in the US and Canada, or contact your local emergency services.',
+    q: 'Who is Thrivefold designed for?',
+    a: 'Anyone seeking a calm, mindful, and private health companion. Thrivefold includes dedicated spaces for Women’s Health (cycle intelligence and symptom rhythms), Men’s Health (strength biomechanics and posture resets), and LGBTQ+ Affirming Wellbeing (medication notes and holistic support). You can choose any space and switch anytime.',
   },
   {
-    q: 'How do I get the app?',
-    a: 'Thrivefold is in beta on iOS and Android. Email us from the beta section below and we will send you an invite when a place opens.',
+    q: 'Does Thrivefold replace professional medical care?',
+    a: 'No. Thrivefold is an observational fitness and mindful wellbeing tool designed to encourage healthy habits and posture awareness. It is not a medical device and does not diagnose, treat, or prevent any medical condition. If you are experiencing a mental health crisis, please call or text 988 (US & Canada), call 999/111 (UK), or contact local emergency services.',
+  },
+  {
+    q: 'How do I join the beta?',
+    a: 'Thrivefold is currently in internal testing on Android (Google Play) and iOS (TestFlight). Send an email to amit@devamit.co.in with your platform of choice, and we will send you an invite code.',
   },
 ]
 
@@ -35,20 +39,24 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="scroll-mt-24">
+      {/* Section Header */}
       <div className="mx-auto max-w-[720px] text-center mb-12 sm:mb-16">
         <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--terracotta)] block mb-3">
-          FAQ
+          Frequently Asked Questions
         </span>
         <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-[-0.03em] text-[var(--ink)] leading-tight">
-          Common <span className="italic text-[var(--terracotta)]">questions.</span>
+          Clear answers, <span className="italic text-[var(--terracotta)]">total clarity.</span>
         </h2>
+        <p className="mt-4 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
+          Everything you need to know about our privacy architecture, Health Connect integration, and on-device features.
+        </p>
       </div>
 
-      <div className="max-w-[840px] mx-auto space-y-3">
+      <div className="max-w-[880px] mx-auto space-y-3">
         {FAQS.map((faq, idx) => {
           const isOpen = openIndex === idx
           return (
-            <div key={faq.q} className="squircle-card overflow-hidden text-left">
+            <div key={faq.q} className="squircle-card overflow-hidden text-left bg-[var(--surface)]">
               <button
                 type="button"
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
@@ -63,10 +71,9 @@ export function FaqSection() {
                   aria-hidden="true"
                 />
               </button>
-              {/* Answers stay in the HTML so they are readable without JavaScript. */}
               <div
                 hidden={!isOpen}
-                className="px-5 pb-6 sm:px-6 sm:pb-7 text-sm text-[var(--ink-secondary)] leading-relaxed pt-1"
+                className="px-5 pb-6 sm:px-6 sm:pb-7 text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed pt-1 border-t border-[var(--border)]/60"
               >
                 {faq.a}
               </div>
