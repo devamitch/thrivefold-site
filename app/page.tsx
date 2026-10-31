@@ -14,6 +14,7 @@ import { HardwareSecuritySpecs } from '@/components/HardwareSecuritySpecs'
 import { PrivacyTermsCovenantBand } from '@/components/PrivacyTermsCovenantBand'
 import { FaqSection } from '@/components/FaqSection'
 import { BetaSignupSection } from '@/components/BetaSignupSection'
+import { EcosystemDirectorySection } from '@/components/EcosystemDirectorySection'
 import { SiteFooter } from '@/components/SiteFooter'
 
 export const metadata: Metadata = {
@@ -58,6 +59,9 @@ export default function HomePage() {
 
           {/* FAQ Section */}
           <FaqSection />
+
+          {/* Ecosystem Discovery & Beta Testing */}
+          <EcosystemDirectorySection />
 
           {/* Beta Testing Access */}
           <BetaSignupSection />
