@@ -10,6 +10,8 @@ const NAV_LINKS = [
   { href: '/#health-connect', label: 'Health Connect', isAnchor: true },
   { href: '/#permissions', label: 'Permissions', isAnchor: true },
   { href: '/#faq', label: 'FAQ', isAnchor: true },
+  { href: '/download', label: 'Download APK', isAnchor: false },
+  { href: '/beta', label: 'Beta Program', isAnchor: false },
   { href: '/privacy/', label: 'Privacy Policy', isAnchor: false },
   { href: '/terms/', label: 'Terms', isAnchor: false },
 ]
@@ -92,13 +94,13 @@ export function SiteHeader() {
             <span>Health Connect</span>
           </a>
 
-          <a
-            href="/#beta"
+          <Link
+            href="/beta"
             className="squircle-button inline-flex items-center gap-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-[13px] font-semibold px-4 py-2 sm:min-h-10 sm:px-5"
           >
             <span>Beta Access</span>
             <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-          </a>
+          </Link>
 
           <button
             type="button"

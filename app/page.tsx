@@ -36,6 +36,9 @@ export default function HomePage() {
           {/* Health Connect & Device Sensor Justification */}
           <HealthConnectJustification />
 
+          {/* Dedicated AnvayKosh Ecosystem All Apps Beta & Download Hub */}
+          <EcosystemDirectorySection />
+
           {/* Authentic Phone Screenshots Gallery */}
           <ScreensGallery />
 
@@ -59,9 +62,6 @@ export default function HomePage() {
 
           {/* FAQ Section */}
           <FaqSection />
-
-          {/* Ecosystem Discovery & Beta Testing */}
-          <EcosystemDirectorySection />
 
           {/* Beta Testing Access */}
           <BetaSignupSection />

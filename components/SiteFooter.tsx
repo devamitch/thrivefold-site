@@ -50,6 +50,7 @@ export function SiteFooter() {
               <a href="/#features" className="hover:text-[var(--terracotta)] transition-colors">Features & Spaces</a>
               <a href="/#screens" className="hover:text-[var(--terracotta)] transition-colors">App Screens & Tour</a>
               <a href="/#inside" className="hover:text-[var(--terracotta)] transition-colors">Pose Coach & Biomechanics</a>
+              <Link href="/download" className="hover:text-[var(--terracotta)] transition-colors font-semibold text-[var(--terracotta-strong)]">Download APK &amp; Beta</Link>
               <a href="/#how" className="hover:text-[var(--terracotta)] transition-colors">How It Works</a>
               <a href="/#faq" className="hover:text-[var(--terracotta)] transition-colors">Frequently Asked Questions</a>
             </div>
@@ -87,13 +88,13 @@ export function SiteFooter() {
             <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
               Active internal testing track on Google Play and TestFlight.
             </p>
-            <a
-              href="/#beta"
+            <Link
+              href="/beta"
               className="squircle-button inline-flex items-center gap-1.5 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white text-xs font-semibold px-4 py-2.5 transition-colors"
             >
               <span>Join Testing</span>
               <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
-            </a>
+            </Link>
           </div>
         </div>
 

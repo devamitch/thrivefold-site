@@ -39,7 +39,7 @@ export function HeroSection() {
           </p>
 
           {/* CTAs */}
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-8 flex flex-wrap gap-3 sm:items-center">
             <a
               href="#beta"
               className="squircle-button inline-flex min-h-12 sm:min-h-14 items-center justify-center gap-2 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white px-7 text-sm sm:text-base font-semibold transition-transform"
@@ -48,10 +48,26 @@ export function HeroSection() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a
-              href="#screens"
-              className="squircle-button inline-flex min-h-12 sm:min-h-14 items-center justify-center gap-2 bg-[var(--surface2)] text-[var(--ink)] px-6 text-sm sm:text-base font-medium transition-colors hover:bg-white"
+              href="https://play.google.com/store/apps/details?id=com.amit.thrivefold"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="squircle-button inline-flex min-h-12 sm:min-h-14 items-center justify-center gap-2 bg-stone-900 hover:bg-black text-white px-6 text-sm sm:text-base font-semibold transition-colors"
             >
-              Explore App Screens
+              <span>Google Play</span>
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+            <a
+              href="/download"
+              className="squircle-button inline-flex min-h-12 sm:min-h-14 items-center justify-center gap-2 bg-stone-100 hover:bg-stone-200 text-[var(--ink)] px-5 text-sm sm:text-base font-semibold transition-colors"
+            >
+              <span>Download APK</span>
+            </a>
+            <a
+              href="#ecosystem"
+              className="squircle-button inline-flex min-h-12 sm:min-h-14 items-center justify-center gap-2 bg-[var(--surface2)] text-[var(--ink)] px-5 text-sm sm:text-base font-medium transition-colors hover:bg-white"
+            >
+              <span>All 10 Apps &amp; Betas</span>
+              <ArrowRight className="h-4 w-4 rotate-90" aria-hidden="true" />
             </a>
           </div>
 
