@@ -38,10 +38,10 @@
   --charcoal: #191918;
   --wick: #EAE4DC;
 
-  /* Subtle Hairline Borders */
-  --border: rgba(25, 25, 24, 0.05);
-  --border-strong: rgba(25, 25, 24, 0.10);
-  --shadow: rgba(25, 25, 24, 0.035);
+  /* Zero Borders & Zero Shadows: Pure AnvayKosh Flat Squircle Aesthetic */
+  --border: transparent;
+  --border-strong: transparent;
+  --shadow: transparent;
 
   --font-serif: 'Fraunces', Georgia, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro', 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -141,6 +141,11 @@ section[id] {
 }
 
 /* Flat squircles: no shadows, no borders */
+[class*="shadow-"],
+[class*="shadow\["] {
+  box-shadow: none !important;
+}
+
 .squircle-card {
   min-width: 0;
   max-width: 100%;

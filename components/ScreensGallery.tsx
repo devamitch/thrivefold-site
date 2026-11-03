@@ -154,7 +154,7 @@ export function ScreensGallery() {
                 onClick={() => setActiveScreenId(screen.id)}
                 className={`squircle-button inline-flex shrink-0 items-center gap-2 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
                   isSelected
-                    ? 'bg-[var(--ink)] text-white shadow-sm'
+                    ? 'bg-[var(--ink)] text-white'
                     : 'bg-[var(--surface2)] text-[var(--ink-secondary)] hover:bg-[var(--surface)] hover:text-[var(--ink)]'
                 }`}
               >
@@ -168,9 +168,9 @@ export function ScreensGallery() {
 
       {/* Spotlight Showcase View */}
       <div className="squircle-card overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-5 sm:p-10 lg:p-12 text-left bg-[var(--surface)]">
-        {/* Clean Showcase Screenshot - No nested bezels, no artificial notches */}
+        {/* Clean Showcase Screenshot - No nested bezels, no artificial notches, Zero Shadows */}
         <div className="lg:col-span-5 flex justify-center items-center">
-          <div className="relative w-full max-w-[280px] sm:max-w-[330px] rounded-[28px] overflow-hidden shadow-2xl transition-all duration-300 bg-transparent">
+          <div className="relative w-full max-w-[280px] sm:max-w-[330px] rounded-[28px] overflow-hidden transition-all duration-300 bg-transparent">
             <img
               src={currentScreen.image}
               alt={`${currentScreen.title} screen capture`}
@@ -251,11 +251,11 @@ export function ScreensGallery() {
               onClick={() => setActiveScreenId(s.id)}
               className={`rounded-2xl p-2.5 text-left transition-all group ${
                 isSelected
-                  ? 'bg-white shadow-md scale-[1.02]'
+                  ? 'bg-white scale-[1.02]'
                   : 'bg-[var(--surface2)]/60 hover:bg-white'
               }`}
             >
-              <div className="aspect-[9/16] rounded-xl overflow-hidden bg-transparent mb-2 shadow-xs">
+              <div className="aspect-[9/16] rounded-xl overflow-hidden bg-transparent mb-2">
                 <img
                   src={s.image}
                   alt={s.title}

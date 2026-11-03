@@ -145,7 +145,7 @@ export function SanctuaryAppShowcase() {
                 aria-selected={isSelected}
                 onClick={() => setActiveTabId(tab.id)}
                 className={`squircle-button inline-flex shrink-0 items-center gap-2 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
-                  isSelected ? 'bg-white text-[var(--ink)] shadow-xs' : 'text-[var(--ink-secondary)] hover:text-[var(--ink)]'
+                  isSelected ? 'bg-white text-[var(--ink)]' : 'text-[var(--ink-secondary)] hover:text-[var(--ink)]'
                 }`}
               >
                 <Icon className="h-4 w-4" aria-hidden="true" />
@@ -158,9 +158,9 @@ export function SanctuaryAppShowcase() {
 
       {/* Card Content with Real Screenshot */}
       <div className="squircle-card overflow-hidden grid lg:grid-cols-[1fr_1.1fr] bg-[var(--surface)] text-left">
-        {/* Clean Screenshot Display - No nested phone frames, no fake notches */}
+        {/* Clean Screenshot Display - No nested phone frames, no fake notches, Zero Shadows */}
         <div className="bg-[var(--surface2)] p-6 sm:p-10 flex items-center justify-center min-h-[360px] sm:min-h-[460px]">
-          <div className="relative w-full max-w-[260px] sm:max-w-[310px] rounded-[28px] overflow-hidden shadow-2xl transition-all duration-300 bg-transparent">
+          <div className="relative w-full max-w-[260px] sm:max-w-[310px] rounded-[28px] overflow-hidden transition-all duration-300 bg-transparent">
             <img
               src={active.image}
               alt={`${active.title} interface capture`}

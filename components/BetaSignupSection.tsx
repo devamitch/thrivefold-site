@@ -49,14 +49,14 @@ export function BetaSignupSection() {
             using the Gmail account linked to your Play Store.
           </p>
 
-          {/* 3 Step Quick Grid */}
+          {/* 3 Step Quick Grid - Flat Squircles, No Borders, No Shadows */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left pt-2">
             {STEPS.map((s) => {
               const Icon = s.icon
               return (
                 <div
                   key={s.step}
-                  className="rounded-2xl border border-[var(--border-subtle,#e7e5e4)] bg-white p-5 flex flex-col justify-between shadow-xs hover:border-[var(--terracotta)] transition-colors"
+                  className="rounded-2xl bg-[var(--surface2,#eae4dc)]/70 p-5 flex flex-col justify-between transition-colors hover:bg-[var(--surface2,#eae4dc)]"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -72,7 +72,7 @@ export function BetaSignupSection() {
                       </p>
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-[var(--border-subtle,#e7e5e4)] mt-4">
+                  <div className="pt-4 mt-4">
                     <a
                       href={s.href}
                       target="_blank"
@@ -94,7 +94,7 @@ export function BetaSignupSection() {
               href={siteConfig.playStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="squircle-button inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-black text-white px-6 py-3.5 text-sm font-semibold shadow-sm"
+              className="squircle-button inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-black text-white px-6 py-3.5 text-sm font-semibold transition-all active:scale-[0.98]"
             >
               <Smartphone className="w-4 h-4" />
               <span>Open on Google Play</span>
@@ -104,7 +104,7 @@ export function BetaSignupSection() {
               href={siteConfig.playStoreBetaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="squircle-button inline-flex items-center justify-center gap-2 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white px-6 py-3.5 text-sm font-semibold shadow-sm"
+              className="squircle-button inline-flex items-center justify-center gap-2 bg-[var(--terracotta)] hover:bg-[var(--terracotta-hover)] text-white px-6 py-3.5 text-sm font-semibold transition-all active:scale-[0.98]"
             >
               <CheckCircle2 className="w-4 h-4" />
               <span>Accept Beta Invite</span>

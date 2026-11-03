@@ -90,7 +90,7 @@ export function HeroSection() {
           <div className="absolute -inset-6 bg-gradient-to-tr from-[var(--terracotta-subtle)] via-transparent to-[var(--sage-subtle)] rounded-[48px] blur-3xl opacity-70 -z-10" />
 
           {/* Floating Pill 1 - Top Left */}
-          <div className="hidden xl:flex absolute -left-8 top-12 z-20 items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-md backdrop-blur-md">
+          <div className="hidden xl:flex absolute -left-8 top-12 z-20 items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 backdrop-blur-md">
             <div className="w-8 h-8 rounded-xl bg-[var(--sage-subtle)] flex items-center justify-center text-[var(--sage-strong)]">
               <ShieldCheck className="w-4 h-4" />
             </div>
@@ -101,7 +101,7 @@ export function HeroSection() {
           </div>
 
           {/* Floating Pill 2 - Bottom Right */}
-          <div className="hidden xl:flex absolute -right-8 bottom-16 z-20 items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 shadow-md backdrop-blur-md">
+          <div className="hidden xl:flex absolute -right-8 bottom-16 z-20 items-center gap-2.5 rounded-2xl bg-white/95 px-4 py-3 backdrop-blur-md">
             <div className="w-8 h-8 rounded-xl bg-[var(--terracotta-subtle)] flex items-center justify-center text-[var(--terracotta-strong)]">
               <Zap className="w-4 h-4" />
             </div>
@@ -111,8 +111,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Clean Aesthetic Poster Display - Natural 9:16 Aspect, Zero fake notch/borders */}
-          <div className="relative w-full rounded-[36px] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01]">
+          {/* Clean Aesthetic Poster Display - Natural 9:16 Aspect, Zero fake notch/borders, Zero shadows */}
+          <div className="relative w-full rounded-[36px] overflow-hidden transition-transform hover:scale-[1.01]">
             <img
               src="/screenshots/home_poster.jpg"
               alt="Thrivefold: Your wellbeing, all in one place. Track, Move, Understand, Grow."
