@@ -101,16 +101,16 @@ export function SiteFooter() {
         {/* Bottom Credits & Legal Links */}
         <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-[var(--ink-muted)]">
           <p>
-            © {new Date().getFullYear()} Thrivefold. AnvayKosh ecosystem flagship by{' '}
+            © {new Date().getFullYear()} Thrivefold. AnvayKosh ecosystem flagship engineered by{' '}
             <a
-              href="https://devamit.co.in"
+              href="https://amitchakraborty.dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[var(--ink)] hover:text-[var(--terracotta)] font-medium underline underline-offset-2"
+              className="text-[var(--ink)] hover:text-[var(--terracotta)] font-semibold underline underline-offset-2"
             >
-              Amit Dev Labs
+              Amit Chakraborty (amitchakraborty.dev)
             </a>
-            , Bengaluru, India.
+            , Bengaluru &amp; Kolkata, India.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/privacy/" className="hover:text-[var(--terracotta)] underline underline-offset-2 font-medium">

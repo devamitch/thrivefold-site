@@ -12,5 +12,5 @@ export const siteConfig = {
   googleGroupEmail: 'anvaykosh-beta-testers@googlegroups.com',
   contactEmail: 'amit@devamit.co.in',
   author: 'Amit Chakraborty',
-  authorUrl: 'https://devamit.co.in',
+  authorUrl: 'https://amitchakraborty.dev',
 }
