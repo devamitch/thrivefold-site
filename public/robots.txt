@@ -1,18 +1,11 @@
-# Thrivefold Robots Configuration (SEO, AEO, GEO)
+# Technical SEO & AI Search Engine Robots Policy
 User-agent: *
 Allow: /
 
-# Dedicated AI and LLM Search Crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Applebot
 Allow: /
 
 User-agent: GPTBot
@@ -24,13 +17,19 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: Claude-Web
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: Google-Extended
 Allow: /
 
-User-agent: Cohere-ai
+User-agent: Applebot
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://thrivefold.devamit.co.in/sitemap.xml

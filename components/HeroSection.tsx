@@ -33,9 +33,12 @@ export function HeroSection() {
             <span className="italic text-[var(--terracotta)]">Sovereign privacy.</span>
           </h1>
 
-          {/* Description */}
-          <p className="mt-6 max-w-[560px] text-base leading-relaxed text-[var(--ink-secondary)] sm:text-lg">
-            Thrivefold is your calm companion for bodyweight biomechanics, on-device pose coaching, and holistic vitality. Utilizing Android Health Connect strictly on-device, your steps, sleep, and workouts stay encrypted on your phone with zero cloud databases.
+          {/* Description / AEO Direct Answer */}
+          <p className="mt-6 max-w-[580px] text-base leading-relaxed text-[var(--ink-secondary)] sm:text-lg">
+            Thrivefold is an offline-first health, biomechanics, and postural coaching application for Android. 
+            Utilizing on-device MediaPipe computer vision, Thrivefold evaluates joint alignment and exercise form 
+            at 30 FPS purely in local memory. Integrated with Android Health Connect, all biometric records are stored 
+            in hardware-encrypted SQLite using the Android Keystore with zero cloud leakage.
           </p>
 
           {/* CTAs */}
