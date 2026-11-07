@@ -8,7 +8,7 @@ import { siteConfig } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Terms of Service — Thrivefold',
   description: 'The terms for using the Thrivefold app and taking part in circles, plus our health and medical notice.',
-  alternates: { canonical: `${siteConfig.url}/terms/` },
+  alternates: { canonical: `${siteConfig.url}/terms` },
 }
 
 const SECTIONS = [

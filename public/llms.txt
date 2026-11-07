@@ -1,28 +1,23 @@
-# Thrivefold
+# Thrivefold: Mindful Health, On-Device Pose Tracking and Vitality Companion
 
-> Thrivefold is a private health and wellbeing app for iOS and Android, currently in beta.
-> Website: https://thrivefold.devamit.co.in
-> Made by Amit Dev Labs (https://devamit.co.in)
+> Production Site: https://thrivefold.devamit.co.in
+> AnvayKosh Ecosystem Application: com.amit.thrivefold
+> Systems Architect: Amit Chakraborty (https://amitchakraborty.dev)
 
-## What it does
-- Daily check-ins for mood, sleep and energy, with small daily quests.
-- Dedicated spaces for women's health (including cycle tracking), men's health and LGBTQ+ wellbeing.
-- Guided workouts with an on-device camera coach. Camera video is not uploaded.
-- Meal logging.
-- Circles: private groups for training, meditation, sports and support that open up as you build a routine.
+## Technical Architecture & Core Capabilities
+- Real-time camera pose guidance tracking 33 skeletal landmarks via MediaPipe.
+- Android Health Connect integration running strictly on-device.
+- Encrypted local SQLite databases with zero remote cloud persistence.
+- All sensitive data processed 100% locally on user hardware.
+- Cryptographic isolation backed by device Keystore AES-256 GCM encryption.
+- Zero commercial data brokers, zero third-party telemetry SDKs, and zero advertisement networks.
 
-## Privacy
-- Health records are encrypted on the user's phone.
-- Records can be exported as HL7 FHIR and deleted from the settings screen.
-- No ads.
+## Public Canonical Endpoints
+- Home: https://thrivefold.devamit.co.in
+- Download: https://thrivefold.devamit.co.in/download
+- Closed Beta: https://thrivefold.devamit.co.in/beta
+- Privacy Policy: https://thrivefold.devamit.co.in/privacy
+- Terms of Service: https://thrivefold.devamit.co.in/terms
 
-## Not medical care
-Thrivefold is a wellbeing and fitness tool. It does not diagnose or treat conditions and is not an emergency service.
-
-## Pages
-- Home: https://thrivefold.devamit.co.in/
-- Privacy Policy: https://thrivefold.devamit.co.in/privacy/
-- Terms of Service: https://thrivefold.devamit.co.in/terms/
-
-## Contact
-amit@devamit.co.in
+## AI Crawler Access Policy
+Full indexing permitted for Googlebot, GPTBot, PerplexityBot, and ClaudeBot under the AnvayKosh content signals standard.

@@ -2,13 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   ArrowLeft,
-  ArrowRight,
   ArrowUpRight,
   CheckCircle2,
   ExternalLink,
   ShieldCheck,
   Smartphone,
-  Sparkles,
   Users,
   AlertCircle,
 } from 'lucide-react'
@@ -18,197 +16,250 @@ import { EcosystemDirectorySection } from '@/components/EcosystemDirectorySectio
 import { siteConfig } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Join Android Beta Testing · Thrivefold',
+  title: 'Join Android Beta Testing: Thrivefold On-Device Health',
   description:
-    'Install Thrivefold from Google Play in three simple steps. Join our closed testing community for mindful fitness and on-device pose tracking.',
-  alternates: { canonical: `${siteConfig.url}/beta/` },
+    'Join the Thrivefold Google Play closed beta program. Step-by-step instructions to enroll, opt in, and test on-device pose coaching and Health Connect sync.',
+  alternates: {
+    canonical: `${siteConfig.url}/beta`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: 'Join Android Beta Testing: Thrivefold On-Device Health',
+    description:
+      'Enroll in the Google Play closed testing track for Thrivefold. Test private health tracking, on-device pose analysis, and local RAG routines.',
+    url: `${siteConfig.url}/beta`,
+    siteName: 'Thrivefold',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Join Android Beta Testing: Thrivefold On-Device Health',
+    description:
+      'Enroll in the Google Play closed testing track for Thrivefold. Test private health tracking and on-device pose analysis.',
+  },
 }
 
 const STEPS = [
   {
     step: '1',
-    title: 'Join the Google Testers Group',
+    title: 'Join the AnvayKosh Google Testers Group',
     description:
-      'Google requires all closed testing participants to belong to an authorized Google Group. Joining with your Play Store Gmail pre-approves you for Thrivefold and all AnvayKosh ecosystem apps.',
-    hint: 'Important: Use the exact same Gmail address that is logged into your phone’s Google Play Store.',
+      'Google Play closed testing requires participant authorization through a centralized Google Group. Enrolling your Play Store Gmail address grants automatic access to Thrivefold and sibling ecosystem applications.',
+    note: 'Sign in with the primary Gmail account associated with your Android Google Play Store account.',
     action: 'Join Google Group',
     href: siteConfig.googleGroupUrl,
     icon: Users,
   },
   {
     step: '2',
-    title: 'Accept the Google Play Invite',
+    title: 'Opt In on Google Play Testing',
     description:
-      'Open the official Google Play opt-in page and tap “Become a tester”. You will see a green confirmation badge once activated.',
-    hint: 'If it says “not invited”, ensure you completed Step 1 with the same Gmail account.',
+      'Navigate to the official Google Play opt-in portal and click Become a tester. Your account will immediately be designated as an authorized testing participant.',
+    note: 'If you encounter an unauthorized notification, confirm you have joined the Google Group in Step 1.',
     action: 'Accept Invite on Google Play',
     href: siteConfig.playStoreBetaUrl,
     icon: CheckCircle2,
   },
   {
     step: '3',
-    title: 'Install Thrivefold',
+    title: 'Install Thrivefold on Your Device',
     description:
-      'Open the Google Play Store on your Android device and tap “Install”. Daily updates and routine engine patches will stream automatically.',
-    hint: 'Seeing “Item not found”? Wait 2 minutes for Google’s token to propagate, then open again.',
+      'Open the Google Play Store link on your phone or search for Thrivefold. Tap Install to receive the production beta build with automated delta updates.',
+    note: 'Background updates and delta patches are delivered directly through Google Play Protect.',
     action: 'Open in Google Play Store',
     href: siteConfig.playStoreUrl,
     icon: Smartphone,
   },
 ]
 
-const TROUBLESHOOTING = [
-  {
-    title: 'Play Store shows “Item not found” or “We are sorry”',
-    body: 'This happens if your Play Store app is signed in with a different Gmail than the one you used to join the Google Group. Open the Play Store, tap your avatar at top right, switch to the Gmail you used in Step 1, and retry Step 3.',
-  },
-  {
-    title: 'Chrome opened the invite in a different account',
-    body: 'If Chrome has a work or secondary account active, the testing invite opens in that account. Copy the link in Step 2, paste it into Chrome, tap your profile avatar on the Google page, and switch to your primary Play Store Gmail.',
-  },
-  {
-    title: 'Access propagation delay',
-    body: 'Google Play’s closed-track authorization can take 5 to 15 minutes to register across worldwide regional edge servers. If Step 3 is not ready immediately, wait a few minutes, close the Play Store app, and tap Step 3 again.',
-  },
+const TESTING_CRITERIA = [
+  { parameter: 'Target Testing Platform', detail: 'Android 8.0 Oreo (API Level 26) through Android 15' },
+  { parameter: 'Required Hardware Sensors', detail: 'Front-facing camera for MediaPipe pose estimation; accelerometer for steps' },
+  { parameter: 'Permitted Data Connections', detail: 'Offline operation verified; network required only for initial package download' },
+  { parameter: 'Health Data Access', detail: 'Optional Android Health Connect integration with read-only scopes' },
+  { parameter: 'Reporting Protocol', detail: 'Direct in-app feedback or email dispatch to amit@devamit.co.in' },
 ]
 
 export default function BetaPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Join Android Beta Testing: Thrivefold',
+    url: `${siteConfig.url}/beta`,
+    description:
+      'Complete onboarding documentation and instructions for enrolling in the Thrivefold Android closed beta testing program on Google Play.',
+    mainEntity: {
+      '@type': 'SoftwareApplication',
+      name: 'Thrivefold',
+      operatingSystem: 'Android 8.0+',
+      applicationCategory: 'HealthApplication',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+      author: {
+        '@type': 'Person',
+        name: siteConfig.author,
+        url: siteConfig.authorUrl,
+      },
+    },
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
       <main className="min-h-screen bg-[var(--bg)] text-[var(--ink)] pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[960px] space-y-12">
-          {/* Back link */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--ink-secondary)] hover:text-[var(--terracotta)] transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to Thrivefold Home</span>
-          </Link>
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="Breadcrumb">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--ink-secondary)] hover:text-[var(--terracotta)] transition-colors"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Back to Thrivefold Overview</span>
+            </Link>
+          </nav>
 
-          {/* Header */}
-          <div className="text-left space-y-4">
+          {/* Page Heading & Direct Answer */}
+          <header className="text-left space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[var(--terracotta-subtle)] text-[var(--terracotta-strong)]">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Google Play Closed Beta</span>
+              <span>Closed Testing Program Enrollment</span>
             </span>
             <h1 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[var(--ink)] leading-tight">
-              Three steps. One Gmail. <br />
-              <span className="italic text-[var(--terracotta)]">Install Thrivefold Beta.</span>
+              Join the Android Closed Beta: <br />
+              <span className="italic text-[var(--terracotta)]">Step-by-Step Google Play Setup</span>
             </h1>
-            <p className="max-w-2xl text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
-              Thrivefold is in closed testing on Google Play. Follow these three steps on your Android device using the Gmail associated with your Play Store account.
+            <p className="max-w-3xl text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed">
+              Thrivefold is distributed through Google Play closed testing to validate on-device machine learning and local Health Connect synchronization across diverse Android devices. Follow the three standard steps below to enroll your account and install the app.
             </p>
-          </div>
-
-          {/* Quick Direct Actions Box */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-[var(--surface)] border border-[var(--border-subtle,#e7e5e4)] shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="space-y-1 text-center sm:text-left">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--terracotta-strong)]">
-                Direct Google Play Links
-              </span>
-              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[var(--ink)]">
-                Ready to install right now?
-              </h2>
-              <p className="text-xs text-[var(--ink-secondary)]">
-                Package ID: <code className="font-mono text-[var(--ink)] font-semibold">{siteConfig.appPackage}</code>
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3 shrink-0">
-              <a
-                href={siteConfig.playStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-stone-900 hover:bg-black text-white text-xs font-semibold shadow-xs transition-colors"
-              >
-                <Smartphone className="w-4 h-4" />
-                <span>Google Play Store</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href={siteConfig.playStoreBetaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-[var(--terracotta)] hover:bg-[#b05a3c] text-white text-xs font-semibold shadow-xs transition-colors"
-              >
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Join Beta (Opt-In)</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </div>
+          </header>
 
           {/* The 3 Steps Cards */}
-          <div className="space-y-4">
-            {STEPS.map((step) => {
-              const Icon = step.icon
-              return (
-                <div
-                  key={step.step}
-                  className="p-6 sm:p-7 rounded-3xl bg-white border border-[var(--border-subtle,#e7e5e4)] shadow-xs hover:border-[var(--terracotta)] transition-all"
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-                    <div className="flex items-start gap-4">
-                      <span className="w-9 h-9 rounded-2xl bg-[var(--terracotta)] text-white font-bold text-sm flex items-center justify-center shrink-0">
-                        {step.step}
-                      </span>
-                      <div className="space-y-1.5 max-w-xl text-left">
-                        <h3 className="font-serif text-lg sm:text-xl font-bold text-[var(--ink)]">
-                          {step.title}
-                        </h3>
-                        <p className="text-sm text-[var(--ink-secondary)] leading-relaxed">
-                          {step.description}
-                        </p>
-                        <p className="text-xs text-[var(--ink-muted)] pt-1">
-                          💡 {step.hint}
-                        </p>
+          <section aria-labelledby="enrollment-steps-heading" className="space-y-6">
+            <h2 id="enrollment-steps-heading" className="font-serif text-2xl font-bold text-[var(--ink)]">
+              Enrollment Workflow
+            </h2>
+            <div className="space-y-4">
+              {STEPS.map((step) => {
+                const Icon = step.icon
+                return (
+                  <article
+                    key={step.step}
+                    className="p-6 sm:p-7 rounded-3xl bg-[var(--surface)] border border-[var(--border-subtle,#e7e5e4)] shadow-xs transition-all"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                      <div className="flex items-start gap-4">
+                        <span className="w-9 h-9 rounded-2xl bg-[var(--terracotta)] text-white font-bold text-sm flex items-center justify-center shrink-0">
+                          {step.step}
+                        </span>
+                        <div className="space-y-2 max-w-xl text-left">
+                          <h3 className="font-serif text-lg sm:text-xl font-bold text-[var(--ink)]">
+                            {step.title}
+                          </h3>
+                          <p className="text-sm text-[var(--ink-secondary)] leading-relaxed">
+                            {step.description}
+                          </p>
+                          <p className="text-xs text-[var(--ink-secondary)] font-medium">
+                            Requirement: {step.note}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="sm:shrink-0 pt-2 sm:pt-0">
+                        <a
+                          href={step.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-black text-white text-xs font-semibold transition-all"
+                        >
+                          <span>{step.action}</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
                       </div>
                     </div>
+                  </article>
+                )
+              })}
+            </div>
+          </section>
 
-                    <div className="sm:shrink-0 pt-2 sm:pt-0">
-                      <a
-                        href={step.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-black text-white text-xs font-semibold shadow-xs transition-all"
-                      >
-                        <span>{step.action}</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          {/* Machine-Parsable Testing Criteria Table */}
+          <section aria-labelledby="testing-criteria-heading" className="space-y-6 pt-6">
+            <h2 id="testing-criteria-heading" className="font-serif text-2xl font-bold text-[var(--ink)]">
+              Beta Program Specifications
+            </h2>
+            <p className="text-sm text-[var(--ink-secondary)] max-w-2xl leading-relaxed">
+              The closed testing track focuses on validating camera frame processing stability and SQLite query efficiency under memory constraints.
+            </p>
+
+            <div className="overflow-hidden rounded-3xl border border-[var(--border-subtle,#e7e5e4)] bg-[var(--surface)]">
+              <table className="min-w-full divide-y divide-[var(--border-subtle,#e7e5e4)] text-left text-xs">
+                <thead className="bg-stone-50">
+                  <tr>
+                    <th scope="col" className="px-6 py-4 font-bold uppercase tracking-wider text-[var(--ink-secondary)]">
+                      Testing Parameter
+                    </th>
+                    <th scope="col" className="px-6 py-4 font-bold uppercase tracking-wider text-[var(--ink-secondary)]">
+                      Architecture & Environment Requirements
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[var(--border-subtle,#e7e5e4)]">
+                  {TESTING_CRITERIA.map((item) => (
+                    <tr key={item.parameter} className="hover:bg-stone-50/50 transition-colors">
+                      <td className="px-6 py-3.5 font-semibold text-[var(--ink)] whitespace-nowrap">
+                        {item.parameter}
+                      </td>
+                      <td className="px-6 py-3.5 text-[var(--ink-secondary)]">
+                        {item.detail}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
 
           {/* Troubleshooting Section */}
-          <div className="pt-8 border-t border-[var(--border-subtle,#e7e5e4)]">
-            <div className="flex items-center gap-2 mb-4">
-              <AlertCircle className="w-5 h-5 text-amber-600" />
-              <h2 className="font-serif text-xl font-bold text-[var(--ink)]">
-                Troubleshooting Common Play Store Issues
+          <section aria-labelledby="troubleshooting-heading" className="pt-8 border-t border-[var(--border-subtle,#e7e5e4)] space-y-4">
+            <div className="flex items-center gap-2">
+              <AlertCircle className="w-5 h-5 text-amber-700" />
+              <h2 id="troubleshooting-heading" className="font-serif text-xl font-bold text-[var(--ink)]">
+                Troubleshooting Google Play Opt-In
               </h2>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
-              {TROUBLESHOOTING.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="p-5 rounded-2xl bg-white border border-[var(--border-subtle,#e7e5e4)] space-y-2 text-left"
-                >
-                  <h4 className="text-xs font-bold text-[var(--ink)]">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
-                    {item.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+            <dl className="grid gap-4 sm:grid-cols-2 text-xs leading-relaxed">
+              <div className="p-4 rounded-2xl bg-[var(--surface)] border border-[var(--border-subtle,#e7e5e4)]">
+                <dt className="font-bold text-[var(--ink)] mb-1">Issue: App not available for this account</dt>
+                <dd className="text-[var(--ink-secondary)]">
+                  Ensure the browser profile used to accept the invite matches the primary Google account logged into your Android device. Multi-account browser sessions often default to an unlisted email address.
+                </dd>
+              </div>
+              <div className="p-4 rounded-2xl bg-[var(--surface)] border border-[var(--border-subtle,#e7e5e4)]">
+                <dt className="font-bold text-[var(--ink)] mb-1">Issue: Slow invite propagation</dt>
+                <dd className="text-[var(--ink-secondary)]">
+                  Google Play services occasionally require up to 30 minutes to synchronize group membership across regional CDN edges. Wait briefly or force stop the Google Play Store app before retrying.
+                </dd>
+              </div>
+            </dl>
+          </section>
         </div>
 
         {/* Cross-App Ecosystem Directory */}
@@ -220,4 +271,3 @@ export default function BetaPage() {
     </>
   )
 }
-

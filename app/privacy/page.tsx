@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy — Health Connect & Data Safety | Thrivefold',
   description:
     'Thrivefold utilizes Health Connect and device sensor permissions strictly on-device to read user activity, step count, sleep, and fitness matrices. No raw health metrics are sold, shared, or persisted to remote backend databases.',
-  alternates: { canonical: `${siteConfig.url}/privacy/` },
+  alternates: { canonical: `${siteConfig.url}/privacy` },
 }
 
 const HEALTH_CONNECT_DECLARATIONS = [
